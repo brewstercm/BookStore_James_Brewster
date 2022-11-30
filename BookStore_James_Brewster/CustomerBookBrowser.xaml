@@ -8,7 +8,30 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="CustomerBookBrowser">
 
-    <Grid>
-        <DataGrid d:ItemsSource="{d:SampleData ItemCount=5}"/>
-    </Grid>
+    <FlowDocumentScrollViewer>
+        <FlowDocument>
+            <Paragraph FontSize="14pt">Books:</Paragraph>
+            <Table x:Name="tblBookList">
+                <TableRowGroup Paragraph.TextAlignment="left">
+                    <TableRow FontWeight="Bold" >
+                        <TableCell>
+                            <Paragraph>ISBN</Paragraph>
+                        </TableCell>
+                        <TableCell>
+                            <Paragraph>Title</Paragraph>
+                        </TableCell>
+                        <TableCell>
+                            <Paragraph>PubDate</Paragraph>
+                        </TableCell>
+                        <TableCell>
+                            <Paragraph>Price</Paragraph>
+                        </TableCell>
+                        <TableCell>
+                            <Paragraph>Reviews</Paragraph>
+                        </TableCell>
+                    </TableRow>
+                </TableRowGroup>
+            </Table>
+        </FlowDocument>
+    </FlowDocumentScrollViewer>
 </Window>
