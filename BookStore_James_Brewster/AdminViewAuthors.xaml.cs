@@ -135,7 +135,7 @@ namespace BookStore_James_Brewster
 
 		private void Button_Click_5(object sender, RoutedEventArgs e)
 		{
-			AdminViewAuthors a = new AdminViewAuthors(this.a);
+			AdminViewAuthors a = new AdminViewAuthors();
 			a.Show();
 			this.Close();
 		}

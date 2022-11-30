@@ -64,7 +64,7 @@
                 </FlowDocument>
 
             </FlowDocumentScrollViewer>
-            <TextBox x:Name="txtAuthorID" Text="AuthorID" Width="150" ContextMenuClosing="txtAuthorID_ContextMenuClosing" TextChanged="txtAuthorID_TextChanged">
+            <TextBox x:Name="txtAuthorID" Text="AuthorID" Width="150">
                 <TextBox.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="8"/>
