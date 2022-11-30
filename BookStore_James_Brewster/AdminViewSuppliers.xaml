@@ -72,7 +72,7 @@
                 </TextBox.Resources>
             </TextBox>
             <Label HorizontalAlignment="Center"></Label>
-            <Button x:Name="btnSupplierID" Width="150">Edit Supplier</Button>
+            <Button x:Name="btnSupplierID" Click="AdminEditSupplier" Width="150">Edit Supplier</Button>
         </StackPanel>
     </Grid>
 </Window>

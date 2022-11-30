@@ -178,6 +178,4 @@ namespace BookStore_James_Brewster
 			this.Close();
 		}
 	}
-
-
 }

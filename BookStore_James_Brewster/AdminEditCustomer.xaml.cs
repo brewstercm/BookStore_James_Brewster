@@ -179,6 +179,22 @@ namespace BookStore_James_Brewster
             a.Show();
             this.Close();
         }
+
+		private void btnDeleteCustomer_Click(object sender, RoutedEventArgs e)
+		{
+            DatabaseInstance.deleteCustomer(customer.customerID);
+            AdminViewCustomers a = new AdminViewCustomers();
+            a.Show();
+            this.Close();
+        }
+
+		private void btnConfirmEditCustomer_Click(object sender, RoutedEventArgs e)
+		{
+            DatabaseInstance.editCustomer(customer.customerID, customer.fName, customer.lName, customer.email, customer.phone, customer.address);
+			AdminViewCustomers a = new AdminViewCustomers();
+			a.Show();
+			this.Close();
+		}
 	}
 	
 }

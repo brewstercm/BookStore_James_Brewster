@@ -197,5 +197,10 @@ namespace BookStore_James_Brewster
 			a.Show();
 			this.Close();
 		}
+
+		private void btntDeleteBook_Click(object sender, RoutedEventArgs e)
+		{
+
+		}
 	}
 }

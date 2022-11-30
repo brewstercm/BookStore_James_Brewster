@@ -58,7 +58,9 @@
             <Label Width="150" HorizontalAlignment="Center">Phone</Label>
             <TextBox x:Name="txtAuthorPhone" TextWrapping="Wrap" Text="000-000-0000" Width="150"/>
 
-            <Button x:Name="btnCreateAccountRedirect" Width="150" BorderBrush="Blue">Submit Changes</Button>
+
+            <Label HorizontalAlignment="Center"></Label>
+            <Button x:Name="btnEditAuthorSubmitChanges" Width="150" BorderBrush="Blue" Click="btnCreateAccountRedirect_Click">Submit Changes</Button>
 
         </StackPanel>
     </Grid>

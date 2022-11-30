@@ -21,6 +21,7 @@ namespace BookStore_James_Brewster
 	/// </summary>
 	public partial class AdminViewAuthors : Window
 	{
+
 		public AdminViewAuthors()
 		{
 			InitializeComponent();
@@ -125,7 +126,7 @@ namespace BookStore_James_Brewster
 
 		private void Button_Click_5(object sender, RoutedEventArgs e)
 		{
-			AdminViewAuthors a = new AdminViewAuthors();
+			AdminViewAuthors a = new AdminViewAuthors(this.a);
 			a.Show();
 			this.Close();
 		}
