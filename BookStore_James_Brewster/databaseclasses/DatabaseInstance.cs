@@ -4,8 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
-using BlazorBookStore1.Pages;
-
 namespace BlazorBookStore1
 {
     /// <summary>
