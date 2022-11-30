@@ -18,12 +18,18 @@
             <Button Click="Button_Click" >@Add Book</Button>
             <Button Click="Button_Click_1">@Book Browser</Button>
             <Button Click="Button_Click_2">@Create Category</Button>
+            <!--<Button Click="Button_Click_3">@Admin Edit Author</Button>
+            <Button Click="Button_Click_4">@Admin Edit Book</Button>
+            <Button>@Admin Edit Customer</Button>
+            <Button>@Admin Edit Order</Button>
+            <Button>@Admin Edit Supplier</Button>-->
             <Button Click="Button_Click_5">@Admin View Authors</Button>
             <Button Click="Button_Click_6">@Admin View Customers</Button>
             <Button Click="Button_Click_7">@Admin View Orders</Button>
             <Button Click="Button_Click_8">@Admin View Suppliers</Button>
             <Button>----</Button>
             <Button Click="Button_Click_10">Book Browser</Button>
+            <!--<Button>Customer Edit Order</Button>-->
             <Button Click="Button_Click_11">Customer Update Account</Button>
             <Button Click="Button_Click_12">Customer View Orders</Button>
             <Button Click="Button_Click_13">Create Account</Button>
