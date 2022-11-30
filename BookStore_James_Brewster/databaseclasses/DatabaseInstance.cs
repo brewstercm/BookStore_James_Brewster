@@ -13,7 +13,18 @@ namespace BlazorBookStore1
     public static class DatabaseInstance
     {
         private static string connectionString = @"Server=(LocalDB)\MSSQLLocalDB;Integrated Security=true;AttachDbFileName=C:\Users\brade\Source\Repos\bradenbjames\BookStore_Brewster_James\BlazorBookStore1\Resources\BookStoreDB.mdf;Connection Lifetime=120;MultipleActiveResultSets=true;";
-
+        public static void createCategory(string catName)
+        {
+            string query = $"INSERT INTO dbo.Categories VALUES('{catName}')";
+            using(SqlConnection conn = new SqlConnection(connectionString))
+            {
+                using(SqlCommand command = new SqlCommand(query, conn))
+                {
+                    conn.Open();
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
         public static void CreateAccount(string fName, string lName, string email, string password, bool isAdministrator, string address, string phone)
         {
             int adminPrivileges = 0;
