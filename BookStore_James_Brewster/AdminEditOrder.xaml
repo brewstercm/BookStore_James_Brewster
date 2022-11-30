@@ -51,16 +51,22 @@
             </TextBox>
             
             <Label Width="150" HorizontalAlignment="Center">Order Date</Label>
-            <TextBox Text="OrderID" Width="150">
+            <TextBox Text="Order Date" Width="150">
                 <TextBox.Resources>
                     <Style TargetType="{x:Type Border}">
-                        <Setter Property="CornerRadius" Value="3"/>
+                        <Setter Property="CornerRadius" Value="8"/>
                     </Style>
                 </TextBox.Resources>
             </TextBox>
             
             <Label Width="150" HorizontalAlignment="Center">Order Cost</Label>
-            <TextBox x:Name="txtOrderCost" TextWrapping="Wrap" Text="Cost" Width="150"/>
+            <TextBox Text="Order Cost" Width="150">
+                <TextBox.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="8"/>
+                    </Style>
+                </TextBox.Resources>
+            </TextBox>
             
             <Label Width="150" HorizontalAlignment="Center"></Label>
 

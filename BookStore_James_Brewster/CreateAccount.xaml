@@ -42,7 +42,7 @@
         <StackPanel Grid.Column="1" Background="LightGray">
             <Label Content="Create Account" HorizontalAlignment="Center" FontSize="14" FontFamily="Georgia"/>
             <Label Width="150" HorizontalAlignment="Center">First Name</Label>
-            <TextBox Text="First Name" Width="150">
+            <TextBox x:Name="txtfName" Text="First Name" Width="150">
                 <TextBox.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="8"/>
@@ -51,7 +51,7 @@
             </TextBox>
             
             <Label Width="150" HorizontalAlignment="Center">Last Name</Label>
-            <TextBox Text="Last Name" Width="150">
+            <TextBox x:Name="txtlName" Text="Last Name" Width="150">
                 <TextBox.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="8"/>
@@ -60,7 +60,7 @@
             </TextBox>
             
             <Label Width="150" HorizontalAlignment="Center">Address</Label>
-            <TextBox Text="Address" Width="150">
+            <TextBox x:Name="txtAddress" Text="Address" Width="150">
                 <TextBox.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="8"/>
@@ -69,7 +69,7 @@
             </TextBox>
             
             <Label Width="150" HorizontalAlignment="Center">Email</Label>
-            <TextBox Text="Email" Width="150">
+            <TextBox x:Name="txtEmail" Text="Email" Width="150">
                 <TextBox.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="8"/>
@@ -78,7 +78,7 @@
             </TextBox>
 
             <Label Width="150" HorizontalAlignment="Center">Password</Label>
-            <TextBox Text="Password" Width="150">
+            <TextBox x:Name="txtPassword" Text="Password" Width="150">
                 <TextBox.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="8"/>
@@ -87,7 +87,7 @@
             </TextBox>
 
             <Label Width="150" HorizontalAlignment="Center">Phone</Label>
-            <TextBox Text="Phone#" Width="150">
+            <TextBox x:Name="txtPhone" Text="Phone#" Width="150">
                 <TextBox.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="8"/>

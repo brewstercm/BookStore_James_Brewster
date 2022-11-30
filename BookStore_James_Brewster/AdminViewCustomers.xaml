@@ -72,7 +72,7 @@
                 </FlowDocument>
 
             </FlowDocumentScrollViewer>
-            <TextBox Text="CustomerID" Width="150">
+            <TextBox x:Name="txtCustomerID" Text="CustomerID" Width="150">
                 <TextBox.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="8"/>
@@ -80,7 +80,7 @@
                 </TextBox.Resources>
             </TextBox>
             <Label HorizontalAlignment="Center"></Label>
-            <Button Width="150">Edit Customer</Button>
+            <Button x:Name="btnEditCustomer" Width="150">Edit Customer</Button>
         </StackPanel>
     </Grid>
 </Window>

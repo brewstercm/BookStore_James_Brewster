@@ -71,7 +71,7 @@
                 </FlowDocument>
 
             </FlowDocumentScrollViewer>
-            <TextBox Text="ISBN#" Width="150">
+            <TextBox x:Name="txtISBN" Text="ISBN#" Width="150">
                 <TextBox.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="3"/>

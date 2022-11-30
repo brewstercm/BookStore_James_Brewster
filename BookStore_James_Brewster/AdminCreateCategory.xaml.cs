@@ -141,5 +141,9 @@ namespace BookStore_James_Brewster
 			this.Close();
 		}
 
+		private void txtCategoryName(object sender, ContextMenuEventArgs e)
+		{
+
+		}
 	}
 }
