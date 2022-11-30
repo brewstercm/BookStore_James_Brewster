@@ -25,6 +25,53 @@ namespace BlazorBookStore1
                 }
             }
         }
+        public static void addBookToOrder(Book book, int customerID)
+        {
+            List<float> prices = new List<float>();
+            int orderID = -1;
+            string query = $"SELECT MAX(orderID) FROM dbo.Orders WHERE customerID={customerID}";
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            { 
+                conn.Open();
+                using (SqlCommand command = new SqlCommand(query, conn))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            orderID = reader.GetInt32(reader.GetOrdinal("orderID"));
+                        }
+                    }
+                }
+                query = $"INSERT INTO dbo.Order_Item VALUES({book.price}, {orderID}, '{book.isbnNum}')";
+                using (SqlCommand command = new SqlCommand(query, conn))
+                {
+                    command.ExecuteNonQuery();
+                }
+                query = $"SELECT * FROM dbo.Order_Item WHERE orderID={orderID}";
+                using (SqlCommand command = new SqlCommand(query, conn))
+                {
+                    using(SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            prices.Add(reader.GetFloat(reader.GetOrdinal("itemPrice")));
+                        }
+                    }
+                }
+                float total = 0;
+                foreach(float price in prices)
+                {
+                    total += price;
+                }
+
+                query = $"UPDATE dbo.Orders SET orderVal={total} WHERE orderID={orderID}";
+                using (SqlCommand command = new SqlCommand(query, conn))
+                {
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
         public static void CreateAccount(string fName, string lName, string email, string password, bool isAdministrator, string address, string phone)
         {
             int adminPrivileges = 0;
@@ -354,10 +401,10 @@ namespace BlazorBookStore1
             return books;
         }
 
-        public static List<Book> searchBooksByTitle(string searchTerm)
+        public static List<Book> browseBooksByTitle()
         {
             List<Book> books = new List<Book>();
-            string query = $"SELECT * FROM dbo.Books WHERE isbnNum like '%{searchTerm}%' or title like '%{searchTerm}%'";
+            string query = $"SELECT * FROM dbo.Books order by title desc";
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 SqlCommand command = new SqlCommand(query, conn);
@@ -582,6 +629,31 @@ namespace BlazorBookStore1
                 conn.Open();
                 command2.ExecuteNonQuery();
                 command.ExecuteNonQuery();
+            }
+        }
+        public static void addSupplierRep(string fName, string lName, string workNum, string cellNum, string email, int supplierID)
+        {
+            string query = $"INSERT INTO dbo.SupplierRep VALUES('{fName}', '{lName}', '{workNum}', '{cellNum}', '{email}', {supplierID})";
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+                using (SqlCommand command = new SqlCommand(query, conn))
+                {
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
+
+        public static void deleteSupplierRep(string fName, string lName, int supplierID)
+        {
+            string query = $"DELETE FROM dbo.SupplierRep WHERE fName='{fName}' and lName='{lName}' and supplierID={supplierID}";
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+                using (SqlCommand command = new SqlCommand(query, conn))
+                {
+                    command.ExecuteNonQuery();
+                }
             }
         }
     }
