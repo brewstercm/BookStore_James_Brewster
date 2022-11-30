@@ -58,9 +58,9 @@
             
             <Label Width="150" HorizontalAlignment="Center"></Label>
 
-            <Button x:Name="btnDeleteCustomer" Width="150" BorderBrush="Red">Delete Customer</Button>
+            <Button x:Name="btnDeleteCustomer" Width="150" BorderBrush="Red" Click="btnDeleteCustomer_Click">Delete Customer</Button>
             <Label Width="150" HorizontalAlignment="Center"></Label>
-            <Button x:Name="btnConfirmEditCustomer" Width="150" BorderBrush="Green">Confirm Edit</Button>
+            <Button x:Name="btnConfirmEditCustomer" Width="150" BorderBrush="Green" Click="btnConfirmEditCustomer_Click">Confirm Edit</Button>
 
         </StackPanel>
     </Grid>

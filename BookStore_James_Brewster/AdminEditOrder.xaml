@@ -66,7 +66,7 @@
             
             <Label Width="150" HorizontalAlignment="Center"></Label>
 
-            <Button x:Name="btnDeleteOrder" Width="150" BorderBrush="Red">Delete Order</Button>
+            <Button x:Name="btnDeleteOrder" Width="150" BorderBrush="Red" Click="btnDeleteOrder_Click">Delete Order</Button>
             <Label Width="150"  HorizontalAlignment="Center"></Label>
             <Button x:Name="btnConfirmOrderChanges" Width="150" BorderBrush="Green">Confirm Changes</Button>
 

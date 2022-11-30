@@ -21,8 +21,10 @@ namespace BookStore_James_Brewster
 	/// </summary>
 	public partial class AdminEditSupplier : Window
 	{
-		public AdminEditSupplier()
+        private Supplier s;
+		public AdminEditSupplier(Supplier s)
 		{
+            this.s = s;
 			InitializeComponent();
             if (BlazorBookStore1.Customer.customerID == -1)
             {
@@ -176,6 +178,16 @@ namespace BookStore_James_Brewster
             a.Show();
             this.Close();
         }
-    }
+
+		private void btnDeleteSupplier_Click(object sender, RoutedEventArgs e)
+		{
+            DatabaseInstance.deleteSupplier(s.supplierID);
+        }
+
+		private void btnConfirmEditSupplier_Click(object sender, RoutedEventArgs e)
+		{
+            DatabaseInstance.editSupplier(s.supplierID, s.name);
+		}
+	}
 	
 }

@@ -197,5 +197,21 @@ namespace BookStore_James_Brewster
 			a.Show();
 			this.Close();
 		}
+
+		private void btntDeleteBook_Click(object sender, RoutedEventArgs e)
+		{
+			DatabaseInstance.deleteBook(book.isbnNum);
+			AdminBookBrowser a = new AdminBookBrowser();
+			a.Show();
+			this.Close();
+		}
+
+		private void btnConfirmEditBook_Click(object sender, RoutedEventArgs e)
+		{
+			DatabaseInstance.editBook(book.isbnNum, book.title, book.pubDate, book.price, book.reviews, book.supplierID);
+			AdminBookBrowser a = new AdminBookBrowser();
+			a.Show();
+			this.Close();
+		}
 	}
 }

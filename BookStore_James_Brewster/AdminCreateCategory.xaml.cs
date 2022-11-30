@@ -184,5 +184,10 @@ namespace BookStore_James_Brewster
 			a.Show();
 			this.Close();
 		}
-    }
+
+		private void btnAddCategory_Click(object sender, RoutedEventArgs e)
+		{
+			DatabaseInstance.createCategory(txtCategoryName.Text);
+		}
+	}
 }

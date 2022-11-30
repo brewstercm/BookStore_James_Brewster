@@ -197,5 +197,14 @@ namespace BookStore_James_Brewster
 			a.Show();
 			this.Close();
 		}
+
+		private void btnCreateAccountRedirect_Click(object sender, RoutedEventArgs e)
+		{
+			DatabaseInstance.editAuthor(author.AuthorID, author.FName, author.LName, author.Gender, author.DOB, author.Address, author.Email, author.Phone);
+			AdminViewAuthors a = new AdminViewAuthors();
+			a.Show();
+			this.Close();
+
+		}
 	}
 }
