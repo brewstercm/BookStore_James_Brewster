@@ -25,32 +25,25 @@ namespace BookStore_James_Brewster
 		public AdminEditAuthorData(AuthorDetails author)
 		{
 			InitializeComponent();
-			txtMessage.Visibility = Visibility.Hidden;
 			this.author = author;
-			txtAuthorAddress.Text = author.Address;
-			txtAuthorDOB.Text = author.DOB;
-			txtAuthorFName.Text = author.FName;
-			txtAuthorLName.Text = author.LName;
-			txtAuthorGender.Text = author.Gender;
+			txtAddress.Text = author.Address;
+			txtDOB.Text = author.DOB;
+			txtfName.Text = author.FName;
+			txtlName.Text = author.LName;
+			txtGender.Text = author.Gender;
 			txtAuthorEmail.Text = author.Email;
 			txtAuthorPhone.Text = author.Phone;
 		}
 
 		private void btnEditAuthor_Click(object sender, RoutedEventArgs e)
 		{
-			txtMessage.Visibility = Visibility.Visible;
-			txtMessage.Text = "Loading...";
-			if(!txtAuthorAddress.Text.Equals(author.Address) || !txtAuthorDOB.Text.Equals(author.DOB) 
-				|| !txtAuthorFName.Text.Equals(author.FName) || !txtAuthorLName.Text.Equals(author.LName) 
-				|| !txtAuthorGender.Text.Equals(author.Gender) || !txtAuthorEmail.Text.Equals(author.Email)
+			if(!txtAddress.Text.Equals(author.Address) || !txtDOB.Text.Equals(author.DOB) 
+				|| !txtfName.Text.Equals(author.FName) || !txtlName.Text.Equals(author.LName) 
+				|| !txtGender.Text.Equals(author.Gender) || !txtAuthorEmail.Text.Equals(author.Email)
 				|| !txtAuthorPhone.Text.Equals(author.Phone))
 			{
-				DatabaseInstance.editAuthor(author.AuthorID, txtAuthorFName.Text, txtAuthorLName.Text, txtAuthorGender.Text,
-					txtAuthorDOB.Text, txtAuthorAddress.Text, txtAuthorEmail.Text, txtAuthorPhone.Text);
-				txtMessage.Text = "Successfully edited author details";
-			} else
-			{
-				txtMessage.Text = "Please change a value before submitting";
+				DatabaseInstance.editAuthor(author.AuthorID, txtfName.Text, txtlName.Text, txtGender.Text,
+					txtDOB.Text, txtAddress.Text, txtAuthorEmail.Text, txtAuthorPhone.Text);
 			}
 		}
 		private void Button_Click(object sender, RoutedEventArgs e)
