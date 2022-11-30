@@ -27,17 +27,16 @@
             <Button>@Admin Edit Supplier</Button>-->
             <Button Click="Button_Click_5">@Admin View Authors</Button>
             <Button Click="Button_Click_6">@Admin View Customers</Button>
-            <Button>@Admin View Orders</Button>
-            <Button>@Admin View Suppliers</Button>
+            <Button Click="Button_Click_7">@Admin View Orders</Button>
+            <Button Click="Button_Click_8">@Admin View Suppliers</Button>
             <Button> ----</Button>
-            <Button>Create Account</Button>
-            <Button>Book Browser</Button>
-            <Button>Customer Edit Order</Button>
-            <Button>Customer Update Account</Button>
-            <Button>Customer View Orders</Button>
-            <Button>Create Account</Button>
-            <Button>Login</Button>
-            <Button>Home</Button>
+            <Button Click="Button_Click_10">Book Browser</Button>
+            <!--<Button>Customer Edit Order</Button>-->
+            <Button Click="Button_Click_11">Customer Update Account</Button>
+            <Button Click="Button_Click_12">Customer View Orders</Button>
+            <Button Click="Button_Click_13">Create Account</Button>
+            <Button Click="Button_Click_14">Login</Button>
+            <Button Click="Button_Click_15">Home</Button>
             
             
             
