@@ -27,13 +27,12 @@ namespace BookStore_James_Brewster
 			foreach(AuthorDetails ad in DatabaseInstance.viewAuthors())
 			{
 				TableRow tableRow = new TableRow();
-				//TableCell isbnCell = new TableCell();
-				//Paragraph isbnParagraph = new Paragraph();
-				//Run isbnRun = new Run();
-				//isbnRun.Text = book.isbnNum;
-				//isbnParagraph.Inlines.Add(isbnRun);
-				//isbnCell.Blocks.Add(isbnParagraph);
-				tableRow.Cells.Add(getCell());
+				tableRow.Cells.Add(getCell(ad.AuthorID.ToString()));
+				tableRow.Cells.Add(getCell(ad.FName));
+				tableRow.Cells.Add(getCell(ad.LName));
+				tableRow.Cells.Add(getCell(ad.Gender));
+				tableRow.Cells.Add(getCell(ad.DOB));
+				tblRow.Rows.Add(tableRow);
 			}
             if (BlazorBookStore1.Customer.customerID == -1)
             {
