@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BlazorBookStore1;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,21 @@ namespace BookStore_James_Brewster
 		public AdminCreateCategory()
 		{
 			InitializeComponent();
+			txtMessage.Visibility = Visibility.Hidden;
+		}
+
+		private void btnCreateCategory_Click(object sender, RoutedEventArgs e)
+		{
+			txtMessage.Visibility = Visibility.Visible;
+			txtMessage.Text = "Loading...";
+			if(!txtCatDesc.Text.Equals("something") && !txtCatDesc.Text.Equals("TextBlock") && !txtCatDesc.Text.Equals(String.Empty))
+			{
+                DatabaseInstance.createCategory(txtCatDesc.Text);
+				txtMessage.Text = "Successfully created book category";
+            } else
+			{
+				txtMessage.Text = "Please enter valid category description";
+			}
 		}
 	}
 }

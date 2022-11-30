@@ -9,6 +9,9 @@
       Title="AdminCreateCategory">
 
     <Grid>
-        
+        <TextBlock x:Name="txtMessage" HorizontalAlignment="Center" Margin="0,302,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
+        <Button x:Name="btnCreateCategory" Content="Create Category" HorizontalAlignment="Left" Margin="452,217,0,0" VerticalAlignment="Top" Click="btnCreateCategory_Click"/>
+        <TextBox x:Name="txtCatDesc" HorizontalAlignment="Left" Margin="239,217,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+
     </Grid>
 </Window>
