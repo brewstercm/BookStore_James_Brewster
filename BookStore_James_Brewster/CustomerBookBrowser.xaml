@@ -1,4 +1,5 @@
 ﻿<Window x:Class="BookStore_James_Brewster.CustomerBookBrowser"
+        WindowStartupLocation="CenterScreen"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -7,7 +8,7 @@
       mc:Ignorable="d" 
       d:DesignHeight="450"
       d:DesignWidth="800"
-      Title="MainWindow" Height="525" Width="800">
+      Title="CustomerBookBrowser">
 
     <Grid Background="LightGray">
         <Grid.ColumnDefinitions>

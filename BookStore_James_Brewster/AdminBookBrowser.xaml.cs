@@ -221,5 +221,12 @@ namespace BookStore_James_Brewster
 			a.Show();
 			this.Close();
 		}
+
+		private void btnAddBook_Click(object sender, RoutedEventArgs e)
+		{
+			AdminAddBook ab = new AdminAddBook();
+			ab.Show();
+			this.Close();
+		}
 	}
 }

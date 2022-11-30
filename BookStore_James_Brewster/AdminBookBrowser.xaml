@@ -1,4 +1,5 @@
 ﻿<Window x:Class="BookStore_James_Brewster.AdminBookBrowser"
+        WindowStartupLocation="CenterScreen"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -7,7 +8,7 @@
       mc:Ignorable="d" 
       d:DesignHeight="450"
       d:DesignWidth="800"
-      Title="MainWindow" Height="525" Width="800">
+      Title="AdminBookBrowser">
 
     <Grid Background="LightGray">
         <Grid.ColumnDefinitions>
@@ -42,6 +43,7 @@
                     <Paragraph FontSize="14pt">Book Browser: (a)</Paragraph>
                     <Table>
                         <TableRowGroup x:Name="tblRow" Paragraph.TextAlignment="left">
+                            
                             <TableRow FontWeight="Bold" >
                                 <TableCell>
                                     <Paragraph>ISBN</Paragraph>
@@ -75,6 +77,8 @@
                     </Style>
                 </TextBox.Resources>
             </TextBox>
+            <Label HorizontalAlignment="Center"></Label>
+            <Button x:Name="btnAddBook" Width="150" Click="btnAddBook_Click">Add Book</Button>
             <Label HorizontalAlignment="Center"></Label>
             <Button x:Name="btnEditBook" Width="150">Edit Book</Button>
         </StackPanel>

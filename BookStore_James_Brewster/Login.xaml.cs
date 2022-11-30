@@ -188,5 +188,12 @@ namespace BookStore_James_Brewster
                 this.Close();
             }
         }
-    }
+
+		private void btnRedirect_Click(object sender, RoutedEventArgs e)
+		{
+            CreateAccount cv= new CreateAccount();
+            cv.Show();
+            this.Close();
+		}
+	}
 }
