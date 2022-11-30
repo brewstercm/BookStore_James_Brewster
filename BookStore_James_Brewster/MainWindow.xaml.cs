@@ -24,5 +24,12 @@ namespace BookStore_James_Brewster
         {
             InitializeComponent();
         }
-    }
+
+		private void Button_Click(object sender, RoutedEventArgs e)
+		{
+			this.Close();
+			AdminAddBook a = new AdminAddBook();
+            a.Show();
+		}
+	}
 }

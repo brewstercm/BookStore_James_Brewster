@@ -45,7 +45,7 @@
             <Label Width="150" HorizontalAlignment="Center">ISBN</Label>
             <TextBox x:Name="txtISBN" TextWrapping="Wrap" Text="ISBN" Width="150"/>
             <Label Width="150" HorizontalAlignment="Center">Title</Label>
-            <TextBox TextWrapping="Wrap" Text="Title" Width="150"/>
+            <TextBox x:Name="txtBookTitle" TextWrapping="Wrap" Text="Title" Width="150"/>
             <Label Width="150" HorizontalAlignment="Center">PubDate</Label>
             <TextBox x:Name="txtPubDate" TextWrapping="Wrap" Text="PubDate" Width="150"/>
             <Label Width="150" HorizontalAlignment="Center">Price</Label>
@@ -54,9 +54,9 @@
             <TextBox x:Name="txtReviews" TextWrapping="Wrap" Text="Reviews" Width="150"/>
             <Label Width="150" HorizontalAlignment="Center"></Label>
             
-            <Button Width="150" BorderBrush="Red">Delete Book</Button>
+            <Button x:Name="btntDeleteBook" Width="150" BorderBrush="Red">Delete Book</Button>
             <Label Width="150" HorizontalAlignment="Center"></Label>
-            <Button Width="150" BorderBrush="Green" >Confirm Cahnges</Button>
+            <Button x:Name="btnConfirmEditBook" Width="150" BorderBrush="Green" >Confirm Cahnges</Button>
 
         </StackPanel>
     </Grid>

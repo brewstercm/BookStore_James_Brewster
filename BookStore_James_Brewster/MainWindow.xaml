@@ -7,7 +7,7 @@
         d:DesignHeight="450"
         d:DesignWidth="800"
         mc:Ignorable="d"
-        Title="MainWindow" Height="500" Width="800">
+        Title="MainWindow" Height="525" Width="800">
 
     <Grid Background="LightGray">
         <Grid.ColumnDefinitions>
@@ -17,7 +17,7 @@
         </Grid.ColumnDefinitions>
         <StackPanel Background="LightSeaGreen">
             <Label HorizontalAlignment="Center">Book Store</Label>
-            <Button >@Add Book</Button>
+            <Button Click="Button_Click" >@Add Book</Button>
             <Button>@Book Browser</Button>
             <Button>@Create Category</Button>
             <Button>@Admin Edit Author</Button>

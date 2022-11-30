@@ -8,7 +8,62 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="CustomerViewOrders">
 
-    <Grid>
-        
+    <Grid Background="LightGray">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width=".20*" />
+            <ColumnDefinition Width=".80*" />
+
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Column="0" Background="AliceBlue">
+            <Label HorizontalAlignment="Center">Book Store</Label>
+            <Button >@Add Book</Button>
+            <Button>@Book Browser</Button>
+            <Button>@Create Category</Button>
+            <Button>@Admin Edit Author</Button>
+            <Button>@Admin Edit Book</Button>
+            <Button>@Admin Edit Customer</Button>
+            <Button>@Admin Edit Order</Button>
+            <Button>@Admin Edit Supplier</Button>
+            <Button>@Admin View Authors</Button>
+            <Button>@Admin View Customers</Button>
+            <Button>@Admin View Orders</Button>
+            <Button>@Admin View Suppliers</Button>
+            <Button>----</Button>
+            <Button>Create Account</Button>
+            <Button>Book Browser</Button>
+            <Button>Customer Edit Order</Button>
+            <Button>Customer Update Account</Button>
+            <Button>Customer View Orders</Button>
+            <Button>Create Account</Button>
+            <Button>Login</Button>
+            <Button>Home</Button>
+        </StackPanel>
+
+        <StackPanel Grid.Column="1" Background="LightGray">
+            <FlowDocumentScrollViewer>
+                <FlowDocument>
+                    <Paragraph FontSize="14pt">View Orders: (c)</Paragraph>
+                    <Table x:Name="tblBookList">
+                        <TableRowGroup Paragraph.TextAlignment="left">
+                            <TableRow FontWeight="Bold" >
+                                <TableCell>
+                                    <Paragraph>OrderID</Paragraph>
+                                </TableCell>
+                                <TableCell>
+                                    <Paragraph>Order Date</Paragraph>
+                                </TableCell>
+                                <TableCell>
+                                    <Paragraph>Order Total</Paragraph>
+                                </TableCell>
+                            </TableRow>
+                        </TableRowGroup>
+                    </Table>
+                </FlowDocument>
+
+            </FlowDocumentScrollViewer>
+            <TextBox x:Name="txtItemNum" Width="120" Text="Item#"></TextBox>
+            <Button x:Name="btnDeleteOrderItem" Width="120">Delete Order Item</Button>
+        </StackPanel>
     </Grid>
 </Window>

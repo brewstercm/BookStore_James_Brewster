@@ -45,7 +45,10 @@
 
 
             <Label Width="150" HorizontalAlignment="Center">Email</Label>
-            <TextBox x:Name="txtPhone" TextWrapping="Wrap" Text="Email" Width="150"/>
+            <TextBox x:Name="txtEmail" TextWrapping="Wrap" Text="Email" Width="150"/>
+
+            <Label Width="150" HorizontalAlignment="Center">Password</Label>
+            <TextBox x:Name="txtPassword" TextWrapping="Wrap" Text="Passowrd" Width="150"/>
 
             <Label Width="150" HorizontalAlignment="Center"></Label>
 
