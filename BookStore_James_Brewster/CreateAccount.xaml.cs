@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BlazorBookStore1;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,7 @@ namespace BookStore_James_Brewster
 		public CreateAccount()
 		{
 			InitializeComponent();
+            chkAdmin.IsChecked = false;
 		}
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -130,6 +132,22 @@ namespace BookStore_James_Brewster
             MainWindow a = new MainWindow();
             a.Show();
             this.Close();
+        }
+
+        private void btnCreateAccountRedirect_Click(object sender, RoutedEventArgs e)
+        {
+            Login a = new Login();
+            a.Show();
+            this.Close();
+        }
+
+        private void btnCreateAccount_Click(object sender, RoutedEventArgs e)
+        {
+            if(!txtfName.Text.Equals(string.Empty) && !txtlName.Text.Equals(string.Empty) && !txtAddress.Text.Equals(string.Empty) && 
+                !txtEmail.Text.Equals(string.Empty) && !txtPassword.Text.Equals(string.Empty) && !txtPhone.Text.Equals(string.Empty) && chkAdmin.IsChecked.HasValue)
+            {
+                DatabaseInstance.CreateAccount(txtfName.Text, txtlName.Text, txtEmail.Text, txtPassword.Text, chkAdmin.IsChecked.Value, txtAddress.Text, txtPhone.Text);
+            }
         }
     }
 }

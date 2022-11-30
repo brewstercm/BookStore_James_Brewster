@@ -51,19 +51,21 @@
             <TextBox x:Name="txtAddress" TextWrapping="Wrap" Text="Address" Width="150"/>
             
             <Label Width="150" HorizontalAlignment="Center">Email</Label>
-            <TextBox x:Name="txtPrice" TextWrapping="Wrap" Text="Price" Width="150"/>
+            <TextBox x:Name="txtEmail" TextWrapping="Wrap" Text="Price" Width="150"/>
 
             <Label Width="150" HorizontalAlignment="Center">Password</Label>
             <TextBox x:Name="txtPassword" TextWrapping="Wrap" Text="Passowrd" Width="150"/>
 
             <Label Width="150" HorizontalAlignment="Center">Phone</Label>
             <TextBox x:Name="txtPhone" TextWrapping="Wrap" Text="000-000-0000" Width="150"/>
+            <Label Width="150" HorizontalAlignment="Center">Administrator?</Label>
+            <CheckBox x:Name="chkAdmin" Width="15"></CheckBox>
             
             <Label Width="150" HorizontalAlignment="Center"></Label>
 
-            <Button x:Name="btnCreateAccountRedirect" Width="150" BorderBrush="Blue">Already a user? Login</Button>
+            <Button x:Name="btnCreateAccountRedirect" Width="150" BorderBrush="Blue" Click="btnCreateAccountRedirect_Click">Already a user? Login</Button>
             <Label Width="150" HorizontalAlignment="Center"></Label>
-            <Button x:Name="btnCreateAccount" Width="150" BorderBrush="Green" >Create Account</Button>
+            <Button x:Name="btnCreateAccount" Width="150" BorderBrush="Green" Click="btnCreateAccount_Click" >Create Account</Button>
 
         </StackPanel>
     </Grid>
