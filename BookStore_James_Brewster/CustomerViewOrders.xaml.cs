@@ -24,6 +24,45 @@ namespace BookStore_James_Brewster
 		public CustomerViewOrders()
 		{
 			InitializeComponent();
+            foreach (Order o in DatabaseInstance.viewCustomerOrders(BlazorBookStore1.Customer.customerID))
+            {
+                TableRow tableRow = new TableRow();
+
+                TableCell orderIDCell = new TableCell();
+                Paragraph orderIDParagraph = new Paragraph();
+                Run orderIDRun = new Run();
+                orderIDRun.Text = o.orderID.ToString();
+                orderIDParagraph.Inlines.Add(orderIDRun);
+                orderIDCell.Blocks.Add(orderIDParagraph);
+                tableRow.Cells.Add(orderIDCell);
+
+                TableCell orderDateCell = new TableCell();
+                Paragraph orderDateParagraph = new Paragraph();
+                Run orderDateRun = new Run();
+                orderDateRun.Text = o.orderDate;
+                orderDateParagraph.Inlines.Add(orderDateRun);
+                orderDateCell.Blocks.Add(orderDateParagraph);
+                tableRow.Cells.Add(orderDateCell);
+
+                TableCell orderValCell = new TableCell();
+                Paragraph orderValParagraph = new Paragraph();
+                Run orderValRun = new Run();
+                orderValRun.Text = o.orderVal.ToString();
+                orderValParagraph.Inlines.Add(orderValRun);
+                orderValCell.Blocks.Add(orderValParagraph);
+                tableRow.Cells.Add(orderValCell);
+
+                TableCell customerIDCell = new TableCell();
+                Paragraph customerIDParagraph = new Paragraph();
+                Run customerIDRun = new Run();
+                customerIDRun.Text = o.customerID.ToString();
+                customerIDParagraph.Inlines.Add(customerIDRun);
+                customerIDCell.Blocks.Add(customerIDParagraph);
+                tableRow.Cells.Add(customerIDCell);
+
+                tblRow.Rows.Add(tableRow);
+            }
+
             if (BlazorBookStore1.Customer.customerID == -1)
             {
                 hideProfileButtons();

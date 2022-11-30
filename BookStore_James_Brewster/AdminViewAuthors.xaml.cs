@@ -27,15 +27,15 @@ namespace BookStore_James_Brewster
 			InitializeComponent();
 			foreach(AuthorDetails ad in DatabaseInstance.viewAuthors())
 			{
-                //TableRow tableRow = new TableRow();
-                //TableCell isbnCell = new TableCell();
-                //Paragraph isbnParagraph = new Paragraph();
-                //Run isbnRun = new Run();
-                //isbnRun.Text = book.isbnNum;
-                //isbnParagraph.Inlines.Add(isbnRun);
-                //isbnCell.Blocks.Add(isbnParagraph);
-                //tableRow.Cells.Add(isbnCell);
-            }
+				TableRow tableRow = new TableRow();
+				//TableCell isbnCell = new TableCell();
+				//Paragraph isbnParagraph = new Paragraph();
+				//Run isbnRun = new Run();
+				//isbnRun.Text = book.isbnNum;
+				//isbnParagraph.Inlines.Add(isbnRun);
+				//isbnCell.Blocks.Add(isbnParagraph);
+				tableRow.Cells.Add(getCell());
+			}
             if (BlazorBookStore1.Customer.customerID == -1)
             {
                 hideProfileButtons();
@@ -49,7 +49,17 @@ namespace BookStore_James_Brewster
                 hideAdminButtons();
             }
         }
+		private TableCell getCell(string value)
+		{
+			TableCell isbnCell = new TableCell();
+			Paragraph isbnParagraph = new Paragraph();
+			Run isbnRun = new Run();
+			isbnRun.Text = value;
+			isbnParagraph.Inlines.Add(isbnRun);
+			isbnCell.Blocks.Add(isbnParagraph);
 
+			return isbnCell;
+		}
         private void hideLoggedInButtons()
         {
             btnLogin.Visibility = Visibility.Hidden;
