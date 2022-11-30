@@ -40,7 +40,7 @@
             <FlowDocumentScrollViewer>
                 <FlowDocument>
                     <Paragraph FontSize="14pt">View Authors:</Paragraph>
-                    <Table x:Name="tblBookList">
+                    <Table>
                         <TableRowGroup x:Name="tblRow" Paragraph.TextAlignment="left">
                             <TableRow FontWeight="Bold" >
                                 <TableCell>
