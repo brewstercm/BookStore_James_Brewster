@@ -73,7 +73,8 @@
             </TextBox>
             <Label HorizontalAlignment="Center"></Label>
             <Button x:Name="btnAddBookToOrder" Width="150">Delete Order</Button>
-            <Button x:Name="btnAddBookToOrder" Width="150">Confirm Changes</Button>
+            <Label HorizontalAlignment="Center"></Label>
+            <Button x:Name="btnConfirmOrderChanges" Width="150">Confirm Changes</Button>
         </StackPanel>
     </Grid>
 </Window>
