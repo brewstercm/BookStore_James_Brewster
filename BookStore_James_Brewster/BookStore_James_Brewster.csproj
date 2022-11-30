@@ -55,20 +55,153 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="AdminAddBook.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AdminBookBrowser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AdminCreateCategory.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AdminEditAuthorData.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AdminEditBook.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AdminEditCustomer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AdminEditOrder.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AdminEditSupplier.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AdminViewAuthors.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AdminViewCustomers.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AdminViewOrders.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AdminViewSuppliers.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CreateAccount.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CustomerBookBrowser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CustomerEditOrder.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CustomerUpdateAccount.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CustomerViewOrders.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Login.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Compile Include="AdminAddBook.xaml.cs">
+      <DependentUpon>AdminAddBook.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AdminBookBrowser.xaml.cs">
+      <DependentUpon>AdminBookBrowser.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AdminCreateCategory.xaml.cs">
+      <DependentUpon>AdminCreateCategory.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AdminEditAuthorData.xaml.cs">
+      <DependentUpon>AdminEditAuthorData.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AdminEditBook.xaml.cs">
+      <DependentUpon>AdminEditBook.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AdminEditCustomer.xaml.cs">
+      <DependentUpon>AdminEditCustomer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AdminEditOrder.xaml.cs">
+      <DependentUpon>AdminEditOrder.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AdminEditSupplier.xaml.cs">
+      <DependentUpon>AdminEditSupplier.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AdminViewAuthors.xaml.cs">
+      <DependentUpon>AdminViewAuthors.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AdminViewCustomers.xaml.cs">
+      <DependentUpon>AdminViewCustomers.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AdminViewOrders.xaml.cs">
+      <DependentUpon>AdminViewOrders.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AdminViewSuppliers.xaml.cs">
+      <DependentUpon>AdminViewSuppliers.xaml</DependentUpon>
+    </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CreateAccount.xaml.cs">
+      <DependentUpon>CreateAccount.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerBookBrowser.xaml.cs">
+      <DependentUpon>CustomerBookBrowser.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerEditOrder.xaml.cs">
+      <DependentUpon>CustomerEditOrder.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerUpdateAccount.xaml.cs">
+      <DependentUpon>CustomerUpdateAccount.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerViewOrders.xaml.cs">
+      <DependentUpon>CustomerViewOrders.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Login.xaml.cs">
+      <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Profile.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Profile.xaml.cs">
+      <DependentUpon>Profile.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
