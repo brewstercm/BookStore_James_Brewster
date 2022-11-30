@@ -69,8 +69,8 @@
                 </FlowDocument>
 
             </FlowDocumentScrollViewer>
-            <TextBox Width="120" Text="Supplier ID"></TextBox>
-            <Button Width="120">Edit Supplier</Button>
+            <TextBox x:Name="txtSupplierID" Width="120" Text="Supplier ID"></TextBox>
+            <Button x:Name="btnSupplierID" Width="120">Edit Supplier</Button>
         </StackPanel>
     </Grid>
 </Window>

@@ -87,8 +87,8 @@
                 </FlowDocument>
                 
             </FlowDocumentScrollViewer>
-            <TextBox Width="120" Text="Order ID"></TextBox>
-            <Button Width="120">Edit Order</Button>
+            <TextBox x:Name="txtOrderID" Width="120" Text="Order ID"></TextBox>
+            <Button x:Name="btnEditOrder" Width="120">Edit Order</Button>
         </StackPanel>
     </Grid>
 </Window>

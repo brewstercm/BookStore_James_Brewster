@@ -44,16 +44,16 @@
             <Label Content="Edit Supplier" HorizontalAlignment="Center" FontSize="14" FontFamily="Georgia"/>
             
             <Label Width="150" HorizontalAlignment="Center">Supplier ID</Label>
-            <TextBox TextWrapping="Wrap" Text="ID" Width="150"/>
+            <TextBox x:Name="txtSupplierID" TextWrapping="Wrap" Text="ID" Width="150"/>
             
             <Label Width="150" HorizontalAlignment="Center">Supplier Name</Label>
-            <TextBox TextWrapping="Wrap" Text="Name" Width="150"/>
+            <TextBox x:Name="txtName" TextWrapping="Wrap" Text="Name" Width="150"/>
 
             <Label Width="150" HorizontalAlignment="Center"></Label>
 
-            <Button Width="150" BorderBrush="Red">Delete Supplier</Button>
+            <Button x:Name="btnDeleteSupplier" Width="150" BorderBrush="Red">Delete Supplier</Button>
             <Label Width="150" HorizontalAlignment="Center"></Label>
-            <Button Width="150" BorderBrush="Green">Confirm Edit</Button>
+            <Button x:Name="btnConfirmEditSupplier" Width="150" BorderBrush="Green">Confirm Edit</Button>
 
         </StackPanel>
     </Grid>

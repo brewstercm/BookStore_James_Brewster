@@ -24,5 +24,10 @@ namespace BookStore_James_Brewster
 		{
 			InitializeComponent();
 		}
+
+		private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+		{
+
+		}
 	}
 }

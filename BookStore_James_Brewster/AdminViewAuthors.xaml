@@ -87,9 +87,9 @@
                 </FlowDocument>
 
             </FlowDocumentScrollViewer>
-            <TextBox Width="120" Text="Author ID"></TextBox>
+            <TextBox x:Name="txtAuthorID" Width="120" Text="Author ID"></TextBox>
             <Label HorizontalAlignment="Center"></Label>
-            <Button Width="120">Edit Author</Button>
+            <Button x:Name="btnEditAuthor" Width="120">Edit Author</Button>
         </StackPanel>
     </Grid>
 </Window>

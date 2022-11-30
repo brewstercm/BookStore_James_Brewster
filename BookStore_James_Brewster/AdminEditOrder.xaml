@@ -43,16 +43,16 @@
         <StackPanel Grid.Column="1" Background="LightGray">
             <Label Content="Edit Order" HorizontalAlignment="Center" FontSize="14" FontFamily="Georgia"/>
             <Label Width="150" HorizontalAlignment="Center">Order ID</Label>
-            <TextBox TextWrapping="Wrap" Text="ID" Width="150"/>
+            <TextBox x:Name="txtOrderID" TextWrapping="Wrap" Text="ID" Width="150"/>
             <Label Width="150" HorizontalAlignment="Center">Order Date</Label>
-            <TextBox TextWrapping="Wrap" Text="Date" Width="150"/>
+            <TextBox x:Name="txtOrderDate" TextWrapping="Wrap" Text="Date" Width="150"/>
             <Label Width="150" HorizontalAlignment="Center">Order Cost</Label>
-            <TextBox TextWrapping="Wrap" Text="Cost" Width="150"/>
+            <TextBox x:Name="txtOrderCost" TextWrapping="Wrap" Text="Cost" Width="150"/>
             <Label Width="150" HorizontalAlignment="Center"></Label>
 
-            <Button Width="150" BorderBrush="Red">Delete Order</Button>
+            <Button x:Name="btnDeleteOrder" Width="150" BorderBrush="Red">Delete Order</Button>
             <Label Width="150"  HorizontalAlignment="Center"></Label>
-            <Button Width="150" BorderBrush="Green">Confirm Changes</Button>
+            <Button x:Name="btnConfirmOrderChanges" Width="150" BorderBrush="Green">Confirm Changes</Button>
 
         </StackPanel>
     </Grid>

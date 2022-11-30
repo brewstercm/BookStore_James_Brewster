@@ -8,7 +8,51 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Login">
 
-    <Grid>
-        
+    <Grid Background="LightGray">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width=".20*" />
+            <ColumnDefinition Width=".80*" />
+
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Column="0" Background="AliceBlue">
+            <Label HorizontalAlignment="Center">Book Store</Label>
+            <Button >@Add Book</Button>
+            <Button>@Book Browser</Button>
+            <Button>@Create Category</Button>
+            <Button>@Admin Edit Author</Button>
+            <Button>@Admin Edit Book</Button>
+            <Button>@Admin Edit Customer</Button>
+            <Button>@Admin Edit Order</Button>
+            <Button>@Admin Edit Supplier</Button>
+            <Button>@Admin View Authors</Button>
+            <Button>@Admin View Customers</Button>
+            <Button>@Admin View Orders</Button>
+            <Button>@Admin View Suppliers</Button>
+            <Button>----</Button>
+            <Button>Create Account</Button>
+            <Button>Book Browser</Button>
+            <Button>Customer Edit Order</Button>
+            <Button>Customer Update Account</Button>
+            <Button>Customer View Orders</Button>
+            <Button>Create Account</Button>
+            <Button>Login</Button>
+            <Button>Home</Button>
+        </StackPanel>
+
+        <StackPanel Grid.Column="1" Background="LightGray">
+            <Label Content="Login" HorizontalAlignment="Center" FontSize="14" FontFamily="Georgia"/>
+
+
+            <Label Width="150" HorizontalAlignment="Center">Email</Label>
+            <TextBox x:Name="txtPhone" TextWrapping="Wrap" Text="Email" Width="150"/>
+
+            <Label Width="150" HorizontalAlignment="Center"></Label>
+
+            <Button x:Name="btnCreateAccountRedirect" Width="150" BorderBrush="Blue">Already a user? Login</Button>
+            <Label Width="150" HorizontalAlignment="Center"></Label>
+            <Button x:Name="btnCreateAccount" Width="150" BorderBrush="Green" >Create Account</Button>
+
+        </StackPanel>
     </Grid>
 </Window>

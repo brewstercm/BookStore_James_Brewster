@@ -44,14 +44,14 @@
             <Label Content="Edit Customer" HorizontalAlignment="Center" FontSize="14" FontFamily="Georgia"/>
 
             <Label Width="150" HorizontalAlignment="Center">First Name</Label>
-            <TextBox TextWrapping="Wrap" Text="First Name" Width="150"/>
+            <TextBox x:Name="txtCustomerFirstName" TextWrapping="Wrap" Text="First Name" Width="150"/>
             <Label Width="150" HorizontalAlignment="Center">Last Name</Label>
-            <TextBox TextWrapping="Wrap" Text="Last Name" Width="150"/>
+            <TextBox x:Name="txtCustomerLastName" TextWrapping="Wrap" Text="Last Name" Width="150"/>
             <Label Width="150" HorizontalAlignment="Center"></Label>
 
-            <Button Width="150" BorderBrush="Red">Delete Customer</Button>
+            <Button x:Name="btnDeleteCustomer" Width="150" BorderBrush="Red">Delete Customer</Button>
             <Label Width="150" HorizontalAlignment="Center"></Label>
-            <Button Width="150" BorderBrush="Green">Confirm Edit</Button>
+            <Button x:Name="btnConfirmEditCustomer" Width="150" BorderBrush="Green">Confirm Edit</Button>
 
         </StackPanel>
     </Grid>
