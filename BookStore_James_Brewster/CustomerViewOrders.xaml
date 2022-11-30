@@ -39,8 +39,8 @@
             <FlowDocumentScrollViewer>
                 <FlowDocument>
                     <Paragraph FontSize="14pt">View Orders: (c)</Paragraph>
-                    <Table x:Name="tblBookList">
-                        <TableRowGroup Paragraph.TextAlignment="left">
+                    <Table>
+                        <TableRowGroup x:Name="tblRow" Paragraph.TextAlignment="left">
                             <TableRow FontWeight="Bold" >
                                 <TableCell>
                                     <Paragraph>OrderID</Paragraph>

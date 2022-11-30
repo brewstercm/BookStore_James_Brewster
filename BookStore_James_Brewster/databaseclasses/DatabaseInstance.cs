@@ -246,7 +246,7 @@ namespace BlazorBookStore1
             return customer;
         }
 
-        public static void editCustomer(int customerID, string fName, string lName, string email, long phone, string address)
+        public static void editCustomer(int customerID, string fName, string lName, string email, string phone, string address)
         {
             string query = $"UPDATE dbo.Customer SET fName='{fName}', lName='{lName}' WHERE customerID={customerID}";
             string query2 = $"UPDATE dbo.CustomerContactDetails SET email='{email}', phone={phone}, address='{address}' WHERE customerID={customerID}";
@@ -274,7 +274,7 @@ namespace BlazorBookStore1
             }
         }
 
-        public static List<Order> viewOrders()
+        public static List<Order> viewAllOrders()
         {
             List<Order> orders = new List<Order>();
             string query = $"SELECT * FROM dbo.Orders";
@@ -290,6 +290,30 @@ namespace BlazorBookStore1
                         string orderDate = reader.GetString(reader.GetOrdinal("orderDate"));
                         float orderVal = reader.GetFloat(reader.GetOrdinal("orderVal"));
                         int customerID = reader.GetInt32(reader.GetOrdinal("customerID"));
+
+                        Order newOrder = new Order(orderID, orderDate, orderVal, customerID);
+                        orders.Add(newOrder);
+                    }
+                }
+            }
+            return orders;
+        }
+
+        public static List<Order> viewCustomerOrders(int customerID)
+        {
+            List<Order> orders = new List<Order>();
+            string query = $"SELECT * FROM dbo.Orders WHERE customerID={customerID}";
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                SqlCommand command = new SqlCommand(query, conn);
+                conn.Open();
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        int orderID = reader.GetInt32(reader.GetOrdinal("orderID"));
+                        string orderDate = reader.GetString(reader.GetOrdinal("orderDate"));
+                        float orderVal = reader.GetFloat(reader.GetOrdinal("orderVal"));
 
                         Order newOrder = new Order(orderID, orderDate, orderVal, customerID);
                         orders.Add(newOrder);
@@ -464,9 +488,9 @@ namespace BlazorBookStore1
             }
         }
 
-        public static void addBook(string isbnNum, string title, string pubDate, float price, float reviews)
+        public static void addBook(string isbnNum, string title, string pubDate, float price, float reviews, int supplierID)
         {
-            string query = $"INSERT INTO dbo.Books VALUES('{isbnNum}', '{title}', '{pubDate}', {price}, {reviews})";
+            string query = $"INSERT INTO dbo.Books VALUES('{isbnNum}', '{title}', '{pubDate}', {price}, {reviews}, {supplierID})";
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 conn.Open();
