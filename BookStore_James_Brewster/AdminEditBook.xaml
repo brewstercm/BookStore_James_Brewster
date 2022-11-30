@@ -54,9 +54,9 @@
             <TextBox x:Name="txtReviews" TextWrapping="Wrap" Text="Reviews" Width="150"/>
             <Label Width="150" HorizontalAlignment="Center"></Label>
             
-            <Button x:Name="btnDeleteBook" Width="150" BorderBrush="Red">Delete Book</Button>
+            <Button x:Name="btntDeleteBook" Width="150" BorderBrush="Red">Delete Book</Button>
             <Label Width="150" HorizontalAlignment="Center"></Label>
-            <Button x:Name="btnConfirmBookChanges" Width="150" BorderBrush="Green" >Confirm Cahnges</Button>
+            <Button x:Name="btnConfirmEditBook" Width="150" BorderBrush="Green" >Confirm Cahnges</Button>
 
         </StackPanel>
     </Grid>

@@ -189,6 +189,7 @@
     <Compile Include="CreateAccount.xaml.cs">
       <DependentUpon>CreateAccount.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Customer.xaml.cs" />
     <Compile Include="CustomerBookBrowser.xaml.cs">
       <DependentUpon>CustomerBookBrowser.xaml</DependentUpon>
     </Compile>
@@ -242,6 +243,10 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <Page Include="CustomerViewOrderItems.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

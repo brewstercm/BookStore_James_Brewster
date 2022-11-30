@@ -1,0 +1,70 @@
+﻿<Window x:Class="BookStore_James_Brewster.Customer"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BookStore_James_Brewster"
+        mc:Ignorable="d"
+        Title="Customer" Height="450" Width="800">
+	<Grid Background="LightGray">
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width=".20*" />
+			<ColumnDefinition Width=".80*" />
+
+		</Grid.ColumnDefinitions>
+
+		<StackPanel Grid.Column="0" Background="AliceBlue">
+			<Label HorizontalAlignment="Center">Book Store</Label>
+			<Button >@Add Book</Button>
+			<Button>@Book Browser</Button>
+			<Button>@Create Category</Button>
+			<Button>@Admin Edit Author</Button>
+			<Button>@Admin Edit Book</Button>
+			<Button>@Admin Edit Customer</Button>
+			<Button>@Admin Edit Order</Button>
+			<Button>@Admin Edit Supplier</Button>
+			<Button>@Admin View Authors</Button>
+			<Button>@Admin View Customers</Button>
+			<Button>@Admin View Orders</Button>
+			<Button>@Admin View Suppliers</Button>
+			<Button>----</Button>
+			<Button>Create Account</Button>
+			<Button>Book Browser</Button>
+			<Button>Customer Edit Order</Button>
+			<Button>Customer Update Account</Button>
+			<Button>Customer View Orders</Button>
+			<Button>Create Account</Button>
+			<Button>Login</Button>
+			<Button>Home</Button>
+		</StackPanel>
+
+		<StackPanel Grid.Column="1" Background="LightGray">
+			<FlowDocumentScrollViewer>
+				<FlowDocument>
+					<Paragraph FontSize="14pt">View Order Items:</Paragraph>
+					<Table x:Name="tblBookList">
+						<TableRowGroup Paragraph.TextAlignment="left">
+							<TableRow FontWeight="Bold" >
+								<TableCell>
+									<Paragraph>Item#</Paragraph>
+								</TableCell>
+								<TableCell>
+									<Paragraph>Item Price</Paragraph>
+								</TableCell>
+								<TableCell>
+									<Paragraph>Order ID</Paragraph>
+								</TableCell>
+								<TableCell>
+									<Paragraph>ISBN#</Paragraph>
+								</TableCell>
+							</TableRow>
+						</TableRowGroup>
+					</Table>
+				</FlowDocument>
+
+			</FlowDocumentScrollViewer>
+			<TextBox Width="120" Text="Item#"></TextBox>
+			<Button Width="120">Delete Order Item</Button>
+		</StackPanel>
+	</Grid>
+</Window>
