@@ -53,7 +53,10 @@
             <Label Width="150" HorizontalAlignment="Center">Reviews</Label>
             <TextBox TextWrapping="Wrap" Text="Reviews" Width="150"/>
             <Label Width="150" HorizontalAlignment="Center"></Label>
-            <Button Width="150">Edit Book</Button>
+            
+            <Button Width="150" BorderBrush="Red">Delete Book</Button>
+            <Label Width="150" HorizontalAlignment="Center"></Label>
+            <Button Width="150" BorderBrush="Green" >Confirm Cahnges</Button>
 
         </StackPanel>
     </Grid>

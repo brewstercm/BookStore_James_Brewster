@@ -49,7 +49,10 @@
             <Label Width="150" HorizontalAlignment="Center">Order Cost</Label>
             <TextBox TextWrapping="Wrap" Text="Cost" Width="150"/>
             <Label Width="150" HorizontalAlignment="Center"></Label>
-            <Button Width="150">Add Book</Button>
+
+            <Button Width="150" BorderBrush="Red">Delete Order</Button>
+            <Label Width="150"  HorizontalAlignment="Center"></Label>
+            <Button Width="150" BorderBrush="Green">Confirm Changes</Button>
 
         </StackPanel>
     </Grid>

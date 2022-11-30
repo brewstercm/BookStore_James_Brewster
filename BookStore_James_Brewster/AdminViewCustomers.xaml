@@ -8,7 +8,93 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="AdminViewCustomers">
 
-    <Grid>
-        
+    <Grid Background="LightGray">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width=".20*" />
+            <ColumnDefinition Width=".80*" />
+
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Column="0" Background="AliceBlue">
+            <Label HorizontalAlignment="Center">Book Store</Label>
+            <Button >@Add Book</Button>
+            <Button>@Book Browser</Button>
+            <Button>@Create Category</Button>
+            <Button>@Admin Edit Author</Button>
+            <Button>@Admin Edit Book</Button>
+            <Button>@Admin Edit Customer</Button>
+            <Button>@Admin Edit Order</Button>
+            <Button>@Admin Edit Supplier</Button>
+            <Button>@Admin View Authors</Button>
+            <Button>@Admin View Customers</Button>
+            <Button>@Admin View Orders</Button>
+            <Button>@Admin View Suppliers</Button>
+            <Button>----</Button>
+            <Button>Create Account</Button>
+            <Button>Book Browser</Button>
+            <Button>Customer Edit Order</Button>
+            <Button>Customer Update Account</Button>
+            <Button>Customer View Orders</Button>
+            <Button>Create Account</Button>
+            <Button>Login</Button>
+            <Button>Home</Button>
+        </StackPanel>
+
+        <StackPanel Grid.Column="1" Background="LightGray">
+            <FlowDocumentScrollViewer>
+                <FlowDocument>
+                    <Paragraph FontSize="14pt">View Customers:</Paragraph>
+                    <Table x:Name="tblBookList">
+                        <TableRowGroup Paragraph.TextAlignment="left">
+                            <TableRow FontWeight="Bold" >
+                                <TableCell>
+                                    <Paragraph>CustomerID</Paragraph>
+                                </TableCell>
+                                <TableCell>
+                                    <Paragraph>First Name</Paragraph>
+                                </TableCell>
+                                <TableCell>
+                                    <Paragraph>Last Name</Paragraph>
+                                </TableCell>
+                                <TableCell>
+                                    <Paragraph>Address</Paragraph>
+                                </TableCell>
+                                <TableCell>
+                                    <Paragraph>Email</Paragraph>
+                                </TableCell>
+                                <TableCell>
+                                    <Paragraph>Phone</Paragraph>
+                                </TableCell>
+                            </TableRow>
+
+                            <TableRow>
+                                <TableCell>
+                                    <Paragraph>1</Paragraph>
+                                </TableCell>
+                                <TableCell>
+                                    <Paragraph>2</Paragraph>
+                                </TableCell>
+                                <TableCell>
+                                    <Paragraph>3</Paragraph>
+                                </TableCell>
+                                <TableCell>
+                                    <Paragraph>4</Paragraph>
+                                </TableCell>
+                                <TableCell>
+                                    <Paragraph>5</Paragraph>
+                                </TableCell>
+                                <TableCell>
+                                    <Paragraph>6</Paragraph>
+                                </TableCell>
+                            </TableRow>
+                        </TableRowGroup>
+
+                    </Table>
+                </FlowDocument>
+
+            </FlowDocumentScrollViewer>
+            <TextBox Width="120" Text="Customer ID"></TextBox>
+            <Button Width="120">Edit Customer</Button>
+        </StackPanel>
     </Grid>
 </Window>

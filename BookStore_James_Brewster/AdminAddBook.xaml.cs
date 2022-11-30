@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BlazorBookStore1;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,5 +25,18 @@ namespace BookStore_James_Brewster
 		{
 			InitializeComponent();
 		}
+
+		private void btnAddBook_Click(object sender, RoutedEventArgs e)
+		{
+			if(!txtISBN.Text.Equals(string.Empty) && !txtTitle.Text.Equals(string.Empty) && !txtPubDate.Text.Equals(String.Empty) && !txtPrice.Text.Equals(String.Empty) && !txtReviews.Text.Equals(string.Empty))
+			{
+                DatabaseInstance.addBook(txtISBN.Text, txtTitle.Text, txtPubDate.Text, float.Parse(txtPrice.Text), float.Parse(txtReviews.Text));
+				txtISBN.Text = string.Empty;
+				txtTitle.Text = string.Empty;
+				txtPubDate.Text = string.Empty;
+				txtPrice.Text = string.Empty;
+				txtReviews.Text = string.Empty;
+            }
+        }
 	}
 }

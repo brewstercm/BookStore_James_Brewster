@@ -414,6 +414,18 @@ namespace BlazorBookStore1
             }
         }
 
+        public static void addBook(string isbnNum, string title, string pubDate, float price, float reviews)
+        {
+            string query = $"INSERT INTO dbo.Books VALUES('{isbnNum}', '{title}', '{pubDate}', {price}, {reviews})";
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+                using (SqlCommand command = new SqlCommand(query, conn))
+                {
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
         public static void deleteBook(string isbnNum)
         {
             string query = $"DELETE FROM dbo.Books WHERE isbnNum='{isbnNum}'";

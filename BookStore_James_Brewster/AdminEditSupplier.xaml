@@ -50,7 +50,10 @@
             <TextBox TextWrapping="Wrap" Text="Name" Width="150"/>
 
             <Label Width="150" HorizontalAlignment="Center"></Label>
-            <Button Width="150">Confirm Edit</Button>
+
+            <Button Width="150" BorderBrush="Red">Delete Supplier</Button>
+            <Label Width="150" HorizontalAlignment="Center"></Label>
+            <Button Width="150" BorderBrush="Green">Confirm Edit</Button>
 
         </StackPanel>
     </Grid>
