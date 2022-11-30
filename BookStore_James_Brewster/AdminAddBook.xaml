@@ -17,7 +17,7 @@
 
         <StackPanel Grid.Column="0" Background="AliceBlue">
             <Label HorizontalAlignment="Center">Book Store</Label>
-            <Button >@Add Book</Button>
+            <Button Click="Button_Click" >@Add Book</Button>
             <Button>@Book Browser</Button>
             <Button>@Create Category</Button>
             <Button>@Admin Edit Author</Button>
@@ -43,13 +43,37 @@
         <StackPanel Grid.Column="1" Background="LightGray">
             <Label Content="Add Book" HorizontalAlignment="Center" FontSize="14" FontFamily="Georgia"/>
             <Label Width="150" HorizontalAlignment="Center">ISBN</Label>
-            <TextBox x:Name="txtISBN" TextWrapping="Wrap" Text="ISBN" Width="150"/>
+            <TextBox Text="ISBN" Width="150" TextChanged="TextBox_TextChanged">
+                <TextBox.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="3"/>
+                    </Style>
+                </TextBox.Resources>
+            </TextBox>
             <Label Width="150" HorizontalAlignment="Center">Title</Label>
-            <TextBox x:Name="txtTitle" TextWrapping="Wrap" Text="Title" Width="150"/>
+            <TextBox Text="Title" Width="150">
+                <TextBox.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="3"/>
+                    </Style>
+                </TextBox.Resources>
+            </TextBox>
             <Label Width="150" HorizontalAlignment="Center">PubDate</Label>
-            <TextBox x:Name="txtPubDate" TextWrapping="Wrap" Text="PubDate" Width="150"/>
+            <TextBox Text="Data Published" Width="150">
+                <TextBox.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="3"/>
+                    </Style>
+                </TextBox.Resources>
+            </TextBox>
             <Label Width="150" HorizontalAlignment="Center">Price</Label>
-            <TextBox x:Name="txtPrice" TextWrapping="Wrap" Text="Price" Width="150"/>
+            <TextBox Text="Data Published" Width="150">
+                <TextBox.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="3"/>
+                    </Style>
+                </TextBox.Resources>
+            </TextBox>
             <Label Width="150" HorizontalAlignment="Center">Reviews</Label>
             <TextBox x:Name="txtReviews" TextWrapping="Wrap" Text="Reviews" Width="150"/>
             <Label Width="150" HorizontalAlignment="Center"></Label>
