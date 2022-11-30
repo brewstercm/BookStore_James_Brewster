@@ -24,6 +24,12 @@ namespace BookStore_James_Brewster
 		public CustomerUpdateAccount()
 		{
 			InitializeComponent();
+            txtfName.Text = BlazorBookStore1.Customer.fName;
+            txtlName.Text = BlazorBookStore1.Customer.lName;
+            txtAddress.Text = BlazorBookStore1.Customer.address;
+            txtEmail.Text = BlazorBookStore1.Customer.email;
+            txtPassword.Text = BlazorBookStore1.Customer.password;
+            txtPhone.Text = BlazorBookStore1.Customer.phone;
             if (BlazorBookStore1.Customer.customerID == -1)
             {
                 hideProfileButtons();
@@ -174,6 +180,22 @@ namespace BookStore_James_Brewster
         {
             MainWindow a = new MainWindow();
             a.Show();
+            this.Close();
+        }
+
+        private void btnDeleteAccount_Click(object sender, RoutedEventArgs e)
+        {
+            DatabaseInstance.deleteCustomer(BlazorBookStore1.Customer.customerID);
+            MainWindow mw = new MainWindow();
+            mw.Show();
+            this.Close();
+        }
+
+        private void btnConfirmUpdateAccount_Click(object sender, RoutedEventArgs e)
+        {
+            DatabaseInstance.UpdateAccount(BlazorBookStore1.Customer.customerID, txtfName.Text, txtlName.Text, txtAddress.Text, txtEmail.Text, txtPhone.Text, txtPassword.Text);
+            MainWindow mw = new MainWindow();
+            mw.Show();
             this.Close();
         }
     }

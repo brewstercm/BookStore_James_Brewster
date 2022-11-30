@@ -93,9 +93,9 @@
 
             <Label Width="150" HorizontalAlignment="Center"></Label>
 
-            <Button x:Name="btnDeleteAccount" Width="150" BorderBrush="red">Delete Account</Button>
+            <Button x:Name="btnDeleteAccount" Width="150" BorderBrush="red" Click="btnDeleteAccount_Click">Delete Account</Button>
             <Label Width="150" HorizontalAlignment="Center"></Label>
-            <Button x:Name="btnConfirmUpdateAccount" Width="150" BorderBrush="Green" >Confirm Update</Button>
+            <Button x:Name="btnConfirmUpdateAccount" Width="150" BorderBrush="Green" Click="btnConfirmUpdateAccount_Click" >Confirm Update</Button>
 
         </StackPanel>
     </Grid>

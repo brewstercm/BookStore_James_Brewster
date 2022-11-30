@@ -168,6 +168,7 @@ namespace BlazorBookStore1
             string query3 = $"UPDATE dbo.Login SET email='{email}', password='{password}' WHERE customerID={customerID}";
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
+                conn.Open();
                 SqlCommand command1 = new SqlCommand(query, conn);
                 SqlCommand command2 = new SqlCommand(query2, conn);
                 SqlCommand command3 = new SqlCommand(query3, conn);
@@ -223,7 +224,7 @@ namespace BlazorBookStore1
         public static CustomerDetails getCustomer(int customerID)
         {
             CustomerDetails customer = null;
-            string query = $"SELECT * FROM dbo.Customer JOIN dbo.CustomerContactDetails ON dbo.Customer.customerID = dbo.CustomerContactDetails.customerID JOIN dbo.Login ON dbo.CustomerContactDetails.customerID = dbo.Login.customerID WHERE customerID={customerID}";
+            string query = $"SELECT * FROM dbo.Customer JOIN dbo.CustomerContactDetails ON dbo.Customer.customerID = dbo.CustomerContactDetails.customerID JOIN dbo.Login ON dbo.CustomerContactDetails.customerID = dbo.Login.customerID WHERE dbo.Customer.customerID={customerID}";
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 SqlCommand command = new SqlCommand(query, conn);

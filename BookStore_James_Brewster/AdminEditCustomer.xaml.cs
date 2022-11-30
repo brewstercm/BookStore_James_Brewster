@@ -26,6 +26,8 @@ namespace BookStore_James_Brewster
 		{
 			InitializeComponent();
 			this.customer = customer;
+            txtfName.Text = this.customer.fName;
+            txtfLName.Text = this.customer.lName;
 
             if (BlazorBookStore1.Customer.customerID == -1)
             {
