@@ -249,7 +249,7 @@ namespace BlazorBookStore1
         public static void editCustomer(int customerID, string fName, string lName, string email, string phone, string address)
         {
             string query = $"UPDATE dbo.Customer SET fName='{fName}', lName='{lName}' WHERE customerID={customerID}";
-            string query2 = $"UPDATE dbo.CustomerContactDetails SET email='{email}', phone={phone}, address='{address}' WHERE customerID={customerID}";
+            string query2 = $"UPDATE dbo.CustomerContactDetails SET email='{email}', phone='{phone}', address='{address}' WHERE customerID={customerID}";
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 SqlCommand command = new SqlCommand(query, conn);
