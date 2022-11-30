@@ -18,7 +18,7 @@ namespace BookStore_James_Brewster
 	/// <summary>
 	/// Interaction logic for AdminViewCustomers.xaml
 	/// </summary>
-	public partial class AdminViewCustomers : Page
+	public partial class AdminViewCustomers : Window
 	{
 		public AdminViewCustomers()
 		{

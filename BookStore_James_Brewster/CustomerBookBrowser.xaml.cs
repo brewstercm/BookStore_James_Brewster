@@ -18,7 +18,7 @@ namespace BookStore_James_Brewster
 	/// <summary>
 	/// Interaction logic for CustomerBookBrowser.xaml
 	/// </summary>
-	public partial class CustomerBookBrowser : Page
+	public partial class CustomerBookBrowser : Window
 	{
 		public CustomerBookBrowser()
 		{

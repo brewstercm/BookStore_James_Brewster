@@ -18,7 +18,7 @@ namespace BookStore_James_Brewster
 	/// <summary>
 	/// Interaction logic for Profile.xaml
 	/// </summary>
-	public partial class Profile : Page
+	public partial class Profile : Window
 	{
 		public Profile()
 		{

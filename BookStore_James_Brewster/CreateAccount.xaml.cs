@@ -18,7 +18,7 @@ namespace BookStore_James_Brewster
 	/// <summary>
 	/// Interaction logic for CreateAccount.xaml
 	/// </summary>
-	public partial class CreateAccount : Page
+	public partial class CreateAccount : Window
 	{
 		public CreateAccount()
 		{

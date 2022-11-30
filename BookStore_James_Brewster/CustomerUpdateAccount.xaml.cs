@@ -18,7 +18,7 @@ namespace BookStore_James_Brewster
 	/// <summary>
 	/// Interaction logic for CustomerUpdateAccount.xaml
 	/// </summary>
-	public partial class CustomerUpdateAccount : Page
+	public partial class CustomerUpdateAccount : Window
 	{
 		public CustomerUpdateAccount()
 		{

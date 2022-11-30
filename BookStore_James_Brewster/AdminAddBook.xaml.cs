@@ -18,7 +18,7 @@ namespace BookStore_James_Brewster
 	/// <summary>
 	/// Interaction logic for AdminAddBook.xaml
 	/// </summary>
-	public partial class AdminAddBook : Page
+	public partial class AdminAddBook : Window
 	{
 		public AdminAddBook()
 		{

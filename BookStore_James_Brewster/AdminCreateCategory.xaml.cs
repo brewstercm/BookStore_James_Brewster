@@ -18,7 +18,7 @@ namespace BookStore_James_Brewster
 	/// <summary>
 	/// Interaction logic for AdminCreateCategory.xaml
 	/// </summary>
-	public partial class AdminCreateCategory : Page
+	public partial class AdminCreateCategory : Window
 	{
 		public AdminCreateCategory()
 		{
