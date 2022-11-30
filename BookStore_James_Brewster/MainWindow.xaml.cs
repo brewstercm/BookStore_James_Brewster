@@ -69,5 +69,68 @@ namespace BookStore_James_Brewster
             a.Show();
             this.Close();
         }
+
+        private void Button_Click_7(object sender, RoutedEventArgs e)
+        {
+            AdminViewOrders a = new AdminViewOrders();
+            a.Show();
+            this.Close();
+        }
+
+        private void Button_Click_8(object sender, RoutedEventArgs e)
+        {
+            AdminViewSuppliers a = new AdminViewSuppliers();
+            a.Show();
+            this.Close();
+        }
+
+        private void Button_Click_9(object sender, RoutedEventArgs e)
+        {
+            CreateAccount a = new CreateAccount();
+            a.Show();
+            this.Close();
+        }
+
+        private void Button_Click_10(object sender, RoutedEventArgs e)
+        {
+            CustomerBookBrowser a = new CustomerBookBrowser();
+            a.Show();
+            this.Close();
+        }
+
+        private void Button_Click_11(object sender, RoutedEventArgs e)
+        {
+            CustomerUpdateAccount a = new CustomerUpdateAccount();
+            a.Show();
+            this.Close();
+        }
+
+        private void Button_Click_12(object sender, RoutedEventArgs e)
+        {
+            CustomerViewOrders a = new CustomerViewOrders();
+            a.Show();
+            this.Close();
+        }
+
+        private void Button_Click_13(object sender, RoutedEventArgs e)
+        {
+            CreateAccount a = new CreateAccount();
+            a.Show();
+            this.Close();
+        }
+
+        private void Button_Click_14(object sender, RoutedEventArgs e)
+        {
+            Login a = new Login();
+            a.Show();
+            this.Close();
+        }
+
+        private void Button_Click_15(object sender, RoutedEventArgs e)
+        {
+            MainWindow a = new MainWindow();
+            a.Show();
+            this.Close();
+        }
     }
 }
