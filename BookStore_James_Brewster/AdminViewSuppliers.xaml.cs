@@ -21,8 +21,10 @@ namespace BookStore_James_Brewster
 	/// </summary>
 	public partial class AdminViewSuppliers : Window
 	{
-		public AdminViewSuppliers()
+		Supplier s;
+		public AdminViewSuppliers(Supplier s)
 		{
+			this.s = s;
 			InitializeComponent();
             if (BlazorBookStore1.Customer.customerID == -1)
             {
@@ -124,7 +126,7 @@ namespace BookStore_James_Brewster
 
 		private void Button_Click_8(object sender, RoutedEventArgs e)
 		{
-			AdminViewSuppliers a = new AdminViewSuppliers();
+			AdminViewSuppliers a = new AdminViewSuppliers(s);
 			a.Show();
 			this.Close();
 		}
@@ -176,6 +178,11 @@ namespace BookStore_James_Brewster
 			MainWindow a = new MainWindow();
 			a.Show();
 			this.Close();
+		}
+
+		private void AdminEditSupplier(object sender, RoutedEventArgs e)
+		{
+			DatabaseInstance.editSupplier(s.supplierID, s.name);
 		}
 	}
 }

@@ -21,8 +21,10 @@ namespace BookStore_James_Brewster
 	/// </summary>
 	public partial class AdminEditOrder : Window
 	{
-		public AdminEditOrder()
+		Order o;
+		public AdminEditOrder(Order o)
 		{
+			this.o = o;
 			InitializeComponent();
             if (BlazorBookStore1.Customer.customerID == -1)
             {
@@ -180,8 +182,8 @@ namespace BookStore_James_Brewster
 
 		private void btnDeleteOrder_Click(object sender, RoutedEventArgs e)
 		{
-
-		}
-	}
+			DatabaseInstance.deleteOrder(o.orderID);
+        }
+    }
 	
 }
