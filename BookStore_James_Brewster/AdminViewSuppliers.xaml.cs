@@ -196,6 +196,15 @@ namespace BookStore_James_Brewster
 			a.Show();
 			this.Close();
 		}
+
+		private void btnSupplierID_Click(object sender, RoutedEventArgs e)
+		{
+			int supplierID = Int32.Parse(txtSupplierID.Text);
+			Supplier s = DatabaseInstance.getSupplier(supplierID);
+			AdminEditSupplier aew = new AdminEditSupplier(s);
+			aew.Show();
+			this.Close();
+		}
 	}
 
 
