@@ -129,8 +129,7 @@ namespace BlazorBookStore1
 
         public static void Logout()
         {
-            Customer customer = new Customer();
-            customer.customerID = -1;
+            Customer.customerID = -1;
         }
 
         public static List<CustomerDetails> viewCustomers()
@@ -467,7 +466,6 @@ namespace BlazorBookStore1
 
         public static AuthorDetails getAuthor(int authorID)
         {
-            //yolo
             AuthorDetails author = null;
             string query = $"SELECT * FROM dbo.Author JOIN dbo.AuthorContactDetails ON dbo.Author.authorID=dbo.AuthorContactDetails.authorID WHERE authorID={authorID}";
             using (SqlConnection conn = new SqlConnection(connectionString))
