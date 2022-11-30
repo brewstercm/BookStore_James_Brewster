@@ -5,8 +5,9 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:BookStore_James_Brewster"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
-      Title="CustomerUpdateAccount">
+      d:DesignHeight="450"
+      d:DesignWidth="800"
+      Title="MainWindow" Height="525" Width="800">
 
     <Grid Background="LightGray">
         <Grid.ColumnDefinitions>
