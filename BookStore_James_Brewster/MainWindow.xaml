@@ -18,10 +18,9 @@
         </Grid.ColumnDefinitions>
         <StackPanel Background="LightSeaGreen">
             <Label HorizontalAlignment="Center">Book Store</Label>
-            <Button x:Name="btnAdminAddBook" Click="Button_Click" >@Add Book</Button>
             <Button x:Name="btnAdminBookBrowser" Click="Button_Click_1">@Book Browser</Button>
-            <Button Click="Button_Click_2">@Create Category</Button>
-            <Button x:Name="btnAdminCreateCategory" Click="Button_Click_5">@Admin View Authors</Button>
+            <Button x:Name="btnAdminCreateCategory" Click="Button_Click_2">@Create Category</Button>
+            <Button x:Name="btnAdminViewAuthors" Click="Button_Click_5">@Admin View Authors</Button>
             <Button x:Name="btnAdminViewCustomers" Click="Button_Click_6">@Admin View Customers</Button>
             <Button x:Name="btnAdminViewOrders" Click="Button_Click_7">@Admin View Orders</Button>
             <Button x:Name="btnAdminViewSuppliers" Click="Button_Click_8">@Admin View Suppliers</Button>

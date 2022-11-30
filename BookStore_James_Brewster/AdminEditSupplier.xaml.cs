@@ -47,7 +47,6 @@ namespace BookStore_James_Brewster
         }
         private void hideAdminButtons()
         {
-            btnAdminAddBook.Visibility = Visibility.Hidden;
             btnAdminBookBrowser.Visibility = Visibility.Hidden;
             btnAdminCreateCategory.Visibility = Visibility.Hidden;
             btnAdminSpacer.Visibility = Visibility.Hidden;

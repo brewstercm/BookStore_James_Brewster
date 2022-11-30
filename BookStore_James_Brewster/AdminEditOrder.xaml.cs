@@ -44,7 +44,7 @@ namespace BookStore_James_Brewster
         {
             btnLogin.Visibility = Visibility.Hidden;
             btnCreateAccount.Visibility = Visibility.Hidden;
-            btnAdminCreateCategory.Visibility = Visibility.Hidden;
+			btnAdminCreateCategory.Visibility = Visibility.Hidden;
 
         }
         private void hideAdminButtons()
@@ -61,7 +61,7 @@ namespace BookStore_James_Brewster
         {
             btnLogout.Visibility = Visibility.Hidden;
             btnCustomerUpdateAccount.Visibility = Visibility.Hidden;
-            btnCustomerViewOrders.Visibility = Visibility.Hidden;
+			btnCustomerViewOrders.Visibility = Visibility.Hidden;
             btnCustomerBookBrowser.Visibility = Visibility.Hidden;
         }
         private void btnLogout_Click(object sender, RoutedEventArgs e)

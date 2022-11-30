@@ -46,7 +46,6 @@ namespace BookStore_James_Brewster
         }
         private void hideAdminButtons()
         {
-            btnAdminAddBook.Visibility = Visibility.Hidden;
             btnAdminBookBrowser.Visibility = Visibility.Hidden;
             btnAdminCreateCategory.Visibility = Visibility.Hidden;
             btnAdminSpacer.Visibility = Visibility.Hidden;
@@ -191,6 +190,9 @@ namespace BookStore_James_Brewster
                 !txtEmail.Text.Equals(string.Empty) && !txtPassword.Text.Equals(string.Empty) && !txtPhone.Text.Equals(string.Empty) && chkAdmin.IsChecked.HasValue)
             {
                 DatabaseInstance.CreateAccount(txtfName.Text, txtlName.Text, txtEmail.Text, txtPassword.Text, chkAdmin.IsChecked.Value, txtAddress.Text, txtPhone.Text);
+                CustomerBookBrowser b = new CustomerBookBrowser();
+                b.Show();
+                this.Close();
             }
         }
     }
