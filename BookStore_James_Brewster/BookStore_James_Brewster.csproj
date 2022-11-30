@@ -255,8 +255,8 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="database\BookStoreDB_log.ldf">
-      <DependentUpon>BookStoreDB.mdf</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>BookStoreDB.mdf</DependentUpon>
     </Content>
   </ItemGroup>
   <ItemGroup />
