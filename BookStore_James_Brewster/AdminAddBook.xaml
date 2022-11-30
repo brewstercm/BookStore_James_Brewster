@@ -43,7 +43,7 @@
         <StackPanel Grid.Column="1" Background="LightGray">
             <Label Content="Add Book" HorizontalAlignment="Center" FontSize="14" FontFamily="Georgia"/>
             <Label Width="150" HorizontalAlignment="Center">ISBN</Label>
-            <TextBox x:Name="txtISBN" Text="ISBN" Width="150" TextChanged="TextBox_TextChanged">
+            <TextBox x:Name="txtISBN" Text="ISBN" Width="150">
                 <TextBox.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="3"/>

@@ -27,7 +27,7 @@ namespace BookStore_James_Brewster
 			InitializeComponent();
 			this.book = book;
 			txtISBN.Text = this.book.isbnNum;
-			txtBookTitle.Text = this.book.title;
+			txtTitle.Text = this.book.title;
 			txtPubDate.Text = this.book.pubDate;
 			txtPrice.Text = this.book.price.ToString();
 			txtReviews.Text = this.book.reviews.ToString();
@@ -40,10 +40,10 @@ namespace BookStore_James_Brewster
 
 		private void btnConfirmChanges_Click(object sender, RoutedEventArgs e)
 		{
-			if(!txtISBN.Text.Equals(string.Empty) && !txtBookTitle.Text.Equals(string.Empty) && !txtPubDate.Text.Equals(string.Empty) && !txtPrice.Text.Equals(string.Empty) && 
+			if(!txtISBN.Text.Equals(string.Empty) && !txtTitle.Text.Equals(string.Empty) && !txtPubDate.Text.Equals(string.Empty) && !txtPrice.Text.Equals(string.Empty) && 
 				!txtReviews.Text.Equals(string.Empty) && float.TryParse(txtPrice.Text, out float result) && float.TryParse(txtReviews.Text, out float result2))
 			{
-                DatabaseInstance.editBook(txtISBN.Text, txtBookTitle.Text, txtPubDate.Text, float.Parse(txtPrice.Text), float.Parse(txtReviews.Text), this.book.supplierID);
+                DatabaseInstance.editBook(txtISBN.Text, txtTitle.Text, txtPubDate.Text, float.Parse(txtPrice.Text), float.Parse(txtReviews.Text), this.book.supplierID);
             }
         }
 		private void Button_Click(object sender, RoutedEventArgs e)
