@@ -9,6 +9,14 @@
       Title="AdminEditAuthorData">
 
     <Grid>
-        
+        <TextBox x:Name="txtAuthorFName" HorizontalAlignment="Left" Margin="131,118,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtAuthorLName" HorizontalAlignment="Left" Margin="131,189,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtAuthorGender" HorizontalAlignment="Left" Margin="131,264,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtAuthorDOB" HorizontalAlignment="Left" Margin="356,118,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtAuthorAddress" HorizontalAlignment="Left" Margin="356,189,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtAuthorEmail" HorizontalAlignment="Left" Margin="356,264,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtAuthorPhone" HorizontalAlignment="Left" Margin="602,118,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="btnEditAuthor" Content="Submit Changes" HorizontalAlignment="Left" Margin="617,263,0,0" VerticalAlignment="Top" Click="btnEditAuthor_Click"/>
+        <TextBlock x:Name="txtMessage" HorizontalAlignment="Left" Margin="369,360,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
     </Grid>
 </Window>

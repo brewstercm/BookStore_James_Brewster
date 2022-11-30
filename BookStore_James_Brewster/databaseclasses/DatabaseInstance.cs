@@ -502,10 +502,24 @@ namespace BlazorBookStore1
             return author;
         }
 
-        public static void editAuthor()
+        public static void editAuthor(int authorID, string fName, string lName, string gender, string DOB, string address, string email, string phone)
         {
-            //finish later and edit Author/AuthorContactDetails
+            string query1 = $"UPDATE dbo.Author SET fName='{fName}', lName='{lName}', gender='{gender}', DOB='{DOB}' WHERE authorID={authorID}";
+            string query2 = $"UPDATE dbo.AuthorContactDetails SET address='{address}', email='{email}', phone='{phone}' WHERE authorID={authorID}";
+            using(SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+                using(SqlCommand command = new SqlCommand(query1, conn))
+                {
+                    command.ExecuteNonQuery();
+                }
+                using (SqlCommand command = new SqlCommand(query2, conn))
+                {
+                    command.ExecuteNonQuery();
+                }
+            }
         }
+        
 
         public static Supplier getSupplier(int supplierID)
         {
