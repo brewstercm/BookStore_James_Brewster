@@ -63,6 +63,7 @@ namespace BookStore_James_Brewster
         {
             DatabaseInstance.Logout();
             MainWindow mw = new MainWindow();
+            mw.WindowStartupLocation= WindowStartupLocation.CenterOwner;
             mw.Show();
             this.Close();
         }
@@ -70,21 +71,24 @@ namespace BookStore_James_Brewster
         private void Button_Click(object sender, RoutedEventArgs e)
 		{
 			AdminAddBook a = new AdminAddBook();
-            a.Show();
+			a.WindowStartupLocation = WindowStartupLocation.CenterOwner;
+			a.Show();
             this.Close();
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             AdminBookBrowser a = new AdminBookBrowser();
-            a.Show();
+			a.WindowStartupLocation = WindowStartupLocation.CenterOwner;
+			a.Show();
             this.Close();
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
             AdminCreateCategory a = new AdminCreateCategory();
-            a.Show();
+			a.WindowStartupLocation = WindowStartupLocation.CenterOwner;
+			a.Show();
             this.Close();
         }
 
@@ -101,77 +105,88 @@ namespace BookStore_James_Brewster
         private void Button_Click_5(object sender, RoutedEventArgs e)
         {
             AdminViewAuthors a = new AdminViewAuthors();
-            a.Show();
+			a.WindowStartupLocation = WindowStartupLocation.CenterOwner;
+			a.Show();
             this.Close();
         }
 
         private void Button_Click_6(object sender, RoutedEventArgs e)
         {
             AdminViewCustomers a = new AdminViewCustomers();
-            a.Show();
+			a.WindowStartupLocation = WindowStartupLocation.CenterOwner;
+			a.Show();
             this.Close();
         }
 
         private void Button_Click_7(object sender, RoutedEventArgs e)
         {
             AdminViewOrders a = new AdminViewOrders();
-            a.Show();
+			a.WindowStartupLocation = WindowStartupLocation.CenterOwner;
+			a.Show();
             this.Close();
         }
 
         private void Button_Click_8(object sender, RoutedEventArgs e)
         {
             AdminViewSuppliers a = new AdminViewSuppliers();
-            a.Show();
+			a.WindowStartupLocation = WindowStartupLocation.CenterOwner;
+			a.Show();
             this.Close();
         }
 
         private void Button_Click_9(object sender, RoutedEventArgs e)
         {
             CreateAccount a = new CreateAccount();
-            a.Show();
+			a.WindowStartupLocation = WindowStartupLocation.CenterOwner;
+			a.Show();
             this.Close();
         }
 
         private void Button_Click_10(object sender, RoutedEventArgs e)
         {
             CustomerBookBrowser a = new CustomerBookBrowser();
-            a.Show();
+			a.WindowStartupLocation = WindowStartupLocation.CenterOwner;
+			a.Show();
             this.Close();
         }
 
         private void Button_Click_11(object sender, RoutedEventArgs e)
         {
             CustomerUpdateAccount a = new CustomerUpdateAccount();
-            a.Show();
+			a.WindowStartupLocation = WindowStartupLocation.CenterOwner;
+			a.Show();
             this.Close();
         }
 
         private void Button_Click_12(object sender, RoutedEventArgs e)
         {
             CustomerViewOrders a = new CustomerViewOrders();
-            a.Show();
+			a.WindowStartupLocation = WindowStartupLocation.CenterOwner;
+			a.Show();
             this.Close();
         }
 
         private void Button_Click_13(object sender, RoutedEventArgs e)
         {
             CreateAccount a = new CreateAccount();
-            a.Show();
+			a.WindowStartupLocation = WindowStartupLocation.CenterOwner;
+			a.Show();
             this.Close();
         }
 
         private void Button_Click_14(object sender, RoutedEventArgs e)
         {
             Login a = new Login();
-            a.Show();
+			a.WindowStartupLocation = WindowStartupLocation.CenterOwner;
+			a.Show();
             this.Close();
         }
 
         private void Button_Click_15(object sender, RoutedEventArgs e)
         {
             MainWindow a = new MainWindow();
-            a.Show();
+			a.WindowStartupLocation = WindowStartupLocation.CenterOwner;
+			a.Show();
             this.Close();
         }
     }

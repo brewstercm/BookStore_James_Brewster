@@ -387,7 +387,7 @@ namespace BlazorBookStore1
                             string isbnNum = reader.GetString(reader.GetOrdinal("isbnNum"));
                             string title = reader.GetString(reader.GetOrdinal("title"));
                             string pubDate = reader.GetString(reader.GetOrdinal("pubDate"));
-                            float price = reader.GetFloat(reader.GetOrdinal("price"));
+                            float price = (float)reader.GetFloat(reader.GetOrdinal("price"));
                             float reviews = reader.GetFloat(reader.GetOrdinal("reviews"));
                             int supplierID = reader.GetInt32(reader.GetOrdinal("supplierID"));
 

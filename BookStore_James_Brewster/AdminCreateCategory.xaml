@@ -1,4 +1,5 @@
 ﻿<Window x:Class="BookStore_James_Brewster.AdminCreateCategory"
+        WindowStartupLocation="CenterScreen"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -7,7 +8,7 @@
       mc:Ignorable="d" 
       d:DesignHeight="450"
       d:DesignWidth="800"
-      Title="MainWindow" Height="525" Width="800">
+      Title="AdminCreateCategory">
 
     <Grid Background="LightGray">
         <Grid.ColumnDefinitions>
@@ -20,7 +21,7 @@
             <Label HorizontalAlignment="Center">Book Store</Label>
             <Button x:Name="btnAdminAddBook" Click="Button_Click" >@Add Book</Button>
             <Button x:Name="btnAdminBookBrowser" Click="Button_Click_1">@Book Browser</Button>
-            <Button Click="Button_Click_2">@Create Category</Button>
+            <Button Name="btnCreateC" Click="Button_Click_2">@Create Category</Button>
             <Button x:Name="btnAdminCreateCategory" Click="Button_Click_5">@Admin View Authors</Button>
             <Button x:Name="btnAdminViewCustomers" Click="Button_Click_6">@Admin View Customers</Button>
             <Button x:Name="btnAdminViewOrders" Click="Button_Click_7">@Admin View Orders</Button>
