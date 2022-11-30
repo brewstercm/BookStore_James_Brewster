@@ -42,7 +42,7 @@
         <StackPanel Grid.Column="1" Background="LightGray">
             <Label Content="Edit Order" HorizontalAlignment="Center" FontSize="14" FontFamily="Georgia"/>
             <Label Width="150" HorizontalAlignment="Center">Order ID</Label>
-            <TextBox Text="OrderID" Width="150">
+            <TextBox x:Name="txtOrderID" Text="OrderID" Width="150">
                 <TextBox.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="8"/>
@@ -51,7 +51,7 @@
             </TextBox>
             
             <Label Width="150" HorizontalAlignment="Center">Order Date</Label>
-            <TextBox Text="Order Date" Width="150">
+            <TextBox x:Name="txtOrderDate" Text="Order Date" Width="150">
                 <TextBox.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="8"/>
@@ -60,7 +60,7 @@
             </TextBox>
             
             <Label Width="150" HorizontalAlignment="Center">Order Cost</Label>
-            <TextBox Text="Order Cost" Width="150">
+            <TextBox x:Name="TxtOrderCost" Text="Order Cost" Width="150">
                 <TextBox.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="8"/>

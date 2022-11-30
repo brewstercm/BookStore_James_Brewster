@@ -135,11 +135,6 @@ namespace BookStore_James_Brewster
             a.Show();
             this.Close();
         }
-
-		private void txtfName(object sender, ContextMenuEventArgs e)
-		{
-
-		}
 	}
 	
 }
