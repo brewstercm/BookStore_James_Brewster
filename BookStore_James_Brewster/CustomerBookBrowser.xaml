@@ -71,7 +71,7 @@
                 </TextBox.Resources>
             </TextBox>
             <Label HorizontalAlignment="Center"></Label>
-            <Button x:Name="btnAddBookToOrder" Width="150">Add Book to Order</Button>
+            <Button x:Name="btnAddBookToOrder" Width="150" Click="btnAddBookToOrder_Click">Add Book to Order</Button>
         </StackPanel>
     </Grid>
 </Window>

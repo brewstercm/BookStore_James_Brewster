@@ -79,7 +79,7 @@
                 </TextBox.Resources>
             </TextBox>
             <Label Width="150" HorizontalAlignment="Center">SupplierID</Label>
-            <TextBox x:Name="txtSupplierID" Text="" Width="150">
+            <TextBox x:Name="txtSupplierID" Text="Supplier ID" Width="150">
                 <TextBox.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="3"/>
