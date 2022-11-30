@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BlazorBookStore1;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -131,6 +132,14 @@ namespace BookStore_James_Brewster
             MainWindow a = new MainWindow();
             a.Show();
             this.Close();
+        }
+
+        private void btnLogin_Click(object sender, RoutedEventArgs e)
+        {
+            if(!txtEmail.Text.Equals(string.Empty) && !txtPassword.Text.Equals(string.Empty))
+            {
+                DatabaseInstance.Login(txtEmail.Text, txtPassword.Text);
+            }
         }
     }
 }
