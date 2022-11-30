@@ -28,9 +28,9 @@ namespace BookStore_James_Brewster
 
 		private void btnCreateCategory_Click(object sender, RoutedEventArgs e)
 		{
-			if(!txtCatDesc.Text.Equals("something") && !txtCatDesc.Text.Equals("TextBlock") && !txtCatDesc.Text.Equals(String.Empty))
+			if(!txtCategoryName.Text.Equals("something") && !txtCategoryName.Text.Equals("TextBlock") && !txtCategoryName.Text.Equals(String.Empty))
 			{
-                DatabaseInstance.createCategory(txtCatDesc.Text);
+                DatabaseInstance.createCategory(txtCategoryName.Text);
             }
 		}
 

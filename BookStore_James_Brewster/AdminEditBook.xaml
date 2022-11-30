@@ -45,7 +45,7 @@
             <Label Width="150" HorizontalAlignment="Center">ISBN</Label>
             <TextBox x:Name="txtISBN" TextWrapping="Wrap" Text="ISBN" Width="150"/>
             <Label Width="150" HorizontalAlignment="Center">Title</Label>
-            <TextBox x:Name="txtBookTitle" TextWrapping="Wrap" Text="Title" Width="150" TextChanged="TextBox_TextChanged"/>
+            <TextBox x:Name="txtBookTitle" TextWrapping="Wrap" Text="Title" Width="150"/>
             <Label Width="150" HorizontalAlignment="Center">PubDate</Label>
             <TextBox x:Name="txtPubDate" TextWrapping="Wrap" Text="PubDate" Width="150"/>
             <Label Width="150" HorizontalAlignment="Center">Price</Label>

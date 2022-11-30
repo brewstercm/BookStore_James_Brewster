@@ -63,24 +63,6 @@
                                     <Paragraph>DOB</Paragraph>
                                 </TableCell>
                             </TableRow>
-
-                            <TableRow>
-                                <TableCell>
-                                    <Paragraph>1</Paragraph>
-                                </TableCell>
-                                <TableCell>
-                                    <Paragraph>2</Paragraph>
-                                </TableCell>
-                                <TableCell>
-                                    <Paragraph>3</Paragraph>
-                                </TableCell>
-                                <TableCell>
-                                    <Paragraph>4</Paragraph>
-                                </TableCell>
-                                <TableCell>
-                                    <Paragraph>5</Paragraph>
-                                </TableCell>
-                            </TableRow>
                         </TableRowGroup>
 
                     </Table>
@@ -89,7 +71,7 @@
             </FlowDocumentScrollViewer>
             <TextBox x:Name="txtAuthorID" Width="120" Text="Author ID"></TextBox>
             <Label HorizontalAlignment="Center"></Label>
-            <Button x:Name="btnEditAuthor" Width="120">Edit Author</Button>
+            <Button x:Name="btnEditAuthor" Width="120" Click="btnEditAuthor_Click">Edit Author</Button>
         </StackPanel>
     </Grid>
 </Window>

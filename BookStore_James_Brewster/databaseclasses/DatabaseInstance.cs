@@ -439,10 +439,10 @@ namespace BlazorBookStore1
             }
         }
 
-        public static List<Author> viewAuthors()
+        public static List<AuthorDetails> viewAuthors()
         {
-            List<Author> authors = new List<Author>();
-            string query = $"SELECT * FROM dbo.Author";
+            List<AuthorDetails> authors = new List<AuthorDetails>();
+            string query = $"SELECT * FROM dbo.Author JOIN dbo.AuthorContactDetails ON dbo.Author.authorID = dbo.AuthorContactDetails.authorID";
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 SqlCommand command = new SqlCommand(query, conn);
@@ -456,8 +456,11 @@ namespace BlazorBookStore1
                         string lName = reader.GetString(reader.GetOrdinal("lName"));
                         string gender = reader.GetString(reader.GetOrdinal("gender"));
                         string DOB = reader.GetString(reader.GetOrdinal("DOB"));
+                        string address = reader.GetString(reader.GetOrdinal("address"));
+                        string email = reader.GetString(reader.GetOrdinal("email"));
+                        string phone = reader.GetString(reader.GetOrdinal("phone"));
 
-                        Author newAuthor = new Author(authorID, fName, lName, gender, DOB);
+                        AuthorDetails newAuthor = new AuthorDetails(authorID, fName, lName, gender, DOB, address, email, phone);
                         authors.Add(newAuthor);
                     }
                 }
