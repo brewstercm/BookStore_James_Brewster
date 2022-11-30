@@ -128,19 +128,22 @@ namespace BlazorBookStore1
                 command1.ExecuteNonQuery();
                 command2.ExecuteNonQuery();
                 command3.ExecuteNonQuery();
+
+                Customer.customerID = customerID;
+                Customer.fName = fName;
+                Customer.lName = lName;
+                Customer.address = address;
+                Customer.email = email;
+                Customer.phone = phone;
+                Customer.password = password;
             }
-            Customer.customerID = customerID;
-            Customer.fName = fName;
-            Customer.lName = lName;
-            Customer.address = address;
-            Customer.email = email;
-            Customer.phone = phone;
-            Customer.password = password;
+           
         }
 
         public static void Logout()
         {
             Customer.customerID = -1;
+            Customer.isAdministrator = false;
         }
 
         public static List<CustomerDetails> viewCustomers()

@@ -15,29 +15,25 @@
 
         </Grid.ColumnDefinitions>
 
-        <StackPanel Grid.Column="0" Background="AliceBlue">
+        <StackPanel Background="LightSeaGreen">
             <Label HorizontalAlignment="Center">Book Store</Label>
-            <Button Click="Button_Click" >@Add Book</Button>
-            <Button Click="Button_Click_1">@Book Browser</Button>
+            <Button x:Name="btnAdminAddBook" Click="Button_Click" >@Add Book</Button>
+            <Button x:Name="btnAdminBookBrowser" Click="Button_Click_1">@Book Browser</Button>
             <Button Click="Button_Click_2">@Create Category</Button>
-            <!--<Button Click="Button_Click_3">@Admin Edit Author</Button>
-            <Button Click="Button_Click_4">@Admin Edit Book</Button>
-            <Button>@Admin Edit Customer</Button>
-            <Button>@Admin Edit Order</Button>
-            <Button>@Admin Edit Supplier</Button>-->
-            <Button Click="Button_Click_5">@Admin View Authors</Button>
-            <Button Click="Button_Click_6">@Admin View Customers</Button>
-            <Button Click="Button_Click_7">@Admin View Orders</Button>
-            <Button Click="Button_Click_8">@Admin View Suppliers</Button>
-            <Button>----</Button>
-            <Button Click="Button_Click_10">Book Browser</Button>
-            <!--<Button>Customer Edit Order</Button>-->
-            <Button Click="Button_Click_11">Customer Update Account</Button>
-            <Button Click="Button_Click_12">Customer View Orders</Button>
-            <Button Click="Button_Click_13">Create Account</Button>
-            <Button Click="Button_Click_14">Login</Button>
+            <Button x:Name="btnAdminCreateCategory" Click="Button_Click_5">@Admin View Authors</Button>
+            <Button x:Name="btnAdminViewCustomers" Click="Button_Click_6">@Admin View Customers</Button>
+            <Button x:Name="btnAdminViewOrders" Click="Button_Click_7">@Admin View Orders</Button>
+            <Button x:Name="btnAdminViewSuppliers" Click="Button_Click_8">@Admin View Suppliers</Button>
+            <Button x:Name="btnAdminSpacer">----</Button>
+            <Button x:Name="btnCustomerBookBrowser" Click="Button_Click_10">Book Browser</Button>
+            <Button x:Name="btnCustomerUpdateAccount" Click="Button_Click_11">Customer Update Account</Button>
+            <Button x:Name="btnCustomerViewOrders" Click="Button_Click_12">Customer View Orders</Button>
+            <Button x:Name="btnCreateAccount" Click="Button_Click_13">Create Account</Button>
+            <Button x:Name="btnLogin" Click="Button_Click_14">Login</Button>
+            <Button x:Name="btnLogout" Click="btnLogout_Click">Logout</Button>
             <Button Click="Button_Click_15">Home</Button>
         </StackPanel>
+
 
         <StackPanel Grid.Column="1" Background="LightGray">
             <Label Content="Edit Supplier" HorizontalAlignment="Center" FontSize="14" FontFamily="Georgia"/>

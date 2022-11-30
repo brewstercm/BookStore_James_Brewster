@@ -25,7 +25,51 @@ namespace BookStore_James_Brewster
 		{
 			InitializeComponent();
             chkAdmin.IsChecked = false;
-		}
+            if (BlazorBookStore1.Customer.customerID == -1)
+            {
+                hideProfileButtons();
+            }
+            else
+            {
+                hideLoggedInButtons();
+            }
+            if (!BlazorBookStore1.Customer.isAdministrator)
+            {
+                hideAdminButtons();
+            }
+        }
+
+        private void hideLoggedInButtons()
+        {
+            btnLogin.Visibility = Visibility.Hidden;
+            btnCreateAccount.Visibility = Visibility.Hidden;
+        }
+        private void hideAdminButtons()
+        {
+            btnAdminAddBook.Visibility = Visibility.Hidden;
+            btnAdminBookBrowser.Visibility = Visibility.Hidden;
+            btnAdminCreateCategory.Visibility = Visibility.Hidden;
+            btnAdminSpacer.Visibility = Visibility.Hidden;
+            btnAdminCreateCategory.Visibility = Visibility.Hidden;
+
+            btnAdminViewCustomers.Visibility = Visibility.Hidden;
+            btnAdminViewOrders.Visibility = Visibility.Hidden;
+            btnAdminViewSuppliers.Visibility = Visibility.Hidden;
+        }
+        private void hideProfileButtons()
+        {
+            btnLogout.Visibility = Visibility.Hidden;
+            btnCustomerUpdateAccount.Visibility = Visibility.Hidden;
+            btnCustomerViewOrders.Visibility = Visibility.Hidden;
+            btnCustomerBookBrowser.Visibility = Visibility.Hidden;
+        }
+        private void btnLogout_Click(object sender, RoutedEventArgs e)
+        {
+            DatabaseInstance.Logout();
+            MainWindow mw = new MainWindow();
+            mw.Show();
+            this.Close();
+        }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             AdminAddBook a = new AdminAddBook();

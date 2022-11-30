@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BlazorBookStore1;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,8 +24,105 @@ namespace BookStore_James_Brewster
 		public AdminViewCustomers()
 		{
 			InitializeComponent();
-		}
-		private void Button_Click(object sender, RoutedEventArgs e)
+            foreach (CustomerDetails cd in DatabaseInstance.viewCustomers())
+            {
+                TableRow tableRow = new TableRow();
+                TableCell cusIDCell = new TableCell();
+                Paragraph cusIDParagraph = new Paragraph();
+                Run cusIDRun = new Run();
+				cusIDRun.Text = cd.customerID.ToString();
+                cusIDParagraph.Inlines.Add(cusIDRun);
+                cusIDCell.Blocks.Add(cusIDParagraph);
+                tableRow.Cells.Add(cusIDCell);
+
+                TableCell fnameCell = new TableCell();
+                Paragraph fnameParagraph = new Paragraph();
+                Run fnameRun = new Run();
+                fnameRun.Text = cd.fName;
+                fnameParagraph.Inlines.Add(fnameRun);
+                fnameCell.Blocks.Add(fnameParagraph);
+                tableRow.Cells.Add(fnameCell);
+
+                TableCell lnameCell = new TableCell();
+                Paragraph lnameParagraph = new Paragraph();
+                Run lnameRun = new Run();
+                lnameRun.Text = cd.lName;
+                lnameParagraph.Inlines.Add(lnameRun);
+                lnameCell.Blocks.Add(lnameParagraph);
+                tableRow.Cells.Add(lnameCell);
+
+                TableCell addressCell = new TableCell();
+                Paragraph addressParagraph = new Paragraph();
+                Run addressRun = new Run();
+                addressRun.Text = cd.address;
+                addressParagraph.Inlines.Add(addressRun);
+                addressCell.Blocks.Add(addressParagraph);
+                tableRow.Cells.Add(addressCell);
+
+                TableCell emailCell = new TableCell();
+                Paragraph emailParagraph = new Paragraph();
+                Run emailRun = new Run();
+                emailRun.Text = cd.email;
+                emailParagraph.Inlines.Add(emailRun);
+                emailCell.Blocks.Add(emailParagraph);
+                tableRow.Cells.Add(emailCell);
+
+                TableCell phoneCell = new TableCell();
+                Paragraph phoneParagraph = new Paragraph();
+                Run phoneRun = new Run();
+                phoneRun.Text = cd.phone;
+                phoneParagraph.Inlines.Add(phoneRun);
+                phoneCell.Blocks.Add(phoneParagraph);
+                tableRow.Cells.Add(phoneCell);
+
+				tblRow.Rows.Add(tableRow);
+            }
+            if (BlazorBookStore1.Customer.customerID == -1)
+            {
+                hideProfileButtons();
+            }
+            else
+            {
+                hideLoggedInButtons();
+            }
+            if (!BlazorBookStore1.Customer.isAdministrator)
+            {
+                hideAdminButtons();
+            }
+        }
+
+        private void hideLoggedInButtons()
+        {
+            btnLogin.Visibility = Visibility.Hidden;
+            btnCreateAccount.Visibility = Visibility.Hidden;
+        }
+        private void hideAdminButtons()
+        {
+            btnAdminAddBook.Visibility = Visibility.Hidden;
+            btnAdminBookBrowser.Visibility = Visibility.Hidden;
+            btnAdminCreateCategory.Visibility = Visibility.Hidden;
+            btnAdminSpacer.Visibility = Visibility.Hidden;
+            btnAdminViewCustomers.Visibility = Visibility.Hidden;
+            btnAdminViewOrders.Visibility = Visibility.Hidden;
+            btnAdminViewSuppliers.Visibility = Visibility.Hidden;
+            btnAdminCreateCategory.Visibility = Visibility.Hidden;
+
+        }
+        private void hideProfileButtons()
+        {
+            btnLogout.Visibility = Visibility.Hidden;
+            btnCustomerUpdateAccount.Visibility = Visibility.Hidden;
+            btnCustomerViewOrders.Visibility = Visibility.Hidden;
+            btnCustomerBookBrowser.Visibility = Visibility.Hidden;
+        }
+        private void btnLogout_Click(object sender, RoutedEventArgs e)
+        {
+            DatabaseInstance.Logout();
+            MainWindow mw = new MainWindow();
+            mw.Show();
+            this.Close();
+        }
+        private void Button_Click(object sender, RoutedEventArgs e)
 		{
 			AdminAddBook a = new AdminAddBook();
 			a.Show();
@@ -131,5 +229,16 @@ namespace BookStore_James_Brewster
 			a.Show();
 			this.Close();
 		}
-	}
+
+        private void btnEditCustomer_Click(object sender, RoutedEventArgs e)
+        {
+			if(!txtCustomerID.Text.Equals(string.Empty) && Int32.TryParse(txtCustomerID.Text, out int result))
+			{
+				CustomerDetails cd = DatabaseInstance.getCustomer(Int32.Parse(txtCustomerID.Text));
+                AdminEditCustomer a = new AdminEditCustomer(cd);
+				a.Show();
+				this.Close();
+            }
+        }
+    }
 }
