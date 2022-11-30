@@ -38,5 +38,6 @@ namespace BookStore_James_Brewster
 				txtReviews.Text = string.Empty;
             }
         }
+
 	}
 }
