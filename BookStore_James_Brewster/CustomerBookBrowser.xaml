@@ -68,9 +68,15 @@
                 </FlowDocument>
 
             </FlowDocumentScrollViewer>
-            <TextBox x:Name="txtISBN" Width="120" Text="ISBN#"></TextBox>
+            <TextBox Text="ISBN#" Width="150">
+                <TextBox.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="8"/>
+                    </Style>
+                </TextBox.Resources>
+            </TextBox>
             <Label HorizontalAlignment="Center"></Label>
-            <Button x:Name="btnAddBookToOrder" Width="120">Add Book to Order</Button>
+            <Button x:Name="btnAddBookToOrder" Width="150">Add Book to Order</Button>
         </StackPanel>
     </Grid>
 </Window>

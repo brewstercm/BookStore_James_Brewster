@@ -67,7 +67,7 @@
                 </TextBox.Resources>
             </TextBox>
             <Label Width="150" HorizontalAlignment="Center">Price</Label>
-            <TextBox Text="Data Published" Width="150">
+            <TextBox Text="Price" Width="150">
                 <TextBox.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="3"/>
@@ -75,7 +75,13 @@
                 </TextBox.Resources>
             </TextBox>
             <Label Width="150" HorizontalAlignment="Center">Reviews</Label>
-            <TextBox x:Name="txtReviews" TextWrapping="Wrap" Text="Reviews" Width="150"/>
+            <TextBox Text="Reviews" Width="150">
+                <TextBox.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="3"/>
+                    </Style>
+                </TextBox.Resources>
+            </TextBox>
             <Label Width="150" HorizontalAlignment="Center"></Label>
             <Button x:Name="btnAddBook" Width="150" Click="btnAddBook_Click">Add Book</Button>
             

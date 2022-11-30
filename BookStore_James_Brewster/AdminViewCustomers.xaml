@@ -66,34 +66,21 @@
                                 </TableCell>
                             </TableRow>
 
-                            <TableRow>
-                                <TableCell>
-                                    <Paragraph>1</Paragraph>
-                                </TableCell>
-                                <TableCell>
-                                    <Paragraph>2</Paragraph>
-                                </TableCell>
-                                <TableCell>
-                                    <Paragraph>3</Paragraph>
-                                </TableCell>
-                                <TableCell>
-                                    <Paragraph>4</Paragraph>
-                                </TableCell>
-                                <TableCell>
-                                    <Paragraph>5</Paragraph>
-                                </TableCell>
-                                <TableCell>
-                                    <Paragraph>6</Paragraph>
-                                </TableCell>
-                            </TableRow>
                         </TableRowGroup>
 
                     </Table>
                 </FlowDocument>
 
             </FlowDocumentScrollViewer>
-            <TextBox Width="120" Text="Customer ID"></TextBox>
-            <Button Width="120">Edit Customer</Button>
+            <TextBox Text="CustomerID" Width="150">
+                <TextBox.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="8"/>
+                    </Style>
+                </TextBox.Resources>
+            </TextBox>
+            <Label HorizontalAlignment="Center"></Label>
+            <Button Width="150">Edit Customer</Button>
         </StackPanel>
     </Grid>
 </Window>

@@ -44,10 +44,22 @@
 
 
             <Label Width="150" HorizontalAlignment="Center">Email</Label>
-            <TextBox x:Name="txtEmail" TextWrapping="Wrap" Text="Email" Width="150"/>
+            <TextBox Text="Email" Width="150">
+                <TextBox.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="8"/>
+                    </Style>
+                </TextBox.Resources>
+            </TextBox>
 
             <Label Width="150" HorizontalAlignment="Center">Password</Label>
-            <TextBox x:Name="txtPassword" TextWrapping="Wrap" Text="Passowrd" Width="150"/>
+            <TextBox Text="Password" Width="150">
+                <TextBox.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="8"/>
+                    </Style>
+                </TextBox.Resources>
+            </TextBox>
 
             <Label Width="150" HorizontalAlignment="Center"></Label>
 

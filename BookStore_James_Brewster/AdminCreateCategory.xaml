@@ -41,8 +41,14 @@
 
         <StackPanel Grid.Column="1" Background="LightGray">
             <Label Content="Create Category" HorizontalAlignment="Center" FontSize="14" FontFamily="Georgia"/>
-            <Label Width="150" HorizontalAlignment="Center">Reviews</Label>
-            <TextBox x:Name="txtCategoryName" TextWrapping="Wrap" Text="Category Name" Width="150"/>
+            <Label Width="150" HorizontalAlignment="Center"></Label>
+            <TextBox Text="Category Name" Width="150">
+                <TextBox.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="3"/>
+                    </Style>
+                </TextBox.Resources>
+            </TextBox>
             <Label Width="150" HorizontalAlignment="Center"></Label>
             <Button Width="150">Add Category</Button>
 

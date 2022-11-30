@@ -43,9 +43,23 @@
             <Label Content="Edit Customer" HorizontalAlignment="Center" FontSize="14" FontFamily="Georgia"/>
 
             <Label Width="150" HorizontalAlignment="Center">First Name</Label>
-            <TextBox x:Name="txtCustomerFirstName" TextWrapping="Wrap" Text="First Name" Width="150"/>
+            <TextBox Text="First Name" Width="150">
+                <TextBox.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="3"/>
+                    </Style>
+                </TextBox.Resources>
+            </TextBox>
+            
             <Label Width="150" HorizontalAlignment="Center">Last Name</Label>
-            <TextBox x:Name="txtCustomerLastName" TextWrapping="Wrap" Text="Last Name" Width="150"/>
+            <TextBox Text="Last Name" Width="150">
+                <TextBox.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="3"/>
+                    </Style>
+                </TextBox.Resources>
+            </TextBox>
+            
             <Label Width="150" HorizontalAlignment="Center"></Label>
 
             <Button x:Name="btnDeleteCustomer" Width="150" BorderBrush="Red">Delete Customer</Button>

@@ -42,22 +42,58 @@
         <StackPanel Grid.Column="1" Background="LightGray">
             <Label Content="Update Account Details" HorizontalAlignment="Center" FontSize="14" FontFamily="Georgia"/>
             <Label Width="150" HorizontalAlignment="Center">First Name</Label>
-            <TextBox x:Name="txtfName" TextWrapping="Wrap" Text="First Name" Width="150"/>
+            <TextBox Text="First Name" Width="150">
+                <TextBox.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="8"/>
+                    </Style>
+                </TextBox.Resources>
+            </TextBox>
 
             <Label Width="150" HorizontalAlignment="Center">Last Name</Label>
-            <TextBox x:Name="txtlName" TextWrapping="Wrap" Text="Last Name" Width="150"/>
+            <TextBox Text="Last Name" Width="150">
+                <TextBox.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="8"/>
+                    </Style>
+                </TextBox.Resources>
+            </TextBox>
 
             <Label Width="150" HorizontalAlignment="Center">Address</Label>
-            <TextBox x:Name="txtAddress" TextWrapping="Wrap" Text="Address" Width="150"/>
+            <TextBox Text="Address" Width="150">
+                <TextBox.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="8"/>
+                    </Style>
+                </TextBox.Resources>
+            </TextBox>
 
             <Label Width="150" HorizontalAlignment="Center">Email</Label>
-            <TextBox x:Name="txtPrice" TextWrapping="Wrap" Text="Price" Width="150"/>
+            <TextBox Text="Email" Width="150">
+                <TextBox.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="8"/>
+                    </Style>
+                </TextBox.Resources>
+            </TextBox>
 
             <Label Width="150" HorizontalAlignment="Center">Password</Label>
-            <TextBox x:Name="txtPassword" TextWrapping="Wrap" Text="Passowrd" Width="150"/>
+            <TextBox Text="Password" Width="150">
+                <TextBox.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="8"/>
+                    </Style>
+                </TextBox.Resources>
+            </TextBox>
 
             <Label Width="150" HorizontalAlignment="Center">Phone</Label>
-            <TextBox x:Name="txtPhone" TextWrapping="Wrap" Text="000-000-0000" Width="150"/>
+            <TextBox Text="Phone#" Width="150">
+                <TextBox.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="8"/>
+                    </Style>
+                </TextBox.Resources>
+            </TextBox>
 
             <Label Width="150" HorizontalAlignment="Center"></Label>
 

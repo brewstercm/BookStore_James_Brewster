@@ -42,11 +42,26 @@
         <StackPanel Grid.Column="1" Background="LightGray">
             <Label Content="Edit Order" HorizontalAlignment="Center" FontSize="14" FontFamily="Georgia"/>
             <Label Width="150" HorizontalAlignment="Center">Order ID</Label>
-            <TextBox x:Name="txtOrderID" TextWrapping="Wrap" Text="ID" Width="150"/>
+            <TextBox Text="OrderID" Width="150">
+                <TextBox.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="8"/>
+                    </Style>
+                </TextBox.Resources>
+            </TextBox>
+            
             <Label Width="150" HorizontalAlignment="Center">Order Date</Label>
-            <TextBox x:Name="txtOrderDate" TextWrapping="Wrap" Text="Date" Width="150"/>
+            <TextBox Text="OrderID" Width="150">
+                <TextBox.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="3"/>
+                    </Style>
+                </TextBox.Resources>
+            </TextBox>
+            
             <Label Width="150" HorizontalAlignment="Center">Order Cost</Label>
             <TextBox x:Name="txtOrderCost" TextWrapping="Wrap" Text="Cost" Width="150"/>
+            
             <Label Width="150" HorizontalAlignment="Center"></Label>
 
             <Button x:Name="btnDeleteOrder" Width="150" BorderBrush="Red">Delete Order</Button>

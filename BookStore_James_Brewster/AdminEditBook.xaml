@@ -41,16 +41,50 @@
 
         <StackPanel Grid.Column="1" Background="LightGray">
             <Label Content="Edit Book" HorizontalAlignment="Center" FontSize="14" FontFamily="Georgia"/>
-            <Label Width="150" HorizontalAlignment="Center">ISBN</Label>
-            <TextBox x:Name="txtISBN" TextWrapping="Wrap" Text="ISBN" Width="150"/>
+            <Label Width="150" HorizontalAlignment="Center">ISBN#</Label>
+            <TextBox Text="ISBN#" Width="150">
+                <TextBox.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="3"/>
+                    </Style>
+                </TextBox.Resources>
+            </TextBox>
+            
             <Label Width="150" HorizontalAlignment="Center">Title</Label>
-            <TextBox x:Name="txtBookTitle" TextWrapping="Wrap" Text="Title" Width="150"/>
+            <TextBox Text="Title" Width="150">
+                <TextBox.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="3"/>
+                    </Style>
+                </TextBox.Resources>
+            </TextBox>
+            
             <Label Width="150" HorizontalAlignment="Center">PubDate</Label>
-            <TextBox x:Name="txtPubDate" TextWrapping="Wrap" Text="PubDate" Width="150"/>
+            <TextBox Text="Date Published" Width="150">
+                <TextBox.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="3"/>
+                    </Style>
+                </TextBox.Resources>
+            </TextBox>
+            
             <Label Width="150" HorizontalAlignment="Center">Price</Label>
-            <TextBox x:Name="txtPrice" TextWrapping="Wrap" Text="Price" Width="150"/>
+            <TextBox Text="Price" Width="150">
+                <TextBox.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="3"/>
+                    </Style>
+                </TextBox.Resources>
+            </TextBox>
+            
             <Label Width="150" HorizontalAlignment="Center">Reviews</Label>
-            <TextBox x:Name="txtReviews" TextWrapping="Wrap" Text="Reviews" Width="150"/>
+            <TextBox Text="Reviews" Width="150">
+                <TextBox.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="3"/>
+                    </Style>
+                </TextBox.Resources>
+            </TextBox>
             <Label Width="150" HorizontalAlignment="Center"></Label>
             
             <Button x:Name="btntDeleteBook" Width="150" BorderBrush="Red">Delete Book</Button>

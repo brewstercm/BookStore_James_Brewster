@@ -42,52 +42,37 @@
         <StackPanel Grid.Column="1" Background="LightGray">
             <FlowDocumentScrollViewer>
                 <FlowDocument>
-                    <Paragraph FontSize="14pt">Books:</Paragraph>
+                    <Paragraph FontSize="14pt">View Orders:</Paragraph>
                     <Table x:Name="tblBookList">
                         <TableRowGroup Paragraph.TextAlignment="left">
                             <TableRow FontWeight="Bold" >
                                 <TableCell>
-                                    <Paragraph>ISBN</Paragraph>
+                                    <Paragraph>Order ID</Paragraph>
                                 </TableCell>
                                 <TableCell>
-                                    <Paragraph>Title</Paragraph>
+                                    <Paragraph>Order Date</Paragraph>
                                 </TableCell>
                                 <TableCell>
-                                    <Paragraph>PubDate</Paragraph>
+                                    <Paragraph>Order Cost</Paragraph>
                                 </TableCell>
                                 <TableCell>
-                                    <Paragraph>Price</Paragraph>
-                                </TableCell>
-                                <TableCell>
-                                    <Paragraph>Reviews</Paragraph>
-                                </TableCell>
-                            </TableRow>
-                            
-                            <TableRow>
-                                <TableCell>
-                                    <Paragraph>1</Paragraph>
-                                </TableCell>
-                                <TableCell>
-                                    <Paragraph>2</Paragraph>
-                                </TableCell>
-                                <TableCell>
-                                    <Paragraph>3</Paragraph>
-                                </TableCell>
-                                <TableCell>
-                                    <Paragraph>4</Paragraph>
-                                </TableCell>
-                                <TableCell>
-                                    <Paragraph>5</Paragraph>
+                                    <Paragraph>Customer ID</Paragraph>
                                 </TableCell>
                             </TableRow>
                         </TableRowGroup>
-                        
                     </Table>
                 </FlowDocument>
                 
             </FlowDocumentScrollViewer>
-            <TextBox x:Name="txtOrderID" Width="120" Text="Order ID"></TextBox>
-            <Button x:Name="btnEditOrder" Width="120">Edit Order</Button>
+            <TextBox Text="OrderID" Width="150">
+                <TextBox.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="8"/>
+                    </Style>
+                </TextBox.Resources>
+            </TextBox>
+            <Label HorizontalAlignment="Center"></Label>
+            <Button x:Name="btnEditOrder" Width="150">Edit Order</Button>
         </StackPanel>
     </Grid>
 </Window>
