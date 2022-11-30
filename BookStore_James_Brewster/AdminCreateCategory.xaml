@@ -43,9 +43,9 @@
         <StackPanel Grid.Column="1" Background="LightGray">
             <Label Content="Create Category" HorizontalAlignment="Center" FontSize="14" FontFamily="Georgia"/>
             <Label Width="150" HorizontalAlignment="Center">Reviews</Label>
-            <TextBox TextWrapping="Wrap" Text="Category Name" Width="150"/>
+            <TextBox x:Name="txtCatDesc" TextWrapping="Wrap" Text="Category Name" Width="150"/>
             <Label Width="150" HorizontalAlignment="Center"></Label>
-            <Button Width="150">Add Category</Button>
+            <Button x:Name="btnCreateCategory" Width="150" Click="btnCreateCategory_Click">Add Category</Button>
 
         </StackPanel>
     </Grid>

@@ -43,20 +43,20 @@
         <StackPanel Grid.Column="1" Background="LightGray">
             <Label Content="Edit Book" HorizontalAlignment="Center" FontSize="14" FontFamily="Georgia"/>
             <Label Width="150" HorizontalAlignment="Center">ISBN</Label>
-            <TextBox TextWrapping="Wrap" Text="ISBN" Width="150"/>
+            <TextBox x:Name="txtISBN" TextWrapping="Wrap" Text="ISBN" Width="150"/>
             <Label Width="150" HorizontalAlignment="Center">Title</Label>
-            <TextBox TextWrapping="Wrap" Text="Title" Width="150"/>
+            <TextBox x:Name="txtTitle" TextWrapping="Wrap" Text="Title" Width="150"/>
             <Label Width="150" HorizontalAlignment="Center">PubDate</Label>
-            <TextBox TextWrapping="Wrap" Text="PubDate" Width="150"/>
+            <TextBox x:Name="txtPubDate" TextWrapping="Wrap" Text="PubDate" Width="150"/>
             <Label Width="150" HorizontalAlignment="Center">Price</Label>
-            <TextBox TextWrapping="Wrap" Text="Price" Width="150"/>
+            <TextBox x:Name="txtPrice" TextWrapping="Wrap" Text="Price" Width="150"/>
             <Label Width="150" HorizontalAlignment="Center">Reviews</Label>
-            <TextBox TextWrapping="Wrap" Text="Reviews" Width="150"/>
+            <TextBox x:Name="txtReviews" TextWrapping="Wrap" Text="Reviews" Width="150"/>
             <Label Width="150" HorizontalAlignment="Center"></Label>
             
-            <Button Width="150" BorderBrush="Red">Delete Book</Button>
+            <Button x:Name="btnDeleteBook" Width="150" BorderBrush="Red" Click="btnDeleteBook_Click">Delete Book</Button>
             <Label Width="150" HorizontalAlignment="Center"></Label>
-            <Button Width="150" BorderBrush="Green" >Confirm Cahnges</Button>
+            <Button x:Name="btnConfirmChanges" Width="150" BorderBrush="Green" Click="btnConfirmChanges_Click" >Confirm Changes</Button>
 
         </StackPanel>
     </Grid>
