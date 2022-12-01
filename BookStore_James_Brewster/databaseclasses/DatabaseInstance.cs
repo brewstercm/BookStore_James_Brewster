@@ -681,5 +681,18 @@ namespace BlazorBookStore1
                 }
             }
         }
+
+        public static void createSupplier(string supplierName)
+        {
+            string query = $"INSERT INTO dbo.Supplier VALUES('{supplierName}')";
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+                using(SqlCommand command = new SqlCommand(query, conn))
+                {
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
     }
 }

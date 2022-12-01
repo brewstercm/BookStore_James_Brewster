@@ -206,11 +206,6 @@ namespace BookStore_James_Brewster
 			this.Close();
 		}
 
-		private void btnAddSupplier_Click(object sender, RoutedEventArgs e)
-		{
-			string supplierName = (txtSupplierID.Text).Trim();
-		}
+		
 	}
-
-
 }
