@@ -188,6 +188,11 @@ namespace BookStore_James_Brewster
 		{
             DatabaseInstance.editSupplier(s.supplierID, s.name);
 		}
-	}
+
+		private void btnViewSupplierRep_Click(object sender, RoutedEventArgs e)
+		{
+            
+        }
+    }
 	
 }

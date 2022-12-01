@@ -61,6 +61,8 @@
 
             <Button x:Name="btnDeleteSupplier" Width="150" Background="Red" Foreground="White" Click="btnDeleteSupplier_Click" Height="30">Delete Supplier</Button>
             <Label Width="150" HorizontalAlignment="Center"></Label>
+            <Button x:Name="btnViewSupplierRep" Width="150" Background="Black" Foreground="White" Height="30" Click="btnViewSupplierRep_Click">View Supplier Rep</Button>
+            <Label Width="150" HorizontalAlignment="Center"></Label>
             <Button x:Name="btnConfirmEditSupplier" Width="150" Background="Green" Foreground="White" Click="btnConfirmEditSupplier_Click" Height="30">Confirm Edit</Button>
 
         </StackPanel>
