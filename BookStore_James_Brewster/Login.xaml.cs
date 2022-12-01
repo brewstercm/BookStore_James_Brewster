@@ -202,7 +202,6 @@ namespace BookStore_James_Brewster
                     lblMessage.Visibility = Visibility.Visible;
                     lblMessage.Content = ex.Message;
                 }
-                
             }
         }
 
