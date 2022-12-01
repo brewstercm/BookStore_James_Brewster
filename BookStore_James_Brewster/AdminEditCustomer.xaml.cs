@@ -28,6 +28,10 @@ namespace BookStore_James_Brewster
 			this.customer = customer;
             txtfName.Text = this.customer.fName;
             txtfLName.Text = this.customer.lName;
+            txtAddress.Text = this.customer.address;
+            txtEmail.Text = this.customer.email;
+            txtPhone.Text = this.customer.phone;
+            txtPassword.Text = this.customer.password;
 
             if (BlazorBookStore1.Customer.customerID == -1)
             {

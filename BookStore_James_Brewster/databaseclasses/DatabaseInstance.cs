@@ -12,7 +12,7 @@ namespace BlazorBookStore1
     /// </summary>
     public static class DatabaseInstance
     {
-        private static string connectionString = @"Server=(LocalDB)\MSSQLLocalDB;Integrated Security=true;AttachDbFileName=C:\Users\Legen\source\repos\BookStore_James_Brewster\BookStore_James_Brewster\database\BookStoreDB.mdf;Connection Lifetime=120;MultipleActiveResultSets=true;";
+        private static string connectionString = @"Server=(LocalDB)\MSSQLLocalDB;Integrated Security=true;AttachDbFileName=C:\Users\brade\source\repos\BookStore_James_Brewster\BookStore_James_Brewster\database\BookStoreDB.mdf;Connection Lifetime=120;MultipleActiveResultSets=true;";
         public static void createCategory(string catName)
         {
             string query = $"INSERT INTO dbo.Categories VALUES('{catName}')";
@@ -387,7 +387,7 @@ namespace BlazorBookStore1
                             string isbnNum = reader.GetString(reader.GetOrdinal("isbnNum"));
                             string title = reader.GetString(reader.GetOrdinal("title"));
                             string pubDate = reader.GetString(reader.GetOrdinal("pubDate"));
-                            float price = (float)reader.GetFloat(reader.GetOrdinal("price"));
+                            float price = reader.GetFloat(reader.GetOrdinal("price"));
                             float reviews = reader.GetFloat(reader.GetOrdinal("reviews"));
                             int supplierID = reader.GetInt32(reader.GetOrdinal("supplierID"));
 
