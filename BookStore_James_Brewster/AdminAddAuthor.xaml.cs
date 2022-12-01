@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BlazorBookStore1;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -137,6 +138,13 @@ namespace BookStore_James_Brewster
 		{
 			AdminAddAuthor aa = new AdminAddAuthor();
 			aa.Show();
+			this.Close();
+		}
+		private void btnLogout_Click(object sender, RoutedEventArgs e)
+		{
+			DatabaseInstance.Logout();
+			MainWindow mw = new MainWindow();
+			mw.Show();
 			this.Close();
 		}
 	}
