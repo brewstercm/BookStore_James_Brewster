@@ -26,54 +26,13 @@ namespace BookStore_James_Brewster
 			InitializeComponent();
             foreach (CustomerDetails cd in DatabaseInstance.viewCustomers())
             {
-                TableRow tableRow = new TableRow();
-                TableCell cusIDCell = new TableCell();
-                Paragraph cusIDParagraph = new Paragraph();
-                Run cusIDRun = new Run();
-				cusIDRun.Text = cd.customerID.ToString();
-                cusIDParagraph.Inlines.Add(cusIDRun);
-                cusIDCell.Blocks.Add(cusIDParagraph);
-                tableRow.Cells.Add(cusIDCell);
-
-                TableCell fnameCell = new TableCell();
-                Paragraph fnameParagraph = new Paragraph();
-                Run fnameRun = new Run();
-                fnameRun.Text = cd.fName;
-                fnameParagraph.Inlines.Add(fnameRun);
-                fnameCell.Blocks.Add(fnameParagraph);
-                tableRow.Cells.Add(fnameCell);
-
-                TableCell lnameCell = new TableCell();
-                Paragraph lnameParagraph = new Paragraph();
-                Run lnameRun = new Run();
-                lnameRun.Text = cd.lName;
-                lnameParagraph.Inlines.Add(lnameRun);
-                lnameCell.Blocks.Add(lnameParagraph);
-                tableRow.Cells.Add(lnameCell);
-
-                TableCell addressCell = new TableCell();
-                Paragraph addressParagraph = new Paragraph();
-                Run addressRun = new Run();
-                addressRun.Text = cd.address;
-                addressParagraph.Inlines.Add(addressRun);
-                addressCell.Blocks.Add(addressParagraph);
-                tableRow.Cells.Add(addressCell);
-
-                TableCell emailCell = new TableCell();
-                Paragraph emailParagraph = new Paragraph();
-                Run emailRun = new Run();
-                emailRun.Text = cd.email;
-                emailParagraph.Inlines.Add(emailRun);
-                emailCell.Blocks.Add(emailParagraph);
-                tableRow.Cells.Add(emailCell);
-
-                TableCell phoneCell = new TableCell();
-                Paragraph phoneParagraph = new Paragraph();
-                Run phoneRun = new Run();
-                phoneRun.Text = cd.phone;
-                phoneParagraph.Inlines.Add(phoneRun);
-                phoneCell.Blocks.Add(phoneParagraph);
-                tableRow.Cells.Add(phoneCell);
+				TableRow tableRow = new TableRow();
+				tableRow.Cells.Add(getCell(cd.customerID.ToString()));
+                tableRow.Cells.Add(getCell(cd.fName));
+                tableRow.Cells.Add(getCell(cd.lName));
+                tableRow.Cells.Add(getCell(cd.address));
+                tableRow.Cells.Add(getCell(cd.email));
+                tableRow.Cells.Add(getCell(cd.phone));
 
 				tblRow.Rows.Add(tableRow);
             }
@@ -89,6 +48,17 @@ namespace BookStore_James_Brewster
             {
                 hideAdminButtons();
             }
+        }
+
+		private TableCell getCell(string info)
+		{
+            TableCell phoneCell = new TableCell();
+            Paragraph phoneParagraph = new Paragraph();
+            Run phoneRun = new Run();
+            phoneRun.Text = info;
+            phoneParagraph.Inlines.Add(phoneRun);
+            phoneCell.Blocks.Add(phoneParagraph);
+			return phoneCell;
         }
 
         private void hideLoggedInButtons()
