@@ -24,6 +24,7 @@ namespace BookStore_James_Brewster
 		public Login()
 		{
 			InitializeComponent();
+            lblMessage.Visibility = Visibility.Hidden;
             if (BlazorBookStore1.Customer.customerID == -1)
             {
                 hideProfileButtons();
@@ -181,10 +182,27 @@ namespace BookStore_James_Brewster
         {
             if(!txtEmail.Text.Equals(string.Empty) && !txtPassword.Text.Equals(string.Empty))
             {
-                DatabaseInstance.Login(txtEmail.Text, txtPassword.Text);
-                MainWindow mw = new MainWindow();
-                mw.Show();
-                this.Close();
+                try
+                {
+                    DatabaseInstance.Login(txtEmail.Text, txtPassword.Text);
+                    if (BlazorBookStore1.Customer.customerID == -1)
+                    {
+                        lblMessage.Visibility = Visibility.Visible;
+                        lblMessage.Content = "No account matches the specified information.";
+                    }
+                    else
+                    {
+                        MainWindow mw = new MainWindow();
+                        mw.Show();
+                        this.Close();
+                    }
+                }
+                catch(Exception ex)
+                {
+                    lblMessage.Visibility = Visibility.Visible;
+                    lblMessage.Content = ex.Message;
+                }
+                
             }
         }
 
