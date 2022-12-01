@@ -17,22 +17,22 @@
 
         </Grid.ColumnDefinitions>
 
-        <StackPanel Background="LightSeaGreen">
-            <Label HorizontalAlignment="Center">Book Store</Label>
-            <Button x:Name="btnAdminBookBrowser" Click="Button_Click_1">@Book Browser</Button>
-            <Button x:Name="btnAdminCreateCategory" Click="Button_Click_2">@Create Category</Button>
-            <Button x:Name="btnAdminViewAuthors" Click="Button_Click_5">@Admin View Authors</Button>
-            <Button x:Name="btnAdminViewCustomers" Click="Button_Click_6">@Admin View Customers</Button>
-            <Button x:Name="btnAdminViewOrders" Click="Button_Click_7">@Admin View Orders</Button>
-            <Button x:Name="btnAdminViewSuppliers" Click="Button_Click_8">@Admin View Suppliers</Button>
+        <StackPanel Background="DarkSlateGray">
+            <Label HorizontalAlignment="Center" Foreground="White" TextElement.FontSize="14" TextElement.FontWeight="Bold">Book Store</Label>
+            <Button x:Name="btnAdminBookBrowser" Foreground="BlueViolet" Click="Button_Click_1" Height="30">Book Browser</Button>
+            <Button x:Name="btnAdminCreateCategory" Foreground="BlueViolet" Click="Button_Click_2" Height="30">Create Category</Button>
+            <Button x:Name="btnAdminViewAuthors" Foreground="BlueViolet" Click="Button_Click_5" Height="30">Admin View Authors</Button>
+            <Button x:Name="btnAdminViewCustomers" Foreground="BlueViolet" Click="Button_Click_6" Height="30">Admin View Customers</Button>
+            <Button x:Name="btnAdminViewOrders" Foreground="BlueViolet" Click="Button_Click_7" Height="30">Admin View Orders</Button>
+            <Button x:Name="btnAdminViewSuppliers" Foreground="BlueViolet" Click="Button_Click_8" Height="30">Admin View Suppliers</Button>
             <Button x:Name="btnAdminSpacer">----</Button>
-            <Button x:Name="btnCustomerBookBrowser" Click="Button_Click_10">Book Browser</Button>
-            <Button x:Name="btnCustomerUpdateAccount" Click="Button_Click_11">Customer Update Account</Button>
-            <Button x:Name="btnCustomerViewOrders" Click="Button_Click_12">Customer View Orders</Button>
-            <Button x:Name="btnCreateAccount" Click="Button_Click_13">Create Account</Button>
-            <Button x:Name="btnLogin" Click="Button_Click_14">Login</Button>
-            <Button x:Name="btnLogout" Click="btnLogout_Click">Logout</Button>
-            <Button Click="Button_Click_15">Home</Button>
+            <Button x:Name="btnCustomerBookBrowser" Click="Button_Click_10" Height="30">Book Browser</Button>
+            <Button x:Name="btnCustomerUpdateAccount" Click="Button_Click_11" Height="30">Customer Update Account</Button>
+            <Button x:Name="btnCustomerViewOrders" Click="Button_Click_12" Height="30">Customer View Orders</Button>
+            <Button x:Name="btnCreateAccount" Click="Button_Click_13" Height="30">Create Account</Button>
+            <Button x:Name="btnLogin" Click="Button_Click_14" Height="30">Login</Button>
+            <Button x:Name="btnLogout" Click="btnLogout_Click" Height="30">Logout</Button>
+            <Button Click="Button_Click_15" Height="30">Home</Button>
         </StackPanel>
 
 
