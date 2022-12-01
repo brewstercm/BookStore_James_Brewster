@@ -109,8 +109,8 @@ namespace BookStore_James_Brewster
         private void btnLogout_Click(object sender, RoutedEventArgs e)
         {
             DatabaseInstance.Logout();
-            MainWindow mw = new MainWindow();
-            mw.Show();
+			Login mw = new Login();
+			mw.Show();
             this.Close();
         }
         private void Button_Click(object sender, RoutedEventArgs e)

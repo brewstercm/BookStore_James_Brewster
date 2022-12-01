@@ -1,14 +1,12 @@
-﻿<Window x:Class="BookStore_James_Brewster.CreateAccount"
-        WindowStartupLocation="CenterScreen"
+﻿<Window x:Class="BookStore_James_Brewster.AdminEditSupplierRep"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:BookStore_James_Brewster"
       mc:Ignorable="d" 
-      d:DesignHeight="450"
-      d:DesignWidth="800"
-      Title="CreateAccount">
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AdminEditSupplierRep">
 
     <Grid Background="LightGray">
         <Grid.ColumnDefinitions>
@@ -35,11 +33,8 @@
             <Button Click="Button_Click_15" Height="30">Home</Button>
         </StackPanel>
 
-
         <StackPanel Grid.Column="1" Background="LightGray">
-            <Label HorizontalAlignment="Center"> </Label>
-            <Label HorizontalAlignment="Center"></Label>
-            <Label Content="Create Account" HorizontalAlignment="Center" FontSize="20" FontFamily="Georgia"/>
+            <Label Content="Edit Supplier Representative" HorizontalAlignment="Center" FontSize="20" FontFamily="Georgia"/>
             <Label Width="150" HorizontalAlignment="Center">First Name</Label>
             <TextBox x:Name="txtfName" Text="First Name" Width="150" FontSize="17">
                 <TextBox.Resources>
@@ -48,7 +43,7 @@
                     </Style>
                 </TextBox.Resources>
             </TextBox>
-            
+
             <Label Width="150" HorizontalAlignment="Center">Last Name</Label>
             <TextBox x:Name="txtlName" Text="Last Name" Width="150" FontSize="17">
                 <TextBox.Resources>
@@ -57,16 +52,25 @@
                     </Style>
                 </TextBox.Resources>
             </TextBox>
-            
-            <Label Width="150" HorizontalAlignment="Center">Address</Label>
-            <TextBox x:Name="txtAddress" Text="Address" Width="150" FontSize="17">
+
+            <Label Width="150" HorizontalAlignment="Center">Work Number</Label>
+            <TextBox x:Name="txtWorkNum" Text="Work Number" Width="150" FontSize="17">
                 <TextBox.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="8"/>
                     </Style>
                 </TextBox.Resources>
             </TextBox>
-            
+
+            <Label Width="150" HorizontalAlignment="Center">Cell Number</Label>
+            <TextBox x:Name="txtCellNum" Text="Cell Number" Width="150" FontSize="17">
+                <TextBox.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="8"/>
+                    </Style>
+                </TextBox.Resources>
+            </TextBox>
+
             <Label Width="150" HorizontalAlignment="Center">Email</Label>
             <TextBox x:Name="txtEmail" Text="Email" Width="150" FontSize="17">
                 <TextBox.Resources>
@@ -76,8 +80,8 @@
                 </TextBox.Resources>
             </TextBox>
 
-            <Label Width="150" HorizontalAlignment="Center">Password</Label>
-            <TextBox x:Name="txtPassword" Text="Password" Width="150" FontSize="17">
+            <Label Width="150" HorizontalAlignment="Center">Supplier ID</Label>
+            <TextBox x:Name="txtSupplierID" Text="Supplier ID" Width="150" FontSize="17">
                 <TextBox.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="8"/>
@@ -85,23 +89,12 @@
                 </TextBox.Resources>
             </TextBox>
 
-            <Label Width="150" HorizontalAlignment="Center">Phone</Label>
-            <TextBox x:Name="txtPhone" Text="Phone#" Width="150" FontSize="17">
-                <TextBox.Resources>
-                    <Style TargetType="{x:Type Border}">
-                        <Setter Property="CornerRadius" Value="8"/>
-                    </Style>
-                </TextBox.Resources>
-            </TextBox>
-            <Label Width="150" HorizontalAlignment="Center">Administrator?</Label>
-            <CheckBox x:Name="chkAdmin" Width="15" HorizontalAlignment="Center"></CheckBox>
-            
             <Label Width="150" HorizontalAlignment="Center"></Label>
 
-            <Button x:Name="btnLoginRedirect" Width="150" BorderBrush="Blue" Click="btnCreateAccountRedirect_Click">Already a user? Login</Button>
+            <Button x:Name="btnDeleteRep" Width="150" Background="Red" Foreground="White" Click="btntDeleteRep_Click" Height="30">Delete Rep</Button>
             <Label Width="150" HorizontalAlignment="Center"></Label>
-            <Button x:Name="btnCreateAccountRedirect" Width="150" BorderBrush="Green" Click="btnCreateAccount_Click" Background="Green" Foreground="White" Height="30">Create Account</Button>
-            <Label x:Name="lblMessage">test</Label>
+            <Button x:Name="btnConfirmEditRep" Width="150" Background="Green" Foreground="White" Click="btnConfirmEditRep_Click" Height="30" >Confirm Changes</Button>
+
         </StackPanel>
     </Grid>
 </Window>

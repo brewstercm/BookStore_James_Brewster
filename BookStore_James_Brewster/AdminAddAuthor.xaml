@@ -37,7 +37,7 @@
 
 
         <StackPanel Grid.Column="1" Background="LightGray">
-            <Label Content="Add Author" HorizontalAlignment="Center" FontSize="14" FontFamily="Georgia"/>
+            <Label Content="Add Author" HorizontalAlignment="Center" FontSize="20" FontFamily="Georgia"/>
             <Label Width="150" HorizontalAlignment="Center">Author First Name</Label>
             <TextBox x:Name="txtAuthorfName" Text="First Name" Width="150" FontSize="17">
                 <TextBox.Resources>

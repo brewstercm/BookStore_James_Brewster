@@ -11,72 +11,32 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace BookStore_James_Brewster
 {
 	/// <summary>
-	/// Interaction logic for AdminCreateCategory.xaml
+	/// Interaction logic for AdminAddSupplierRep.xaml
 	/// </summary>
-	public partial class AdminCreateCategory : Window
+	public partial class AdminAddSupplierRep : Window
 	{
-		public AdminCreateCategory()
+		public AdminAddSupplierRep()
 		{
 			InitializeComponent();
-            if (BlazorBookStore1.Customer.customerID == -1)
-            {
-                hideProfileButtons();
-            }
-            else
-            {
-                hideLoggedInButtons();
-            }
-            if (!BlazorBookStore1.Customer.isAdministrator)
-            {
-                hideAdminButtons();
-            }
-        }
-
-        private void hideLoggedInButtons()
-        {
-            btnLogin.Visibility = Visibility.Hidden;
-            btnCreateAccount.Visibility = Visibility.Hidden;
-        }
-        private void hideAdminButtons()
-        {
-            btnAdminBookBrowser.Visibility = Visibility.Hidden;
-            btnAdminCreateCategory.Visibility = Visibility.Hidden;
-            btnAdminSpacer.Visibility = Visibility.Hidden;
-            btnAdminViewCustomers.Visibility = Visibility.Hidden;
-            btnAdminViewOrders.Visibility = Visibility.Hidden;
-            btnAdminViewSuppliers.Visibility = Visibility.Hidden;
-            btnAdminCreateCategory.Visibility = Visibility.Hidden;
-			btnAdminViewAuthors.Visibility = Visibility.Hidden;
-
 		}
-        private void hideProfileButtons()
-        {
-            btnLogout.Visibility = Visibility.Hidden;
-            btnCustomerUpdateAccount.Visibility = Visibility.Hidden;
-            btnCustomerViewOrders.Visibility = Visibility.Hidden;
-            btnCustomerBookBrowser.Visibility = Visibility.Hidden;
-        }
-        private void btnLogout_Click(object sender, RoutedEventArgs e)
-        {
-            DatabaseInstance.Logout();
+
+		private void btnLogout_Click(object sender, RoutedEventArgs e)
+		{
+			DatabaseInstance.Logout();
 			Login mw = new Login();
 			mw.Show();
-            this.Close();
-        }
-
-        private void btnCreateCategory_Click(object sender, RoutedEventArgs e)
-		{
-			if(!txtCategoryName.Text.Equals("something") && !txtCategoryName.Text.Equals("TextBlock") && !txtCategoryName.Text.Equals(String.Empty))
-			{
-                DatabaseInstance.createCategory(txtCategoryName.Text);
-            }
+			this.Close();
 		}
+		private void btnAddBook_Click(object sender, RoutedEventArgs e)
+		{
+			DatabaseInstance.addSupplierRep(txtfName.Text, txtlName.Text, txtWorkNum.Text, txtCellNum.Text, txtEmail.Text, int.Parse(txtSupplierID.Text));
+		}
+
 		private void Button_Click(object sender, RoutedEventArgs e)
 		{
 			AdminAddBook a = new AdminAddBook();
@@ -183,11 +143,6 @@ namespace BookStore_James_Brewster
 			MainWindow a = new MainWindow();
 			a.Show();
 			this.Close();
-		}
-
-		private void btnAddCategory_Click(object sender, RoutedEventArgs e)
-		{
-			DatabaseInstance.createCategory(txtCategoryName.Text);
 		}
 	}
 }

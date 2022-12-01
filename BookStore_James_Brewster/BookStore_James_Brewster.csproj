@@ -80,6 +80,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="AdminAddSupplierRep.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="AdminBookBrowser.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -120,7 +124,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="AdminViewSupplierRep.xaml">
+    <Page Include="AdminEditSupplierRep.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AdminViewSupplierReps.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -162,6 +170,9 @@
     <Compile Include="AdminAddBook.xaml.cs">
       <DependentUpon>AdminAddBook.xaml</DependentUpon>
     </Compile>
+    <Compile Include="AdminAddSupplierRep.xaml.cs">
+      <DependentUpon>AdminAddSupplierRep.xaml</DependentUpon>
+    </Compile>
     <Compile Include="AdminBookBrowser.xaml.cs">
       <DependentUpon>AdminBookBrowser.xaml</DependentUpon>
     </Compile>
@@ -192,8 +203,11 @@
     <Compile Include="AdminViewOrders.xaml.cs">
       <DependentUpon>AdminViewOrders.xaml</DependentUpon>
     </Compile>
-    <Compile Include="AdminViewSupplierRep.xaml.cs">
-      <DependentUpon>AdminViewSupplierRep.xaml</DependentUpon>
+    <Compile Include="AdminEditSupplierRep.xaml.cs">
+      <DependentUpon>AdminEditSupplierRep.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AdminViewSupplierReps.xaml.cs">
+      <DependentUpon>AdminViewSupplierReps.xaml</DependentUpon>
     </Compile>
     <Compile Include="AdminViewSuppliers.xaml.cs">
       <DependentUpon>AdminViewSuppliers.xaml</DependentUpon>
@@ -226,6 +240,7 @@
     <Compile Include="databaseclasses\DatabaseInstance.cs" />
     <Compile Include="databaseclasses\Order.cs" />
     <Compile Include="databaseclasses\Supplier.cs" />
+    <Compile Include="databaseclasses\SupplierRep.cs" />
     <Compile Include="Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
@@ -279,10 +294,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="database\BookStoreDB.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="database\BookStoreDB_log.ldf">
-      <DependentUpon>BookStoreDB.mdf</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

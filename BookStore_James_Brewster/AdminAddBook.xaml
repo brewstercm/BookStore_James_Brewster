@@ -55,7 +55,7 @@
                 </TextBox.Resources>
             </TextBox>
             <Label Width="150" HorizontalAlignment="Center">PubDate</Label>
-            <TextBox x:Name="txtPubDate" Text="Data Published" Width="150" FontSize="17">
+            <TextBox x:Name="txtPubDate" Text="Date Published" Width="150" FontSize="17">
                 <TextBox.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="8"/>

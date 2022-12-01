@@ -63,8 +63,8 @@ namespace BookStore_James_Brewster
         private void btnLogout_Click(object sender, RoutedEventArgs e)
         {
             DatabaseInstance.Logout();
-            MainWindow mw = new MainWindow();
-            mw.Show();
+			Login mw = new Login();
+			mw.Show();
             this.Close();
         }
 
@@ -188,5 +188,10 @@ namespace BookStore_James_Brewster
 			a.Show();
 			this.Close();
 		}
-	}
+
+		private void btnConfirmEditBook_Click(object sender, RoutedEventArgs e)
+		{
+			
+        }
+    }
 }

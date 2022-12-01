@@ -47,13 +47,6 @@
             </TextBox>
 
             <Label Width="150" HorizontalAlignment="Center">Title</Label>
-            <TextBox x:Name="txtReviews" Text="Reviews" Width="150" FontSize="17">
-                <TextBox.Resources>
-                    <Style TargetType="{x:Type Border}">
-                        <Setter Property="CornerRadius" Value="8"/>
-                    </Style>
-                </TextBox.Resources>
-            </TextBox>
             <TextBox x:Name="txtTitle" Text="Title" Width="150" FontSize="17">
                 <TextBox.Resources>
                     <Style TargetType="{x:Type Border}">
@@ -81,6 +74,14 @@
             </TextBox>
 
             <Label Width="150" HorizontalAlignment="Center">Reviews</Label>
+            <TextBox x:Name="txtReviews" Text="Reviews" Width="150" FontSize="17">
+                <TextBox.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="8"/>
+                    </Style>
+                </TextBox.Resources>
+            </TextBox>
+
             <Label Width="150" HorizontalAlignment="Center"></Label>
 
             <Button x:Name="btntDeleteBook" Width="150" Background="Red" Foreground="White" Click="btntDeleteBook_Click" Height="30">Delete Book</Button>
