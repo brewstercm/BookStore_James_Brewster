@@ -1,5 +1,4 @@
-﻿using BlazorBookStore1;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,88 +16,13 @@ using System.Windows.Shapes;
 namespace BookStore_James_Brewster
 {
 	/// <summary>
-	/// Interaction logic for AdminViewAuthors.xaml
+	/// Interaction logic for AdminAddAuthor.xaml
 	/// </summary>
-	public partial class AdminViewAuthors : Window
+	public partial class AdminAddAuthor : Window
 	{
-
-		public AdminViewAuthors()
+		public AdminAddAuthor()
 		{
 			InitializeComponent();
-			foreach(AuthorDetails ad in DatabaseInstance.viewAuthors())
-			{
-				TableRow tableRow = new TableRow();
-				tableRow.Cells.Add(getCell(ad.AuthorID.ToString()));
-				tableRow.Cells.Add(getCell(ad.FName));
-				tableRow.Cells.Add(getCell(ad.LName));
-				tableRow.Cells.Add(getCell(ad.Gender));
-				tableRow.Cells.Add(getCell(ad.DOB));
-				tblRow.Rows.Add(tableRow);
-			}
-            if (BlazorBookStore1.Customer.customerID == -1)
-            {
-                hideProfileButtons();
-            }
-            else
-            {
-                hideLoggedInButtons();
-            }
-            if (!BlazorBookStore1.Customer.isAdministrator)
-            {
-                hideAdminButtons();
-            }
-        }
-		private TableCell getCell(string value)
-		{
-			TableCell isbnCell = new TableCell();
-			Paragraph isbnParagraph = new Paragraph();
-			Run isbnRun = new Run();
-			isbnRun.Text = value;
-			isbnParagraph.Inlines.Add(isbnRun);
-			isbnCell.Blocks.Add(isbnParagraph);
-
-			return isbnCell;
-		}
-        private void hideLoggedInButtons()
-        {
-            btnLogin.Visibility = Visibility.Hidden;
-            btnCreateAccount.Visibility = Visibility.Hidden;
-        }
-        private void hideAdminButtons()
-        {
-            btnAdminBookBrowser.Visibility = Visibility.Hidden;
-            btnAdminCreateCategory.Visibility = Visibility.Hidden;
-            btnAdminSpacer.Visibility = Visibility.Hidden;
-            btnAdminViewCustomers.Visibility = Visibility.Hidden;
-            btnAdminViewOrders.Visibility = Visibility.Hidden;
-            btnAdminViewSuppliers.Visibility = Visibility.Hidden;
-            btnAdminCreateCategory.Visibility = Visibility.Hidden;
-
-        }
-        private void hideProfileButtons()
-        {
-            btnLogout.Visibility = Visibility.Hidden;
-            btnCustomerUpdateAccount.Visibility = Visibility.Hidden;
-            btnCustomerViewOrders.Visibility = Visibility.Hidden;
-            btnCustomerBookBrowser.Visibility = Visibility.Hidden;
-        }
-        private void btnLogout_Click(object sender, RoutedEventArgs e)
-        {
-            DatabaseInstance.Logout();
-            MainWindow mw = new MainWindow();
-            mw.Show();
-            this.Close();
-        }
-
-        private void btnEditAuthor_Click(object sender, RoutedEventArgs e)
-		{
-			if(!txtAuthorID.Text.Equals(string.Empty) && Int32.TryParse(txtAuthorID.Text, out int authorID))
-			{
-				AuthorDetails ad = DatabaseInstance.getAuthor(Int32.Parse(txtAuthorID.Text));
-				AdminEditAuthorData aead = new AdminEditAuthorData(ad);
-				aead.Activate();
-				this.Close();
-			}
 		}
 
 		private void Button_Click(object sender, RoutedEventArgs e)
