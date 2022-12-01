@@ -41,7 +41,7 @@
 
 
             <Label Width="150" HorizontalAlignment="Center">Email</Label>
-            <TextBox x:Name="txtEmail" Text="Email" Width="150">
+            <TextBox x:Name="txtEmail" Text="Email" Width="150" FontSize="17">
                 <TextBox.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="8"/>
@@ -50,7 +50,7 @@
             </TextBox>
 
             <Label Width="150" HorizontalAlignment="Center">Password</Label>
-            <TextBox x:Name="txtPassword" Text="Password" Width="150">
+            <TextBox x:Name="txtPassword" Text="Password" Width="150" FontSize="17">
                 <TextBox.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="8"/>

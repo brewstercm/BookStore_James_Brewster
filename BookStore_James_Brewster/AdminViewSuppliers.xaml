@@ -56,7 +56,7 @@
                 </FlowDocument>
 
             </FlowDocumentScrollViewer>
-            <TextBox x:Name="txtSupplierID" Text="SupplierID" Width="150">
+            <TextBox x:Name="txtSupplierID" Text="SupplierID" Width="150" FontSize="17">
                 <TextBox.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="8"/>
