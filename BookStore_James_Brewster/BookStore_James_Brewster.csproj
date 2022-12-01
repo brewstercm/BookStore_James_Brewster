@@ -116,6 +116,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="AdminViewSupplierRep.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="AdminViewSuppliers.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -180,6 +184,9 @@
     </Compile>
     <Compile Include="AdminViewOrders.xaml.cs">
       <DependentUpon>AdminViewOrders.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AdminViewSupplierRep.xaml.cs">
+      <DependentUpon>AdminViewSupplierRep.xaml</DependentUpon>
     </Compile>
     <Compile Include="AdminViewSuppliers.xaml.cs">
       <DependentUpon>AdminViewSuppliers.xaml</DependentUpon>
