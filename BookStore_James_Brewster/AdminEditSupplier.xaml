@@ -40,7 +40,7 @@
             <Label Content="Edit Supplier" HorizontalAlignment="Center" FontSize="20" FontFamily="Georgia"/>
             
             <Label Width="150" HorizontalAlignment="Center">Supplier ID</Label>
-            <TextBox x:Name="txtSupplierID" Text="Supplier ID" Width="150">
+            <TextBox x:Name="txtSupplierID" Text="Supplier ID" Width="150" FontSize="17">
                 <TextBox.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="8"/>
@@ -49,7 +49,7 @@
             </TextBox>
             
             <Label Width="150" HorizontalAlignment="Center">Supplier Name</Label>
-            <TextBox x:Name="txtSupplierName" Text="Supplier Name" Width="150">
+            <TextBox x:Name="txtSupplierName" Text="Supplier Name" Width="150" FontSize="17">
                 <TextBox.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="8"/>
