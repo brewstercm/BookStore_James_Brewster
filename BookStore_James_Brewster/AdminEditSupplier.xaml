@@ -37,7 +37,7 @@
 
 
         <StackPanel Grid.Column="1" Background="LightGray">
-            <Label Content="Edit Supplier" HorizontalAlignment="Center" FontSize="14" FontFamily="Georgia"/>
+            <Label Content="Edit Supplier" HorizontalAlignment="Center" FontSize="20" FontFamily="Georgia"/>
             
             <Label Width="150" HorizontalAlignment="Center">Supplier ID</Label>
             <TextBox x:Name="txtSupplierID" Text="Supplier ID" Width="150">

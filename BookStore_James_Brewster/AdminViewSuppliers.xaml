@@ -39,7 +39,7 @@
         <StackPanel Grid.Column="1" Background="LightGray">
             <FlowDocumentScrollViewer>
                 <FlowDocument>
-                    <Paragraph FontSize="14pt">Suppliers:</Paragraph>
+                    <Paragraph FontSize="14pt">View Suppliers:</Paragraph>
                     <Table x:Name="tblBookList">
                         <TableRowGroup x:Name="tblRow" Paragraph.TextAlignment="left">
                             <TableRow FontWeight="Bold" >
