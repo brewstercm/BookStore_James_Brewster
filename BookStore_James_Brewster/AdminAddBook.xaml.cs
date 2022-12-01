@@ -45,7 +45,6 @@ namespace BookStore_James_Brewster
         }
         private void hideAdminButtons()
         {
-            btnAdminAddBook.Visibility = Visibility.Hidden;
             btnAdminBookBrowser.Visibility = Visibility.Hidden;
             btnAdminCreateCategory.Visibility = Visibility.Hidden;
             btnAdminSpacer.Visibility = Visibility.Hidden;
@@ -71,7 +70,7 @@ namespace BookStore_James_Brewster
 
         private void btnAddBook_Click(object sender, RoutedEventArgs e)
 		{
-			if(!txtISBN.Text.Equals(string.Empty) && !txtTitle.Text.Equals(string.Empty) && !txtPubDate.Text.Equals(String.Empty) && !txtPrice.Text.Equals(String.Empty) && !txtReviews.Text.Equals(string.Empty) && !txtSupplierID.Text.Equals(string.Empty) && Int32.TryParse(txtSupplierID.Text, out int result))
+			if(!txtISBN.Text.Equals(string.Empty) && !txtTitle.Text.Equals(string.Empty) && !txtPubDate.Text.Equals(string.Empty) && !txtPrice.Text.Equals(string.Empty) && !txtReviews.Text.Equals(string.Empty) && !txtSupplierID.Text.Equals(string.Empty) && Int32.TryParse(txtSupplierID.Text, out int result))
 			{
                 DatabaseInstance.addBook(txtISBN.Text, txtTitle.Text, txtPubDate.Text, float.Parse(txtPrice.Text), float.Parse(txtReviews.Text), Int32.Parse(txtSupplierID.Text));
 				txtISBN.Text = string.Empty;

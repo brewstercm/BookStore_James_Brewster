@@ -77,7 +77,7 @@
                 </TextBox.Resources>
             </TextBox>
             <Label HorizontalAlignment="Center"></Label>
-            <Button x:Name="btnEditCustomer" Width="150" Click="btnEditCustomer_Click">Edit Customer</Button>
+            <Button x:Name="btnEditCustomer" Width="150" Click="btnEditCustomer_Click" Background="Blue" Foreground="White" Height="30">Edit Customer</Button>
         </StackPanel>
     </Grid>
 </Window>

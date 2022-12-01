@@ -50,8 +50,8 @@ namespace BookStore_James_Brewster
             btnAdminCreateCategory.Visibility = Visibility.Hidden;
             btnAdminSpacer.Visibility = Visibility.Hidden;
             btnAdminCreateCategory.Visibility = Visibility.Hidden;
-
-            btnAdminViewCustomers.Visibility = Visibility.Hidden;
+			btnAdminViewAuthors.Visibility = Visibility.Hidden;
+			btnAdminViewCustomers.Visibility = Visibility.Hidden;
             btnAdminViewOrders.Visibility = Visibility.Hidden;
             btnAdminViewSuppliers.Visibility = Visibility.Hidden;
         }

@@ -49,8 +49,8 @@ namespace BookStore_James_Brewster
             btnAdminSpacer.Visibility = Visibility.Hidden;
             btnAdminViewCustomers.Visibility = Visibility.Hidden;
             btnAdminCreateCategory.Visibility = Visibility.Hidden;
-
-            btnAdminViewOrders.Visibility = Visibility.Hidden;
+			btnAdminViewAuthors.Visibility = Visibility.Hidden;
+			btnAdminViewOrders.Visibility = Visibility.Hidden;
             btnAdminViewSuppliers.Visibility = Visibility.Hidden;
         }
         private void hideProfileButtons()

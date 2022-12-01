@@ -69,7 +69,7 @@
                 </TextBox.Resources>
             </TextBox>
             <Label HorizontalAlignment="Center"></Label>
-            <Button x:Name="btnEditOrder" Width="150">Edit Order</Button>
+            <Button x:Name="btnEditOrder" Width="150"  Background="Blue" Foreground="White" Height="30">Edit Order</Button>
         </StackPanel>
     </Grid>
 </Window>

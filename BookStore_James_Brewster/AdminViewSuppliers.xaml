@@ -64,7 +64,9 @@
                 </TextBox.Resources>
             </TextBox>
             <Label HorizontalAlignment="Center"></Label>
-            <Button x:Name="btnSupplierID" Click="btnSupplierID_Click" Width="150">Edit Supplier</Button>
+            <Button x:Name="btnSupplierID" Click="btnSupplierID_Click" Width="150" Background="Blue" Foreground="White" Height="30">Edit Supplier</Button>
+            <Label HorizontalAlignment="Center"></Label>
+            <Button x:Name="btnAddSupplier" Click="btnSupplierID_Click" Width="150" Background="Green" Foreground="White" Height="30">Add Supplier</Button>
         </StackPanel>
     </Grid>
 </Window>

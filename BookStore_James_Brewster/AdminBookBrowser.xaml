@@ -31,7 +31,7 @@
             <Button x:Name="btnCustomerViewOrders" Click="Button_Click_12">Customer View Orders</Button>
             <Button x:Name="btnCreateAccount" Click="Button_Click_13">Create Account</Button>
             <Button x:Name="btnLogin" Click="Button_Click_14">Login</Button>
-            <Button x:Name="btnLogout" Click="btnLogout_Click">Logout</Button>
+            <Button x:Name="btnLogout" Click="btnLogout_Click" >Logout</Button>
             <Button Click="Button_Click_15">Home</Button>
         </StackPanel>
 
@@ -77,9 +77,9 @@
                 </TextBox.Resources>
             </TextBox>
             <Label HorizontalAlignment="Center"></Label>
-            <Button x:Name="btnAddBook" Width="150" Click="btnAddBook_Click">Add Book</Button>
+            <Button x:Name="btnAddBook" Width="150" Click="btnAddBook_Click" Background="Green" Foreground="White" Height="30">Add Book</Button>
             <Label HorizontalAlignment="Center"></Label>
-            <Button x:Name="btnEditBook" Width="150">Edit Book</Button>
+            <Button x:Name="btnEditBook" Width="150" Background="Blue" Foreground="White" Height="30">Edit Book</Button>
         </StackPanel>
     </Grid>
 </Window>

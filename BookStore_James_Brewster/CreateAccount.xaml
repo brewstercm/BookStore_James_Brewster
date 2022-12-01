@@ -98,7 +98,7 @@
 
             <Button x:Name="btnLoginRedirect" Width="150" BorderBrush="Blue" Click="btnCreateAccountRedirect_Click">Already a user? Login</Button>
             <Label Width="150" HorizontalAlignment="Center"></Label>
-            <Button x:Name="btnCreateAccountRedirect" Width="150" BorderBrush="Green" Click="btnCreateAccount_Click" >Create Account</Button>
+            <Button x:Name="btnCreateAccountRedirect" Width="150" BorderBrush="Green" Click="btnCreateAccount_Click" Background="Green" Foreground="White" Height="30">Create Account</Button>
 
         </StackPanel>
     </Grid>

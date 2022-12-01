@@ -47,7 +47,7 @@
                 </TextBox.Resources>
             </TextBox>
             <Label Width="150" HorizontalAlignment="Center"></Label>
-            <Button x:Name="btnAddCategory" Width="150" Click="btnAddCategory_Click">Add Category</Button>
+            <Button x:Name="btnAddCategory" Width="150" Click="btnAddCategory_Click" Background="Green" Foreground="White" Height="30">Add Category</Button>
 
         </StackPanel>
     </Grid>

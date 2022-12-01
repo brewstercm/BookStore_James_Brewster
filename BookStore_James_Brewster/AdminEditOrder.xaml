@@ -19,22 +19,6 @@
 
         <StackPanel Background="LightSeaGreen">
             <Label HorizontalAlignment="Center">Book Store</Label>
-            <Label HorizontalAlignment="Center">Book Store</Label>
-            <Button x:Name="btnAdminAddBook" Click="Button_Click" >@Add Book</Button>
-            <Button x:Name="btnAdminBookBrowser" Click="Button_Click_1">@Book Browser</Button>
-            <Button x:Name="btnAdminCreateCategory" Click="Button_Click_2">@Create Category</Button>
-            <Button x:Name="btnAdminViewAuthors" Click="Button_Click_5">@Admin View Authors</Button>
-            <Button x:Name="btnAdminViewCustomers" Click="Button_Click_6">@Admin View Customers</Button>
-            <Button x:Name="btnAdminViewOrders" Click="Button_Click_7">@Admin View Orders</Button>
-            <Button x:Name="btnAdminViewSuppliers" Click="Button_Click_8">@Admin View Suppliers</Button>
-            <Button x:Name="btnAdminSpacer">----</Button>
-            <Button x:Name="btnCustomerBookBrowser" Click="Button_Click_10">Book Browser</Button>
-            <Button x:Name="btnCustomerUpdateAccount" Click="Button_Click_11">Customer Update Account</Button>
-            <Button x:Name="btnCustomerViewOrders" Click="Button_Click_12">Customer View Orders</Button>
-            <Button x:Name="btnCreateAccount" Click="Button_Click_13">Create Account</Button>
-            <Button x:Name="btnLogin" Click="Button_Click_14">Login</Button>
-            <Button x:Name="btnLogout" Click="btnLogout_Click">Logout</Button>
-            <Button Click="Button_Click_15">Home</Button>
             <Button x:Name="btnAdminBookBrowser" Click="Button_Click_1">@Book Browser</Button>
             <Button x:Name="btnAdminCreateCategory" Click="Button_Click_2">@Create Category</Button>
             <Button x:Name="btnAdminViewAuthors" Click="Button_Click_5">@Admin View Authors</Button>
@@ -83,9 +67,9 @@
             
             <Label Width="150" HorizontalAlignment="Center"></Label>
 
-            <Button x:Name="btnDeleteOrder" Width="150" BorderBrush="Red" Click="btnDeleteOrder_Click">Delete Order</Button>
+            <Button x:Name="btnDeleteOrder" Width="150" Background="Red" Foreground="White" Click="btnDeleteOrder_Click" Height="30">Delete Order</Button>
             <Label Width="150"  HorizontalAlignment="Center"></Label>
-            <Button x:Name="btnConfirmOrderChanges" Width="150" BorderBrush="Green">Confirm Changes</Button>
+            <Button x:Name="btnConfirmOrderChanges" Width="150" Background="Green" Foreground="White" Height="30">Confirm Changes</Button>
 
         </StackPanel>
     </Grid>

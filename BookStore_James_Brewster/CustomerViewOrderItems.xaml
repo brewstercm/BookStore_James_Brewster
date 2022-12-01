@@ -68,7 +68,7 @@
                 </TextBox.Resources>
             </TextBox>
             <Label HorizontalAlignment="Center"></Label>
-            <Button x:Name="btnDeleteOrderItem" Width="150">Delete Order Item</Button>
+            <Button x:Name="btnDeleteOrderItem" Width="150" Background="Red" Foreground="White" Height="30">Delete Order Item</Button>
 		</StackPanel>
 	</Grid>
 </Window>

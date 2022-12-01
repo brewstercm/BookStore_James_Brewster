@@ -27,6 +27,7 @@ namespace BookStore_James_Brewster
 			EventManager.RegisterClassHandler(typeof(TextBox), TextBox.MouseDoubleClickEvent,
 				new RoutedEventHandler(SelectAllText));
 			base.OnStartup(e);
+			
 		}
 
 		void SelectivelyIgnoreMouseButton(object sender, MouseButtonEventArgs e)

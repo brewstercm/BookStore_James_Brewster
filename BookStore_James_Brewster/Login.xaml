@@ -60,9 +60,9 @@
 
             <Label Width="150" HorizontalAlignment="Center"></Label>
 
-            <Button x:Name="btnLoginRedirect" Width="150" BorderBrush="Blue" Click="btnLogin_Click">Login</Button>
-            <Label Width="150" HorizontalAlignment="Center"></Label>
             <Button x:Name="btnRedirect" Width="150" BorderBrush="Blue" Click="btnRedirect_Click">No Account? Create One!</Button>
+            <Label Width="150" HorizontalAlignment="Center"></Label>
+            <Button x:Name="btnLoginRedirect" Width="150" Background="Green" Foreground="White" Click="btnLogin_Click" Height="28">Login</Button>
         </StackPanel>
     </Grid>
 </Window>

@@ -39,29 +39,71 @@
         <StackPanel Grid.Column="1" Background="LightGray">
             <Label Content="Edit Author Data:" HorizontalAlignment="Center" FontSize="14" FontFamily="Georgia"/>
             <Label Width="150" HorizontalAlignment="Center">First Name</Label>
-            <TextBox x:Name="txtfName" TextWrapping="Wrap" Text="First Name" Width="150"/>
+            <TextBox x:Name="txtfName" Text="First Name" Width="150">
+                <TextBox.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="8"/>
+                    </Style>
+                </TextBox.Resources>
+            </TextBox>
 
             <Label Width="150" HorizontalAlignment="Center">Last Name</Label>
-            <TextBox x:Name="txtlName" TextWrapping="Wrap" Text="Last Name" Width="150"/>
+            <TextBox x:Name="txtlName" Text="Last Name" Width="150">
+                <TextBox.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="8"/>
+                    </Style>
+                </TextBox.Resources>
+            </TextBox>
 
             <Label Width="150" HorizontalAlignment="Center">Gender</Label>
-            <TextBox x:Name="txtGender" TextWrapping="Wrap" Text="Gender" Width="150"/>
+            <TextBox x:Name="txtGender" Text="Gender" Width="150">
+                <TextBox.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="8"/>
+                    </Style>
+                </TextBox.Resources>
+            </TextBox>
 
             <Label Width="150" HorizontalAlignment="Center">DOB</Label>
-            <TextBox x:Name="txtDOB" TextWrapping="Wrap" Text="DOB" Width="150"/>
-
+            <TextBox x:Name="txtDOB" Text="DOB" Width="150">
+                <TextBox.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="8"/>
+                    </Style>
+                </TextBox.Resources>
+            </TextBox>
+            
             <Label Width="150" HorizontalAlignment="Center">Address</Label>
-            <TextBox x:Name="txtAddress" TextWrapping="Wrap" Text="Address" Width="150"/>
+            <TextBox x:Name="txtAddress" Text="Address" Width="150">
+                <TextBox.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="8"/>
+                    </Style>
+                </TextBox.Resources>
+            </TextBox>
 
             <Label Width="150" HorizontalAlignment="Center">Email</Label>
-            <TextBox x:Name="txtAuthorEmail" TextWrapping="Wrap" Text="Email" Width="150"/>
+            <TextBox x:Name="txtAuthorEmail" Text="Email" Width="150">
+                <TextBox.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="8"/>
+                    </Style>
+                </TextBox.Resources>
+            </TextBox>
 
             <Label Width="150" HorizontalAlignment="Center">Phone</Label>
-            <TextBox x:Name="txtAuthorPhone" TextWrapping="Wrap" Text="000-000-0000" Width="150"/>
+            <TextBox x:Name="txtAuthorPhone" Text="Address" Width="150">
+                <TextBox.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="8"/>
+                    </Style>
+                </TextBox.Resources>
+            </TextBox>
 
 
             <Label HorizontalAlignment="Center"></Label>
-            <Button x:Name="btnEditAuthorSubmitChanges" Width="150" BorderBrush="Blue" Click="btnCreateAccountRedirect_Click">Submit Changes</Button>
+            <Button x:Name="btnEditAuthorSubmitChanges" Width="150" BorderBrush="Blue" Click="btnCreateAccountRedirect_Click" Background="Green" Foreground="White" Height="30">Submit Changes</Button>
 
         </StackPanel>
     </Grid>

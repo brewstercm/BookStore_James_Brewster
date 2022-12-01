@@ -45,7 +45,6 @@ namespace BookStore_James_Brewster
         }
         private void hideAdminButtons()
         {
-            btnAdminAddBook.Visibility = Visibility.Hidden;
             btnAdminBookBrowser.Visibility = Visibility.Hidden;
             btnAdminCreateCategory.Visibility = Visibility.Hidden;
             btnAdminSpacer.Visibility = Visibility.Hidden;
@@ -53,8 +52,9 @@ namespace BookStore_James_Brewster
             btnAdminViewOrders.Visibility = Visibility.Hidden;
             btnAdminViewSuppliers.Visibility = Visibility.Hidden;
             btnAdminCreateCategory.Visibility = Visibility.Hidden;
+			btnAdminViewAuthors.Visibility = Visibility.Hidden;
 
-        }
+		}
         private void hideProfileButtons()
         {
             btnLogout.Visibility = Visibility.Hidden;

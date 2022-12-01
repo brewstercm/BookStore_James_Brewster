@@ -42,7 +42,7 @@
             <TextBox x:Name="txtISBN" Text="ISBN" Width="150">
                 <TextBox.Resources>
                     <Style TargetType="{x:Type Border}">
-                        <Setter Property="CornerRadius" Value="3"/>
+                        <Setter Property="CornerRadius" Value="8"/>
                     </Style>
                 </TextBox.Resources>
             </TextBox>
@@ -50,7 +50,7 @@
             <TextBox x:Name="txtTitle" Text="Title" Width="150">
                 <TextBox.Resources>
                     <Style TargetType="{x:Type Border}">
-                        <Setter Property="CornerRadius" Value="3"/>
+                        <Setter Property="CornerRadius" Value="8"/>
                     </Style>
                 </TextBox.Resources>
             </TextBox>
@@ -58,7 +58,7 @@
             <TextBox x:Name="txtPubDate" Text="Data Published" Width="150">
                 <TextBox.Resources>
                     <Style TargetType="{x:Type Border}">
-                        <Setter Property="CornerRadius" Value="3"/>
+                        <Setter Property="CornerRadius" Value="8"/>
                     </Style>
                 </TextBox.Resources>
             </TextBox>
@@ -66,7 +66,7 @@
             <TextBox x:Name="txtPrice" Text="Price" Width="150">
                 <TextBox.Resources>
                     <Style TargetType="{x:Type Border}">
-                        <Setter Property="CornerRadius" Value="3"/>
+                        <Setter Property="CornerRadius" Value="8"/>
                     </Style>
                 </TextBox.Resources>
             </TextBox>
@@ -74,7 +74,7 @@
             <TextBox x:Name="txtReviews" Text="Reviews" Width="150">
                 <TextBox.Resources>
                     <Style TargetType="{x:Type Border}">
-                        <Setter Property="CornerRadius" Value="3"/>
+                        <Setter Property="CornerRadius" Value="8"/>
                     </Style>
                 </TextBox.Resources>
             </TextBox>
@@ -82,12 +82,12 @@
             <TextBox x:Name="txtSupplierID" Text="Supplier ID" Width="150">
                 <TextBox.Resources>
                     <Style TargetType="{x:Type Border}">
-                        <Setter Property="CornerRadius" Value="3"/>
+                        <Setter Property="CornerRadius" Value="8"/>
                     </Style>
                 </TextBox.Resources>
             </TextBox>
             <Label Width="150" HorizontalAlignment="Center"></Label>
-            <Button x:Name="btnAddBook" Width="150" Click="btnAddBook_Click">Add Book</Button>
+            <Button x:Name="btnAddBook" Width="150" Background="Green" Foreground="White" Click="btnAddBook_Click" Height="30">Add Book</Button>
             
         </StackPanel>
     </Grid>
