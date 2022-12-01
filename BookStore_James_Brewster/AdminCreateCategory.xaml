@@ -37,9 +37,9 @@
 
 
         <StackPanel Grid.Column="1" Background="LightGray">
-            <Label Content="Create Category" HorizontalAlignment="Center" FontSize="14" FontFamily="Georgia"/>
+            <Label Content="Create Category" HorizontalAlignment="Center" FontSize="20" FontFamily="Georgia"/>
             <Label Width="150" HorizontalAlignment="Center"></Label>
-            <TextBox x:Name="txtCategoryName" Text="Category Name" Width="150">
+            <TextBox x:Name="txtCategoryName" Text="Category Name" Width="150" FontSize="17">
                 <TextBox.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="3"/>

@@ -33,6 +33,11 @@
             <Button x:Name="btnLogout" Click="btnLogout_Click" Height="30">Logout</Button>
             <Button Click="Button_Click_15" Height="30">Home</Button>
         </StackPanel>
+        <StackPanel Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Bottom">
+            <TextBox HorizontalAlignment="Center" Width="150" IsEnabled="False">
+                
+            </TextBox>
+        </StackPanel>
 
     </Grid>
     

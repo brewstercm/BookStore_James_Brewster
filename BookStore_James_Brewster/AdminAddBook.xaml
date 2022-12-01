@@ -37,9 +37,9 @@
 
 
         <StackPanel Grid.Column="1" Background="LightGray">
-            <Label Content="Add Book" HorizontalAlignment="Center" FontSize="14" FontFamily="Georgia"/>
+            <Label Content="Add Book" HorizontalAlignment="Center" FontSize="20" FontFamily="Georgia"/>
             <Label Width="150" HorizontalAlignment="Center">ISBN</Label>
-            <TextBox x:Name="txtISBN" Text="ISBN" Width="150">
+            <TextBox x:Name="txtISBN" Text="ISBN" Width="150" FontSize="17">
                 <TextBox.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="8"/>
@@ -47,7 +47,7 @@
                 </TextBox.Resources>
             </TextBox>
             <Label Width="150" HorizontalAlignment="Center">Title</Label>
-            <TextBox x:Name="txtTitle" Text="Title" Width="150">
+            <TextBox x:Name="txtTitle" Text="Title" Width="150" FontSize="17">
                 <TextBox.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="8"/>
@@ -55,7 +55,7 @@
                 </TextBox.Resources>
             </TextBox>
             <Label Width="150" HorizontalAlignment="Center">PubDate</Label>
-            <TextBox x:Name="txtPubDate" Text="Data Published" Width="150">
+            <TextBox x:Name="txtPubDate" Text="Data Published" Width="150" FontSize="17">
                 <TextBox.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="8"/>
@@ -63,7 +63,7 @@
                 </TextBox.Resources>
             </TextBox>
             <Label Width="150" HorizontalAlignment="Center">Price</Label>
-            <TextBox x:Name="txtPrice" Text="Price" Width="150">
+            <TextBox x:Name="txtPrice" Text="Price" Width="150" FontSize="17">
                 <TextBox.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="8"/>
@@ -71,7 +71,7 @@
                 </TextBox.Resources>
             </TextBox>
             <Label Width="150" HorizontalAlignment="Center">Reviews</Label>
-            <TextBox x:Name="txtReviews" Text="Reviews" Width="150">
+            <TextBox x:Name="txtReviews" Text="Reviews" Width="150" FontSize="17">
                 <TextBox.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="8"/>
@@ -79,7 +79,7 @@
                 </TextBox.Resources>
             </TextBox>
             <Label Width="150" HorizontalAlignment="Center">SupplierID</Label>
-            <TextBox x:Name="txtSupplierID" Text="Supplier ID" Width="150">
+            <TextBox x:Name="txtSupplierID" Text="Supplier ID" Width="150" FontSize="17">
                 <TextBox.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="8"/>
