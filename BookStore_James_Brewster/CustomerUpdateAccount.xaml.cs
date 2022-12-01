@@ -28,8 +28,9 @@ namespace BookStore_James_Brewster
             txtlName.Text = BlazorBookStore1.Customer.lName;
             txtAddress.Text = BlazorBookStore1.Customer.address;
             txtEmail.Text = BlazorBookStore1.Customer.email;
-            txtPassword.Text = BlazorBookStore1.Customer.password;
-            txtPhone.Text = BlazorBookStore1.Customer.phone;
+			txtPhone.Text = BlazorBookStore1.Customer.phone;
+			txtPassword.Text = BlazorBookStore1.Customer.password;
+
             if (BlazorBookStore1.Customer.customerID == -1)
             {
                 hideProfileButtons();
