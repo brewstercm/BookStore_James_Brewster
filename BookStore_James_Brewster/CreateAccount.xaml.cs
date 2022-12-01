@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -24,6 +25,7 @@ namespace BookStore_James_Brewster
 		public CreateAccount()
 		{
 			InitializeComponent();
+            lblMessage.Visibility = Visibility.Hidden;
             chkAdmin.IsChecked = false;
             if (BlazorBookStore1.Customer.customerID == -1)
             {
@@ -189,10 +191,20 @@ namespace BookStore_James_Brewster
             if(!txtfName.Text.Equals(string.Empty) && !txtlName.Text.Equals(string.Empty) && !txtAddress.Text.Equals(string.Empty) && 
                 !txtEmail.Text.Equals(string.Empty) && !txtPassword.Text.Equals(string.Empty) && !txtPhone.Text.Equals(string.Empty) && chkAdmin.IsChecked.HasValue)
             {
-                DatabaseInstance.CreateAccount(txtfName.Text, txtlName.Text, txtEmail.Text, txtPassword.Text, chkAdmin.IsChecked.Value, txtAddress.Text, txtPhone.Text);
-                CustomerBookBrowser b = new CustomerBookBrowser();
-                b.Show();
-                this.Close();
+                lblMessage.Visibility = Visibility.Visible;
+                try
+                {
+                    DatabaseInstance.CreateAccount(txtfName.Text, txtlName.Text, txtEmail.Text, txtPassword.Text, chkAdmin.IsChecked.Value, txtAddress.Text, txtPhone.Text);
+                    Login b = new Login();
+                    b.Show();
+                    this.Close();
+                }
+                catch(Exception ex)
+                {
+                    lblMessage.Content=ex.Message;
+                    lblMessage.Width = lblMessage.ActualWidth;
+                }
+                
             }
         }
     }
