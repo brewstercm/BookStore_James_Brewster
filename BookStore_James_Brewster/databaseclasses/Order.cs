@@ -10,10 +10,10 @@ namespace BlazorBookStore1
     {
         public int orderID { get; set; }
         public string orderDate { get; set; }
-        public float orderVal { get; set; }
+        public decimal orderVal { get; set; }
         public int customerID { get; set; }
 
-        public Order(int orderID, string orderDate, float orderVal, int customerID)
+        public Order(int orderID, string orderDate, decimal orderVal, int customerID)
         {
             this.orderID = orderID;
             this.orderDate = orderDate;

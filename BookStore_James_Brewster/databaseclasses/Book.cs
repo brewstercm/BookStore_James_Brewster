@@ -11,11 +11,11 @@ namespace BlazorBookStore1
         public string isbnNum { get; set; }
         public string title { get; set; }
         public string pubDate { get; set; }
-        public float price { get; set; }
-        public float reviews { get; set; }
+        public decimal price { get; set; }
+        public decimal reviews { get; set; }
         public int supplierID { get; set; }
 
-        public Book(string isbnNum, string title, string pubDate, float price, float reviews, int supplierID)
+        public Book(string isbnNum, string title, string pubDate, decimal price, decimal reviews, int supplierID)
         {
             this.isbnNum = isbnNum;
             this.title = title;

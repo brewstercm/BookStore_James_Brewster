@@ -72,7 +72,7 @@ namespace BookStore_James_Brewster
 		{
 			if(!txtISBN.Text.Equals(string.Empty) && !txtTitle.Text.Equals(string.Empty) && !txtPubDate.Text.Equals(string.Empty) && !txtPrice.Text.Equals(string.Empty) && !txtReviews.Text.Equals(string.Empty) && !txtSupplierID.Text.Equals(string.Empty) && Int32.TryParse(txtSupplierID.Text, out int result))
 			{
-                DatabaseInstance.addBook(txtISBN.Text, txtTitle.Text, txtPubDate.Text, float.Parse(txtPrice.Text), float.Parse(txtReviews.Text), Int32.Parse(txtSupplierID.Text));
+                DatabaseInstance.addBook(txtISBN.Text, txtTitle.Text, txtPubDate.Text, decimal.Parse(txtPrice.Text), decimal.Parse(txtReviews.Text), Int32.Parse(txtSupplierID.Text));
 				txtISBN.Text = string.Empty;
 				txtTitle.Text = string.Empty;
 				txtPubDate.Text = string.Empty;

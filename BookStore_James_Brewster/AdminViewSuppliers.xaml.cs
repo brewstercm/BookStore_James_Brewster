@@ -28,7 +28,6 @@ namespace BookStore_James_Brewster
                 TableRow tableRow = new TableRow();
                 tableRow.Cells.Add(getCell(s.supplierID.ToString()));
                 tableRow.Cells.Add(getCell(s.name));
-
 				tblRow.Rows.Add(tableRow);
             }
 			

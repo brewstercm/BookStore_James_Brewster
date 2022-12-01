@@ -27,7 +27,7 @@ namespace BlazorBookStore1
         }
         public static void addBookToOrder(Book book, int customerID)
         {
-            List<float> prices = new List<float>();
+            List<decimal> prices = new List<decimal>();
             int orderID = -1;
             string query = $"SELECT MAX(orderID) FROM dbo.Orders WHERE customerID={customerID}";
             using (SqlConnection conn = new SqlConnection(connectionString))
@@ -55,12 +55,12 @@ namespace BlazorBookStore1
                     {
                         while (reader.Read())
                         {
-                            prices.Add(reader.GetFloat(reader.GetOrdinal("itemPrice")));
+                            prices.Add(reader.GetDecimal(reader.GetOrdinal("itemPrice")));
                         }
                     }
                 }
-                float total = 0;
-                foreach(float price in prices)
+                decimal total = 0;
+                foreach(decimal price in prices)
                 {
                     total += price;
                 }
@@ -289,7 +289,7 @@ namespace BlazorBookStore1
                     {
                         int orderID = reader.GetInt32(reader.GetOrdinal("orderID"));
                         string orderDate = reader.GetString(reader.GetOrdinal("orderDate"));
-                        float orderVal = reader.GetFloat(reader.GetOrdinal("orderVal"));
+                        decimal orderVal = reader.GetDecimal(reader.GetOrdinal("orderVal"));
                         int customerID = reader.GetInt32(reader.GetOrdinal("customerID"));
 
                         Order newOrder = new Order(orderID, orderDate, orderVal, customerID);
@@ -314,7 +314,7 @@ namespace BlazorBookStore1
                     {
                         int orderID = reader.GetInt32(reader.GetOrdinal("orderID"));
                         string orderDate = reader.GetString(reader.GetOrdinal("orderDate"));
-                        float orderVal = reader.GetFloat(reader.GetOrdinal("orderVal"));
+                        decimal orderVal = reader.GetDecimal(reader.GetOrdinal("orderVal"));
 
                         Order newOrder = new Order(orderID, orderDate, orderVal, customerID);
                         orders.Add(newOrder);
@@ -337,7 +337,7 @@ namespace BlazorBookStore1
                     while (reader.Read())
                     {
                         string orderDate = reader.GetString(reader.GetOrdinal("orderDate"));
-                        float orderVal = reader.GetFloat(reader.GetOrdinal("orderVal"));
+                        decimal orderVal = reader.GetDecimal(reader.GetOrdinal("orderVal"));
                         int customerID = reader.GetInt32(reader.GetOrdinal("customerID"));
 
                         order = new Order(orderID, orderDate, orderVal, customerID);
@@ -347,7 +347,7 @@ namespace BlazorBookStore1
             return order;
         }
 
-        public static void editOrder(int orderID, string orderDate, float orderVal, int customerID)
+        public static void editOrder(int orderID, string orderDate, decimal orderVal, int customerID)
         {
             string query = $"UPDATE dbo.Orders SET orderDate='{orderDate}', orderVal={orderVal}, customerID={customerID} WHERE orderID={orderID}";
             using (SqlConnection conn = new SqlConnection(connectionString))
@@ -387,8 +387,8 @@ namespace BlazorBookStore1
                             string isbnNum = reader.GetString(reader.GetOrdinal("isbnNum"));
                             string title = reader.GetString(reader.GetOrdinal("title"));
                             string pubDate = reader.GetString(reader.GetOrdinal("pubDate"));
-                            float price = (float)reader.GetFloat(reader.GetOrdinal("price"));
-                            float reviews = reader.GetFloat(reader.GetOrdinal("reviews"));
+                            decimal price = reader.GetDecimal(reader.GetOrdinal("price"));
+                            decimal reviews = reader.GetDecimal(reader.GetOrdinal("reviews"));
                             int supplierID = reader.GetInt32(reader.GetOrdinal("supplierID"));
 
                             Book newBook = new Book(isbnNum, title, pubDate, price, reviews, supplierID);
@@ -414,8 +414,8 @@ namespace BlazorBookStore1
                         string isbnNum = reader.GetString(reader.GetOrdinal("isbnNum"));
                         string title = reader.GetString(reader.GetOrdinal("title"));
                         string pubDate = reader.GetString(reader.GetOrdinal("pubDate"));
-                        float price = reader.GetFloat(reader.GetOrdinal("price"));
-                        float reviews = reader.GetFloat(reader.GetOrdinal("reviews"));
+                        decimal price = reader.GetDecimal(reader.GetOrdinal("price"));
+                        decimal reviews = reader.GetDecimal(reader.GetOrdinal("reviews"));
                         int supplierID = reader.GetInt32(reader.GetOrdinal("supplierID"));
 
                         Book newBook = new Book(isbnNum, title, pubDate, price, reviews, supplierID);
@@ -441,8 +441,8 @@ namespace BlazorBookStore1
                         string isbnNum = reader.GetString(reader.GetOrdinal("isbnNum"));
                         string title = reader.GetString(reader.GetOrdinal("title"));
                         string pubDate = reader.GetString(reader.GetOrdinal("pubDate"));
-                        float price = reader.GetFloat(reader.GetOrdinal("price"));
-                        float reviews = reader.GetFloat(reader.GetOrdinal("reviews"));
+                        decimal price = reader.GetDecimal(reader.GetOrdinal("price"));
+                        decimal reviews = reader.GetDecimal(reader.GetOrdinal("reviews"));
                         int supplierID = reader.GetInt32(reader.GetOrdinal("supplierID"));
 
                         Book newBook = new Book(isbnNum, title, pubDate, price, reviews, supplierID);
@@ -467,8 +467,8 @@ namespace BlazorBookStore1
                     {
                         string title = reader.GetString(reader.GetOrdinal("title"));
                         string pubDate = reader.GetString(reader.GetOrdinal("pubDate"));
-                        float price = reader.GetFloat(reader.GetOrdinal("price"));
-                        float reviews = reader.GetFloat(reader.GetOrdinal("reviews"));
+                        decimal price = reader.GetDecimal(reader.GetOrdinal("price"));
+                        decimal reviews = reader.GetDecimal(reader.GetOrdinal("reviews"));
                         int supplierID = reader.GetInt32(reader.GetOrdinal("supplierID"));
 
                         book = new Book(isbnNum, title, pubDate, price, reviews, supplierID);
@@ -478,7 +478,7 @@ namespace BlazorBookStore1
             return book;
         }
 
-        public static void editBook(string isbnNum, string title, string pubDate, float price, float reviews, int supplierID)
+        public static void editBook(string isbnNum, string title, string pubDate, decimal price, decimal reviews, int supplierID)
         {
             string query = $"UPDATE dbo.Books SET isbnNum='{isbnNum}', title='{title}', pubDate='{pubDate}', price={price}, reviews={reviews}, supplierID={supplierID} WHERE isbnNum='{isbnNum}'";
             using (SqlConnection conn = new SqlConnection(connectionString))
@@ -489,7 +489,7 @@ namespace BlazorBookStore1
             }
         }
 
-        public static void addBook(string isbnNum, string title, string pubDate, float price, float reviews, int supplierID)
+        public static void addBook(string isbnNum, string title, string pubDate, decimal price, decimal reviews, int supplierID)
         {
             string query = $"INSERT INTO dbo.Books VALUES('{isbnNum}', '{title}', '{pubDate}', {price}, {reviews}, {supplierID})";
             using (SqlConnection conn = new SqlConnection(connectionString))
