@@ -9,6 +9,7 @@ using System.Collections;
 using System.Windows.Controls;
 using System.Runtime.CompilerServices;
 using System.ComponentModel;
+using BookStore_James_Brewster.databaseclasses;
 
 namespace BlazorBookStore1
 {
@@ -840,5 +841,30 @@ namespace BlazorBookStore1
 				}
 			}
 		}
+
+        public static List<OrderItem> getOrderItems(int orderID)
+        {
+            string query = $"SELECT * FROM dbo.Order_Item WHERE orderID={orderID}";
+            List<OrderItem> items = new List<OrderItem>();
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+                using (SqlCommand command = new SqlCommand(query, conn))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            int itemNum = reader.GetInt32(reader.GetOrdinal("itemNum"));
+                            decimal itemPrice = reader.GetDecimal(reader.GetOrdinal("itemPrice"));
+                            string isbnNum = reader.GetString(reader.GetOrdinal("isbnNum"));
+
+                            items.Add(new OrderItem(itemNum, itemPrice, orderID, isbnNum));
+                        }
+                    }
+                }
+            }
+            return items;
+        }
     }
 }
