@@ -766,7 +766,7 @@ namespace BlazorBookStore1
                 {
                     command.ExecuteNonQuery();
                 }
-                query = $"DELETE FROM dbo.BookCategories WHERE authorID WHERE authorID={authorID}";
+                query = $"DELETE FROM dbo.BookCategories WHERE authorID={authorID}";
                 using (SqlCommand command = new SqlCommand(query, conn))
                 {
                     command.ExecuteNonQuery();
