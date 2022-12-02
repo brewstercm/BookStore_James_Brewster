@@ -200,7 +200,7 @@ namespace BookStore_James_Brewster
 
 		private void btnEditOrder_Click(object sender, RoutedEventArgs e)
 		{
-			AdminEditOrder aeo = new AdminEditOrder(DatabaseInstance.getOrder(Int32.Parse(txtOrderID.Text)));
+			AdminEditOrder aeo = new AdminEditOrder(DatabaseInstance.getOrder(Int32.Parse(txtOrderID.Text.Trim())));
 			aeo.Show();
 			this.Close();
 		}

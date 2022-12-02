@@ -230,7 +230,7 @@ namespace BookStore_James_Brewster
 
 		private void btnEditBook_Click(object sender, RoutedEventArgs e)
 		{
-			AdminEditBook a = new AdminEditBook(DatabaseInstance.getBook(txtISBN.Text));
+			AdminEditBook a = new AdminEditBook(DatabaseInstance.getBook(txtISBN.Text.Trim()));
 			a.Show();
 			this.Close();
         }

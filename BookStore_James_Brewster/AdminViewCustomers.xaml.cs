@@ -202,9 +202,9 @@ namespace BookStore_James_Brewster
 
         private void btnEditCustomer_Click(object sender, RoutedEventArgs e)
         {
-			if(!txtCustomerID.Text.Equals(string.Empty) && Int32.TryParse(txtCustomerID.Text, out int result))
+			if(!txtCustomerID.Text.Trim().Equals(string.Empty) && Int32.TryParse(txtCustomerID.Text.Trim(), out int result))
 			{
-				CustomerDetails cd = DatabaseInstance.getCustomer(Int32.Parse(txtCustomerID.Text));
+				CustomerDetails cd = DatabaseInstance.getCustomer(Int32.Parse(txtCustomerID.Text.Trim()));
                 AdminEditCustomer a = new AdminEditCustomer(cd);
 				a.Show();
 				this.Close();

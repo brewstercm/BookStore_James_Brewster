@@ -180,11 +180,11 @@ namespace BookStore_James_Brewster
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
-            if(!txtEmail.Text.Equals(string.Empty) && !txtPassword.Text.Equals(string.Empty))
+            if(!txtEmail.Text.Trim().Equals(string.Empty) && !txtPassword.Text.Trim().Equals(string.Empty))
             {
                 try
                 {
-                    DatabaseInstance.Login(txtEmail.Text, txtPassword.Text);
+                    DatabaseInstance.Login(txtEmail.Text.Trim(), txtPassword.Text.Trim());
                     if (BlazorBookStore1.Customer.customerID == -1)
                     {
                         lblMessage.Visibility = Visibility.Visible;

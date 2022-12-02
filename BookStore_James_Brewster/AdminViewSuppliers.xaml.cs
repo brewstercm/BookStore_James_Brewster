@@ -49,7 +49,7 @@ namespace BookStore_James_Brewster
             TableCell isbnCell = new TableCell();
             Paragraph isbnParagraph = new Paragraph();
             Run isbnRun = new Run();
-            isbnRun.Text = value;
+            isbnRun.Text.Trim() = value;
             isbnParagraph.Inlines.Add(isbnRun);
             isbnCell.Blocks.Add(isbnParagraph);
 
@@ -197,7 +197,7 @@ namespace BookStore_James_Brewster
 
 		private void btnSupplierID_Click(object sender, RoutedEventArgs e)
 		{
-			int supplierID = Int32.Parse(txtSupplierID.Text);
+			int supplierID = Int32.Parse(txtSupplierID.Text.Trim());
 			Supplier s = DatabaseInstance.getSupplier(supplierID);
 			AdminEditSupplier aew = new AdminEditSupplier(s);
 			aew.Show();
