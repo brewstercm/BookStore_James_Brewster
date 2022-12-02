@@ -180,7 +180,7 @@ namespace BookStore_James_Brewster
 			Administrator.CheckAdmin();
 			this.Close();
 
-			private void btnDeleteSupplier_Click(object sender, RoutedEventArgs e)
+		private void btnDeleteSupplier_Click(object sender, RoutedEventArgs e)
 		{
             DatabaseInstance.deleteSupplier(s.supplierID);
         }

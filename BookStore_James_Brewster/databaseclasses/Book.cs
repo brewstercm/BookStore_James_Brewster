@@ -26,5 +26,6 @@ namespace BlazorBookStore1
             this.supplierID = supplierID;
             this.category = category;
         }
+        //
     }
 }
