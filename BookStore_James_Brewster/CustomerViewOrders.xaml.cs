@@ -207,5 +207,19 @@ namespace BookStore_James_Brewster
             a.Show();
             this.Close();
         }
-    }
+
+		private void btnEditOrder_Click(object sender, RoutedEventArgs e)
+		{
+            if (Int32.TryParse(txtOrderNum.Text.Trim(), out int result))
+            {
+                Customer a = new Customer(DatabaseInstance.getOrder(Int32.Parse(txtOrderNum.Text.Trim())));
+                a.Show();
+                this.Close();
+            }
+            else {
+                lblMessage.Visibility = Visibility.Visible;
+                lblMessage.Content = "Can't find order...";
+            }
+		}
+	}
 }
