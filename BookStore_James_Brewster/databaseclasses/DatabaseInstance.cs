@@ -17,7 +17,7 @@ namespace BlazorBookStore1
     /// </summary>
     public static class DatabaseInstance
     {
-        private static string connectionString = @"Server=(LocalDB)\MSSQLLocalDB;Integrated Security=true;AttachDbFileName=C:\Users\Legend\source\repos\BookStore_James_Brewster\BookStore_James_Brewster\database\BookStoreDB.mdf;Connection Lifetime=120;MultipleActiveResultSets=true;";
+        private static string connectionString = @"Server=(LocalDB)\MSSQLLocalDB;Integrated Security=true;AttachDbFileName=C:\Users\Legen\source\repos\BookStore_James_Brewster\BookStore_James_Brewster\database\BookStoreDB.mdf;Connection Lifetime=120;MultipleActiveResultSets=true;";
         public static void createCategory(string catName)
         {
             string query = $"INSERT INTO dbo.Categories VALUES('{catName}')";
@@ -585,7 +585,7 @@ namespace BlazorBookStore1
         public static AuthorDetails getAuthor(int authorID)
         {
             AuthorDetails author = null;
-            string query = $"SELECT * FROM dbo.Author JOIN dbo.AuthorContactDetails ON dbo.Author.authorID=dbo.AuthorContactDetails.authorID WHERE authorID={authorID}";
+            string query = $"SELECT * FROM dbo.Author JOIN dbo.AuthorContactDetails ON dbo.Author.authorID=dbo.AuthorContactDetails.authorID WHERE dbo.Author.authorID={authorID}";
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 SqlCommand command = new SqlCommand(query, conn);

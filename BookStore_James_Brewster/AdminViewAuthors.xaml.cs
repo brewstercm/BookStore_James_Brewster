@@ -96,7 +96,7 @@ namespace BookStore_James_Brewster
 			{
 				AuthorDetails ad = DatabaseInstance.getAuthor(Int32.Parse(txtAuthorID.Text.Trim()));
 				AdminEditAuthorData aead = new AdminEditAuthorData(ad);
-				aead.Activate();
+				aead.Show();
 				this.Close();
 			}
 		}
