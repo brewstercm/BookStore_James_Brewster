@@ -658,7 +658,7 @@ namespace BlazorBookStore1
         public static Book getBook(string isbnNum)
         {
             Book book = null;
-            string query = $"SELECT * FROM dbo.Books JOIN dbo.BookCategories ON dbo.Books.isbnNum = dbo.BookCategories.isbnNum JOIN dbo.Categories ON dbo.BookCategories.catCode = dbo.BookCategories.catCode WHERE dbo.Books.isbnNum='{isbnNum}'";
+            string query = $"SELECT * FROM dbo.Books WHERE dbo.Books.isbnNum='{isbnNum}'";
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 SqlCommand command = new SqlCommand(query, conn);
@@ -667,12 +667,24 @@ namespace BlazorBookStore1
                 {
                     while (reader.Read())
                     {
+                        string name = string.Empty;
                         string title = reader.GetString(reader.GetOrdinal("title"));
                         string pubDate = reader.GetString(reader.GetOrdinal("pubDate"));
                         decimal price = reader.GetDecimal(reader.GetOrdinal("price"));
                         decimal reviews = reader.GetDecimal(reader.GetOrdinal("reviews"));
                         int supplierID = reader.GetInt32(reader.GetOrdinal("supplierID"));
-                        string name = reader.GetString(reader.GetOrdinal("catDesc"));
+                        query = $"SELECT * FROM dbo.BookCategories JOIN dbo.Categories ON dbo.BookCategories.catCode = dbo.Categories.catCode WHERE isbnNum='{isbnNum}'";
+                        using (SqlCommand command1 = new SqlCommand(query, conn))
+                        {
+                            using (SqlDataReader reader1 = command1.ExecuteReader())
+                            {
+                                while (reader1.Read())
+                                {
+                                    name = reader1.GetString(reader1.GetOrdinal("catDesc"));
+                                    break;
+                                }
+                            }
+                        }
                         book = new Book(isbnNum, title, pubDate, price, reviews, supplierID, name);
                     }
                 }
