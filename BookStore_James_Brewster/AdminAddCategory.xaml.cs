@@ -198,8 +198,8 @@ namespace BookStore_James_Brewster
 			this.Close();
 		}
 
-        private void btnCreateCategory_Click(object sender, RoutedEventArgs e)
-        {
+		private void btnAddCategory_Click(object sender, RoutedEventArgs e)
+		{
             if (!txtCategoryName.Text.Trim().Equals(string.Empty))
             {
                 DatabaseInstance.createCategory(txtCategoryName.Text.Trim());
@@ -207,7 +207,6 @@ namespace BookStore_James_Brewster
                 aac.Show();
                 this.Close();
             }
-            
         }
-    }
+	}
 }
