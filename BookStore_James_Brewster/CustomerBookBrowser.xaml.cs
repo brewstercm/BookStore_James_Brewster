@@ -270,9 +270,10 @@ namespace BookStore_James_Brewster
             string a = txtISBN.Text.Trim();
             Book book = DatabaseInstance.getBook(a);
             DatabaseInstance.addBookToOrder(book, BlazorBookStore1.Customer.customerID);
-            CustomerViewOrders c = new CustomerViewOrders();
+			CustomerViewOrders c = new CustomerViewOrders();
             c.Show();
             this.Close();
+            
         }
 
         private void cmbSearchBy_SelectionChanged(object sender, SelectionChangedEventArgs e)

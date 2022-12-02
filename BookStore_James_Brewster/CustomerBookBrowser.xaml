@@ -102,6 +102,8 @@
             </TextBox>
             <Label HorizontalAlignment="Center"></Label>
             <Button x:Name="btnAddBookToOrder" Width="150" Click="btnAddBookToOrder_Click" Background="Green" Foreground="White" Height="30">Add Book to Order</Button>
+            <Label HorizontalAlignment="Center"></Label>
+            <Label x:Name="lblMessage" HorizontalAlignment="Center" Foreground="Green" Visibility="Hidden"></Label>
         </StackPanel>
     </Grid>
 </Window>
