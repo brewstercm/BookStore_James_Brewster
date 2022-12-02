@@ -20,8 +20,10 @@ namespace BookStore_James_Brewster
 	/// </summary>
 	public partial class Customer : Window
 	{
-		public Customer()
+        Order o;
+		public Customer(Order o)
 		{
+            this.o = o;
 			InitializeComponent();
             if (BlazorBookStore1.Customer.customerID == -1)
             {

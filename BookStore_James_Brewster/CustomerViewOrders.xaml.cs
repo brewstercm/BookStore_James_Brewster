@@ -52,14 +52,6 @@ namespace BookStore_James_Brewster
                 orderValCell.Blocks.Add(orderValParagraph);
                 tableRow.Cells.Add(orderValCell);
 
-                TableCell customerIDCell = new TableCell();
-                Paragraph customerIDParagraph = new Paragraph();
-                Run customerIDRun = new Run();
-                customerIDRun.Text = o.customerID.ToString();
-                customerIDParagraph.Inlines.Add(customerIDRun);
-                customerIDCell.Blocks.Add(customerIDParagraph);
-                tableRow.Cells.Add(customerIDCell);
-
                 tblRow.Rows.Add(tableRow);
             }
 
