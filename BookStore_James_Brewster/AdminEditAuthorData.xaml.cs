@@ -80,13 +80,13 @@ namespace BookStore_James_Brewster
 
         private void btnEditAuthor_Click(object sender, RoutedEventArgs e)
 		{
-			if(!txtAddress.Text.Equals(author.Address) || !txtDOB.Text.Equals(author.DOB) 
-				|| !txtfName.Text.Equals(author.FName) || !txtlName.Text.Equals(author.LName) 
-				|| !txtGender.Text.Equals(author.Gender) || !txtAuthorEmail.Text.Equals(author.Email)
-				|| !txtAuthorPhone.Text.Equals(author.Phone))
+			if(!txtAddress.Text.Trim().Equals(author.Address) || !txtDOB.Text.Trim().Equals(author.DOB) 
+				|| !txtfName.Text.Trim().Equals(author.FName) || !txtlName.Text.Trim().Equals(author.LName) 
+				|| !txtGender.Text.Trim().Equals(author.Gender) || !txtAuthorEmail.Text.Trim().Equals(author.Email)
+				|| !txtAuthorPhone.Text.Trim().Equals(author.Phone))
 			{
-				DatabaseInstance.editAuthor(author.AuthorID, txtfName.Text, txtlName.Text, txtGender.Text,
-					txtDOB.Text, txtAddress.Text, txtAuthorEmail.Text, txtAuthorPhone.Text);
+				DatabaseInstance.editAuthor(author.AuthorID, txtfName.Text.Trim(), txtlName.Text.Trim(), txtGender.Text.Trim(),
+					txtDOB.Text, txtAddress.Text.Trim(), txtAuthorEmail.Text.Trim(), txtAuthorPhone.Text.Trim());
 			}
 		}
 		private void Button_Click(object sender, RoutedEventArgs e)
@@ -207,7 +207,7 @@ namespace BookStore_James_Brewster
 
 		private void btnDeleteAuthor_Click(object sender, RoutedEventArgs e) 
 		{
-			DatabaseInstance.deleteAuthor(Int32.Parse(txtAuthorID.Text));
+			DatabaseInstance.deleteAuthor(Int32.Parse(txtAuthorID.Text.Trim()));
 		}
 	}
 }

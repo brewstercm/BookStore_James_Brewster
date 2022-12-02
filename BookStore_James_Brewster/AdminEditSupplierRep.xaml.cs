@@ -179,12 +179,12 @@ namespace BookStore_James_Brewster
 
 		private void btntDeleteRep_Click(object sender, RoutedEventArgs e)
 		{
-			DatabaseInstance.deleteSupplierRep(txtfName.Text, txtlName.Text, int.Parse(txtSupplierID.Text));
+			DatabaseInstance.deleteSupplierRep(txtfName.Text.Trim(), txtlName.Text.Trim(), int.Parse(txtSupplierID.Text.Trim()));
 		}
 
 		private void btnConfirmEditRep_Click(object sender, RoutedEventArgs e)
 		{
-			DatabaseInstance.editSupplierRep(txtfName.Text, txtlName.Text, txtWorkNum.Text, txtCellNum.Text, txtEmail.Text, int.Parse(txtSupplierID.Text));
+			DatabaseInstance.editSupplierRep(txtfName.Text.Trim(), txtlName.Text.Trim(), txtWorkNum.Text.Trim(), txtCellNum.Text.Trim(), txtEmail.Text.Trim(), int.Parse(txtSupplierID.Text.Trim()));
 		}
 	}
 }

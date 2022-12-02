@@ -188,20 +188,20 @@ namespace BookStore_James_Brewster
 
         private void btnCreateAccount_Click(object sender, RoutedEventArgs e)
         {
-            if(!txtfName.Text.Equals(string.Empty) && !txtlName.Text.Equals(string.Empty) && !txtAddress.Text.Equals(string.Empty) && 
-                !txtEmail.Text.Equals(string.Empty) && !txtPassword.Text.Equals(string.Empty) && !txtPhone.Text.Equals(string.Empty) && chkAdmin.IsChecked.HasValue)
+            if(!txtfName.Text.Trim().Equals(string.Empty) && !txtlName.Text.Trim().Equals(string.Empty) && !txtAddress.Text.Trim().Equals(string.Empty) && 
+                !txtEmail.Text.Trim().Equals(string.Empty) && !txtPassword.Text.Trim().Equals(string.Empty) && !txtPhone.Text.Trim().Equals(string.Empty) && chkAdmin.IsChecked.HasValue)
             {
                 lblMessage.Visibility = Visibility.Visible;
                 try
                 {
-                    DatabaseInstance.CreateAccount(txtfName.Text, txtlName.Text, txtEmail.Text, txtPassword.Text, chkAdmin.IsChecked.Value, txtAddress.Text, txtPhone.Text);
+                    DatabaseInstance.CreateAccount(txtfName.Text.Trim(), txtlName.Text.Trim(), txtEmail.Text.Trim(), txtPassword.Text.Trim(), chkAdmin.IsChecked.Value, txtAddress.Text.Trim(), txtPhone.Text.Trim());
                     Login b = new Login();
                     b.Show();
                     this.Close();
                 }
                 catch(Exception ex)
                 {
-                    lblMessage.Content=ex.Message;
+                    lblMessage.Content=ex.Message.Trim();
                     lblMessage.Width = lblMessage.ActualWidth;
                 }
                 

@@ -193,7 +193,7 @@ namespace BookStore_James_Brewster
 
         private void btnConfirmUpdateAccount_Click(object sender, RoutedEventArgs e)
         {
-            DatabaseInstance.UpdateAccount(BlazorBookStore1.Customer.customerID, txtfName.Text, txtlName.Text, txtAddress.Text, txtEmail.Text, txtPhone.Text, txtPassword.Text);
+            DatabaseInstance.UpdateAccount(BlazorBookStore1.Customer.customerID, txtfName.Text.Trim(), txtlName.Text.Trim(), txtAddress.Text.Trim(), txtEmail.Text.Trim(), txtPhone.Text.Trim(), txtPassword.Text.Trim());
             CustomerBookBrowser cbb = new CustomerBookBrowser();
             cbb.Show();
             this.Close();

@@ -92,9 +92,9 @@ namespace BookStore_James_Brewster
 
         private void btnEditAuthor_Click(object sender, RoutedEventArgs e)
 		{
-			if(!txtAuthorID.Text.Equals(string.Empty) && Int32.TryParse(txtAuthorID.Text, out int authorID))
+			if(!txtAuthorID.Text.Trim().Equals(string.Empty) && Int32.TryParse(txtAuthorID.Text.Trim(), out int authorID))
 			{
-				AuthorDetails ad = DatabaseInstance.getAuthor(Int32.Parse(txtAuthorID.Text));
+				AuthorDetails ad = DatabaseInstance.getAuthor(Int32.Parse(txtAuthorID.Text.Trim()));
 				AdminEditAuthorData aead = new AdminEditAuthorData(ad);
 				aead.Activate();
 				this.Close();

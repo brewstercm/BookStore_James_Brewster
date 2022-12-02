@@ -72,9 +72,9 @@ namespace BookStore_James_Brewster
 
         private void btnCreateCategory_Click(object sender, RoutedEventArgs e)
 		{
-			if(!txtCategoryName.Text.Equals("something") && !txtCategoryName.Text.Equals("TextBlock") && !txtCategoryName.Text.Equals(String.Empty))
+			if(!txtCategoryName.Text.Trim().Equals("something") && !txtCategoryName.Text.Trim().Equals("TextBlock") && !txtCategoryName.Text.Trim().Equals(String.Empty))
 			{
-                DatabaseInstance.createCategory(txtCategoryName.Text);
+                DatabaseInstance.createCategory(txtCategoryName.Text.Trim());
             }
 		}
 		private void Button_Click(object sender, RoutedEventArgs e)
@@ -187,7 +187,7 @@ namespace BookStore_James_Brewster
 
 		private void btnAddCategory_Click(object sender, RoutedEventArgs e)
 		{
-			DatabaseInstance.createCategory(txtCategoryName.Text);
+			DatabaseInstance.createCategory(txtCategoryName.Text.Trim());
 		}
 	}
 }

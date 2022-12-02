@@ -84,10 +84,10 @@ namespace BookStore_James_Brewster
 
 		private void btnConfirmChanges_Click(object sender, RoutedEventArgs e)
 		{
-			if(!txtISBN.Text.Equals(string.Empty) && !txtTitle.Text.Equals(string.Empty) && !txtPubDate.Text.Equals(string.Empty) && !txtPrice.Text.Equals(string.Empty) && 
-				!txtReviews.Text.Equals(string.Empty) && float.TryParse(txtPrice.Text, out float result) && float.TryParse(txtReviews.Text, out float result2))
+			if(!txtISBN.Text.Trim().Equals(string.Empty) && !txtTitle.Text.Trim().Equals(string.Empty) && !txtPubDate.Text.Trim().Equals(string.Empty) && !txtPrice.Text.Trim().Equals(string.Empty) && 
+				!txtReviews.Text.Trim().Equals(string.Empty) && float.TryParse(txtPrice.Text.Trim(), out float result) && float.TryParse(txtReviews.Text.Trim(), out float result2))
 			{
-                DatabaseInstance.editBook(txtISBN.Text, txtTitle.Text, txtPubDate.Text, decimal.Parse(txtPrice.Text), decimal.Parse(txtReviews.Text), this.book.supplierID);
+                DatabaseInstance.editBook(txtISBN.Text.Trim(), txtTitle.Text.Trim(), txtPubDate.Text.Trim(), decimal.Parse(txtPrice.Text.Trim()), decimal.Parse(txtReviews.Text.Trim()), this.book.supplierID);
             }
         }
 		private void Button_Click(object sender, RoutedEventArgs e)

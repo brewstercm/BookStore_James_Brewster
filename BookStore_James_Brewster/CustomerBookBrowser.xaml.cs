@@ -224,7 +224,7 @@ namespace BookStore_James_Brewster
 
 		private void btnAddBookToOrder_Click(object sender, RoutedEventArgs e)
 		{
-            string a = txtISBN.Text;
+            string a = txtISBN.Text.Trim();
             Book book = DatabaseInstance.getBook(a);
             DatabaseInstance.addBookToOrder(book, BlazorBookStore1.Customer.customerID);
             CustomerViewOrders c = new CustomerViewOrders();
