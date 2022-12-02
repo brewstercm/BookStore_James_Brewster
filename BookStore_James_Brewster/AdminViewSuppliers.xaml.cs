@@ -49,7 +49,7 @@ namespace BookStore_James_Brewster
             TableCell isbnCell = new TableCell();
             Paragraph isbnParagraph = new Paragraph();
             Run isbnRun = new Run();
-            isbnRun.Text.Trim() = value;
+            isbnRun.Text = value;
             isbnParagraph.Inlines.Add(isbnRun);
             isbnCell.Blocks.Add(isbnParagraph);
 
