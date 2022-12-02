@@ -28,46 +28,12 @@ namespace BookStore_James_Brewster
             foreach (Book book in DatabaseInstance.viewBooks())
             {
                 TableRow tableRow = new TableRow();
-                TableCell isbnCell = new TableCell();
-                Paragraph isbnParagraph = new Paragraph();
-                Run isbnRun = new Run();
-                isbnRun.Text = book.isbnNum;
-                isbnParagraph.Inlines.Add(isbnRun);
-                isbnCell.Blocks.Add(isbnParagraph);
-                tableRow.Cells.Add(isbnCell);
-
-                TableCell titleCell = new TableCell();
-                Paragraph titleParagraph = new Paragraph();
-                Run titleRun = new Run();
-                titleRun.Text = book.title;
-                titleParagraph.Inlines.Add(titleRun);
-                titleCell.Blocks.Add(titleParagraph);
-                tableRow.Cells.Add(titleCell);
-
-                TableCell pubDateCell = new TableCell();
-                Paragraph pubDateParagraph = new Paragraph();
-                Run pubDateRun = new Run();
-                pubDateRun.Text = book.pubDate;
-                pubDateParagraph.Inlines.Add(pubDateRun);
-                pubDateCell.Blocks.Add(pubDateParagraph);
-                tableRow.Cells.Add(pubDateCell);
-
-                TableCell priceCell = new TableCell();
-                Paragraph priceParagraph = new Paragraph();
-                Run priceRun = new Run();
-                priceRun.Text = book.price.ToString();
-                priceParagraph.Inlines.Add(priceRun);
-                priceCell.Blocks.Add(priceParagraph);
-                tableRow.Cells.Add(priceCell);
-
-                TableCell reviewsCell = new TableCell();
-                Paragraph reviewsParagraph = new Paragraph();
-                Run reviewsRun = new Run();
-                reviewsRun.Text = book.reviews.ToString();
-                reviewsParagraph.Inlines.Add(reviewsRun);
-                reviewsCell.Blocks.Add(reviewsParagraph);
-                tableRow.Cells.Add(reviewsCell);
-
+                tableRow.Cells.Add(getCell(book.isbnNum));
+                tableRow.Cells.Add(getCell(book.title));
+                tableRow.Cells.Add(getCell(book.pubDate));
+                tableRow.Cells.Add(getCell(book.price.ToString()));
+                tableRow.Cells.Add(getCell(book.reviews.ToString()));
+				tableRow.Cells.Add(getCell(book.supplierID.ToString()));
 				tblRow.Rows.Add(tableRow);
             }
             if (BlazorBookStore1.Customer.customerID == -1)
@@ -82,6 +48,17 @@ namespace BookStore_James_Brewster
             {
                 hideAdminButtons();
             }
+        }
+        private TableCell getCell(string value)
+        {
+            TableCell isbnCell = new TableCell();
+            Paragraph isbnParagraph = new Paragraph();
+            Run isbnRun = new Run();
+            isbnRun.Text = value;
+            isbnParagraph.Inlines.Add(isbnRun);
+            isbnCell.Blocks.Add(isbnParagraph);
+
+            return isbnCell;
         }
 
         private void hideLoggedInButtons()
