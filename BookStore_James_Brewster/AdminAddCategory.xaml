@@ -37,8 +37,27 @@
 
 
         <StackPanel Grid.Column="1" Background="LightGray">
-            <Label Content="Create Category" HorizontalAlignment="Center" FontSize="20" FontFamily="Georgia"/>
             <Label Width="150" HorizontalAlignment="Center"></Label>
+            <StackPanel Grid.Column="1" Background="LightGray">
+                <FlowDocumentScrollViewer>
+                    <FlowDocument>
+                        <Paragraph FontSize="14pt">Categories:</Paragraph>
+                        <Table>
+                            <TableRowGroup x:Name="tblRow" Paragraph.TextAlignment="left">
+                                <TableRow FontWeight="Bold" >
+                                    <TableCell>
+                                        <Paragraph>CatCode</Paragraph>
+                                    </TableCell>
+                                    <TableCell>
+                                        <Paragraph>CatName</Paragraph>
+                                    </TableCell>
+                                </TableRow>
+                            </TableRowGroup>
+                        </Table>
+                    </FlowDocument>
+                </FlowDocumentScrollViewer>
+                <Label HorizontalAlignment="Center"></Label>
+            </StackPanel>
             <TextBox x:Name="txtCategoryName" Text="Category Name" Width="150" FontSize="17">
                 <TextBox.Resources>
                     <Style TargetType="{x:Type Border}">
@@ -48,7 +67,6 @@
             </TextBox>
             <Label Width="150" HorizontalAlignment="Center"></Label>
             <Button x:Name="btnAddCategory" Width="150" Click="btnAddCategory_Click" Background="Green" Foreground="White" Height="30">Add Category</Button>
-
         </StackPanel>
     </Grid>
 </Window>

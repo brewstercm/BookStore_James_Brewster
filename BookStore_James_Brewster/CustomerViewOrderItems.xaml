@@ -17,7 +17,7 @@
 		</Grid.ColumnDefinitions>
 
         <StackPanel Background="DarkSlateGray">
-            <Label HorizontalAlignment="Center" Foreground="White" TextElement.FontSize="14" TextElement.FontWeight="Bold">Book Store</Label>
+            <Label HorizontalAlignment="Center" Foreground="White" TextElement.FontSize="14" TextElement.FontWeight="Bold" TextElement.FontStyle="Italic">Book Store</Label>
             <Button x:Name="btnAdminBookBrowser" Foreground="BlueViolet" Click="Button_Click_1" Height="30">Book Browser</Button>
             <Button x:Name="btnAdminCreateCategory" Foreground="BlueViolet" Click="Button_Click_2" Height="30">Create Category</Button>
             <Button x:Name="btnAdminViewAuthors" Foreground="BlueViolet" Click="Button_Click_5" Height="30">Admin View Authors</Button>
