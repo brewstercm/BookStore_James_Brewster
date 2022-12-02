@@ -27,7 +27,7 @@ namespace BookStore_James_Brewster
 
 		private void btnConfirmAddSupplier_Click(object sender, RoutedEventArgs e)
 		{
-			DatabaseInstance.addSupplier(Int32.Parse(txtSupplierID.Text), txtSupplierName.Text);
+			DatabaseInstance.addSupplier(txtSupplierName.Text);
         }
 
 		private void hideLoggedInButtons()
