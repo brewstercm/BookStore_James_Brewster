@@ -86,7 +86,7 @@ namespace BookStore_James_Brewster
 				|| !txtAuthorPhone.Text.Trim().Equals(author.Phone))
 			{
 				DatabaseInstance.editAuthor(author.AuthorID, txtfName.Text.Trim(), txtlName.Text.Trim(), txtGender.Text.Trim(),
-					txtDOB.Text, txtAddress.Text.Trim(), txtAuthorEmail.Text.Trim(), txtAuthorPhone.Text.Trim());
+					txtDOB.Text.Trim(), txtAddress.Text.Trim(), txtAuthorEmail.Text.Trim(), txtAuthorPhone.Text.Trim());
 			}
 		}
 		private void Button_Click(object sender, RoutedEventArgs e)
