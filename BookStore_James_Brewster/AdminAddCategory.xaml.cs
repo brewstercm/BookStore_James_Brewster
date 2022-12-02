@@ -89,16 +89,7 @@ namespace BookStore_James_Brewster
             this.Close();
         }
 
-        private void btnCreateCategory_Click(object sender, RoutedEventArgs e)
-		{
-			if(!txtCategoryName.Text.Trim().Equals("something") && !txtCategoryName.Text.Trim().Equals("TextBlock") && !txtCategoryName.Text.Trim().Equals(String.Empty))
-			{
-                DatabaseInstance.createCategory(txtCategoryName.Text.Trim());
-            }
-			AdminAddCategory aac = new AdminAddCategory();
-			aac.Show();
-			this.Close();
-		}
+        
 		private void Button_Click(object sender, RoutedEventArgs e)
 		{
 			AdminAddBook a = new AdminAddBook();
@@ -207,9 +198,16 @@ namespace BookStore_James_Brewster
 			this.Close();
 		}
 
-		private void btnAddCategory_Click(object sender, RoutedEventArgs e)
-		{
-			DatabaseInstance.createCategory(txtCategoryName.Text.Trim());
-		}
-	}
+        private void btnCreateCategory_Click(object sender, RoutedEventArgs e)
+        {
+            if (!txtCategoryName.Text.Trim().Equals(string.Empty))
+            {
+                DatabaseInstance.createCategory(txtCategoryName.Text.Trim());
+                AdminAddCategory aac = new AdminAddCategory();
+                aac.Show();
+                this.Close();
+            }
+            
+        }
+    }
 }
