@@ -70,7 +70,7 @@ namespace BookStore_James_Brewster
 
         private void btnAddBook_Click(object sender, RoutedEventArgs e)
 		{
-			if(!txtISBN.Text.Equals(string.Empty) && !txtTitle.Text.Trim().Equals(string.Empty) && !txtPubDate.Text.Trim().Equals(string.Empty) && !txtPrice.Text.Trim().Equals(string.Empty) && !txtReviews.Text.Trim().Equals(string.Empty) && 
+			if(!txtISBN.Text.Trim().Equals(string.Empty) && !txtTitle.Text.Trim().Equals(string.Empty) && !txtPubDate.Text.Trim().Equals(string.Empty) && !txtPrice.Text.Trim().Equals(string.Empty) && !txtReviews.Text.Trim().Equals(string.Empty) && 
 				!txtSupplierID.Text.Trim().Equals(string.Empty) && Int32.TryParse(txtSupplierID.Text.Trim(), out int result) && !txtCategoryID.Text.Trim().Equals(string.Empty) && Int32.TryParse(txtCategoryID.Text.Trim(), out int result2) &&
 				!txtAuthorID.Text.Trim().Equals(string.Empty) && Int32.TryParse(txtAuthorID.Text.Trim(), out int result3))
 			{
