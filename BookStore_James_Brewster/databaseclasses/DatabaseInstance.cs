@@ -58,7 +58,7 @@ namespace BlazorBookStore1
         {
             List<decimal> prices = new List<decimal>();
             int orderID = -1;
-            string query = $"SELECT MAX(orderID) FROM dbo.Orders WHERE customerID={customerID}";
+            string query = $"SELECT orderID FROM dbo.Orders WHERE customerID={customerID} and isPlaced=0";
             using (SqlConnection conn = new SqlConnection(connectionString))
             { 
                 conn.Open();
@@ -72,7 +72,29 @@ namespace BlazorBookStore1
                         }
                     }
                 }
-                query = $"INSERT INTO dbo.Order_Item VALUES({book.price}, {orderID}, '{book.isbnNum}')";
+                if (orderID == -1)
+                {
+                    query = $"INSERT INTO dbo.Orders VALUES('{DateTime.Now.ToShortDateString().Replace("/", string.Empty)}', {book.price}, {customerID}, {0})";
+                    using (SqlCommand command = new SqlCommand(query, conn))
+                    {
+                        command.ExecuteNonQuery();
+                    }
+
+					query = $"SELECT orderID FROM dbo.Orders WHERE customerID={customerID} and isPlaced=0";
+					using (SqlCommand command = new SqlCommand(query, conn))
+					{
+						using (SqlDataReader reader = command.ExecuteReader())
+						{
+							while (reader.Read())
+							{
+								orderID = reader.GetInt32(reader.GetOrdinal("orderID"));
+							}
+						}
+					}
+				}
+
+
+				query = $"INSERT INTO dbo.Order_Item VALUES({book.price}, {orderID}, '{book.isbnNum}')";
                 using (SqlCommand command = new SqlCommand(query, conn))
                 {
                     command.ExecuteNonQuery();
