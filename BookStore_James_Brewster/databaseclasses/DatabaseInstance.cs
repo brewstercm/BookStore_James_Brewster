@@ -713,18 +713,35 @@ namespace BlazorBookStore1
 			}
 		}
 
-        public static void addAuthor(int authorID, string fName, string lName, string gender, string DOB, string address, string email, string phone)
+        public static void addAuthor(string fName, string lName, string gender, string DOB, string address, string email, string phone)
         {
-            string query = $"INSERT INTO dbo.Author VALUES('{fName}', '{lName}', '{gender}', '{DOB}')";
-            string query2 = $"INSERT INTO dbo.AuthorContactDetails VALUES('{address}', '{email}', '{phone}') WHERE authorID={authorID}";
+            string query = $"INSERT INTO dbo.Author VALUES('{fName.Trim()}', '{lName.Trim()}', '{gender.Trim()}', '{DOB.Trim()}')";
 			using (SqlConnection conn = new SqlConnection(connectionString))
 			{
-				SqlCommand command = new SqlCommand(query, conn);
-				SqlCommand command2 = new SqlCommand(query2, conn);
-				conn.Open();
-				command2.ExecuteNonQuery();
-				command.ExecuteNonQuery();
-			}
+                conn.Open();
+                using (SqlCommand command = new SqlCommand(query, conn))
+                {
+                    command.ExecuteNonQuery();
+                }
+                query = $"SELECT * FROM dbo.Author WHERE fName='{fName.Trim()}' and lName='{lName.Trim()}' and gender='{gender.Trim()}' and DOB='{DOB.Trim()}'";
+                int authorID = -1;
+                using (SqlCommand command = new SqlCommand(query, conn))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            authorID = reader.GetInt32(reader.GetOrdinal("authorID"));
+                            break;
+                        }
+                    }
+                }
+                string query2 = $"INSERT INTO dbo.AuthorContactDetails VALUES({authorID}, '{address}', '{email}', '{phone}')";
+                using (SqlCommand command2 = new SqlCommand(query2, conn))
+                {
+                    command2.ExecuteNonQuery();
+                }
+            }
 		}
 
         public static void deleteAuthor(int authorID)
