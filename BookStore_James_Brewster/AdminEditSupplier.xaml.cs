@@ -26,6 +26,8 @@ namespace BookStore_James_Brewster
 		{
             this.s = s;
 			InitializeComponent();
+            txtSupplierID.Text = s.supplierID.ToString();
+            txtSupplierName.Text = s.name;
             if (BlazorBookStore1.Customer.customerID == -1)
             {
                 hideProfileButtons();
