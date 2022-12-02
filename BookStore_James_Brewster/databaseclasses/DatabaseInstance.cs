@@ -530,12 +530,12 @@ namespace BlazorBookStore1
                 {
                     command.ExecuteNonQuery();
                 }
-                query = $"INSERT INTO dbo.BookCategories VALUES({isbnNum}, {categoryID})";
+                query = $"INSERT INTO dbo.BookCategories VALUES('{isbnNum}', {categoryID})";
                 using (SqlCommand command = new SqlCommand(query, conn))
                 {
                     command.ExecuteNonQuery();
                 }
-                query = $"INSERT INTO dbo.BookAuthor VALUES({AuthorID}, {isbnNum})";
+                query = $"INSERT INTO dbo.BookAuthor VALUES({AuthorID}, '{isbnNum}')";
                 using (SqlCommand command = new SqlCommand(query, conn))
                 {
                     command.ExecuteNonQuery();
