@@ -210,6 +210,9 @@ namespace BookStore_James_Brewster
 		private void btnAddCategory_Click(object sender, RoutedEventArgs e)
 		{
 			DatabaseInstance.createCategory(txtCategoryName.Text.Trim());
+			AdminAddCategory a = new AdminAddCategory();
+			a.Show();
+			this.Close();
 		}
 	}
 }
