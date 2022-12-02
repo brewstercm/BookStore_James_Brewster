@@ -23,86 +23,103 @@ namespace BookStore_James_Brewster
 	/// </summary>
 	public partial class CustomerBookBrowser : Window
 	{
-        public CustomerBookBrowser(string searchBy = "")
+        public CustomerBookBrowser(string searchBy = "", string searchTerm = "")
 		{
 			InitializeComponent();
-            cmbSearchBy.Items.Add("category");
             cmbSearchBy.Items.Add("title");
             cmbSearchBy.Items.Add("pubDate");
             cmbSearchBy.Items.Add("reviews");
-            cmbSearchBy.Items.Add("");
-            switch (searchBy)
+            cmbSearchBy.Items.Add("default sorting");
+            if (searchTerm != string.Empty)
             {
-                case "category":
-                    foreach (Book book in DatabaseInstance.browseBooksByCategory())
-                    {
-                        TableRow tableRow = new TableRow();
-                        tableRow.Cells.Add(getCell(book.isbnNum));
-                        tableRow.Cells.Add(getCell(book.title));
-                        tableRow.Cells.Add(getCell(book.pubDate));
-                        tableRow.Cells.Add(getCell(book.price.ToString()));
-                        tableRow.Cells.Add(getCell(book.reviews.ToString()));
-                        tableRow.Cells.Add(getCell(book.category));
+                foreach(Book book in DatabaseInstance.searchBooks(searchTerm))
+                {
+                    TableRow tableRow = new TableRow();
+                    tableRow.Cells.Add(getCell(book.isbnNum));
+                    tableRow.Cells.Add(getCell(book.title));
+                    tableRow.Cells.Add(getCell(book.pubDate));
+                    tableRow.Cells.Add(getCell(book.price.ToString()));
+                    tableRow.Cells.Add(getCell(book.reviews.ToString()));
+                    tableRow.Cells.Add(getCell(book.category));
 
-                        tblRow.Rows.Add(tableRow);
-                    }
-                    break;
-                case "title":
-                    foreach (Book book in DatabaseInstance.browseBooksByTitle())
-                    {
-                        TableRow tableRow = new TableRow();
-                        tableRow.Cells.Add(getCell(book.isbnNum));
-                        tableRow.Cells.Add(getCell(book.title));
-                        tableRow.Cells.Add(getCell(book.pubDate));
-                        tableRow.Cells.Add(getCell(book.price.ToString()));
-                        tableRow.Cells.Add(getCell(book.reviews.ToString()));
-                        tableRow.Cells.Add(getCell(book.category));
+                    tblRow.Rows.Add(tableRow);
+                }
+            }
+            else
+            {
+                switch (searchBy)
+                {
+                    case "category":
+                        foreach (Book book in DatabaseInstance.browseBooksByCategory())
+                        {
+                            TableRow tableRow = new TableRow();
+                            tableRow.Cells.Add(getCell(book.isbnNum));
+                            tableRow.Cells.Add(getCell(book.title));
+                            tableRow.Cells.Add(getCell(book.pubDate));
+                            tableRow.Cells.Add(getCell(book.price.ToString()));
+                            tableRow.Cells.Add(getCell(book.reviews.ToString()));
+                            tableRow.Cells.Add(getCell(book.category));
 
-                        tblRow.Rows.Add(tableRow);
-                    }
-                    break;
-                case "pubDate":
-                    foreach (Book book in DatabaseInstance.browseBooksByPubDate())
-                    {
-                        TableRow tableRow = new TableRow();
-                        tableRow.Cells.Add(getCell(book.isbnNum));
-                        tableRow.Cells.Add(getCell(book.title));
-                        tableRow.Cells.Add(getCell(book.pubDate));
-                        tableRow.Cells.Add(getCell(book.price.ToString()));
-                        tableRow.Cells.Add(getCell(book.reviews.ToString()));
-                        tableRow.Cells.Add(getCell(book.category));
+                            tblRow.Rows.Add(tableRow);
+                        }
+                        break;
+                    case "title":
+                        foreach (Book book in DatabaseInstance.browseBooksByTitle())
+                        {
+                            TableRow tableRow = new TableRow();
+                            tableRow.Cells.Add(getCell(book.isbnNum));
+                            tableRow.Cells.Add(getCell(book.title));
+                            tableRow.Cells.Add(getCell(book.pubDate));
+                            tableRow.Cells.Add(getCell(book.price.ToString()));
+                            tableRow.Cells.Add(getCell(book.reviews.ToString()));
+                            tableRow.Cells.Add(getCell(book.category));
 
-                        tblRow.Rows.Add(tableRow);
-                    }
-                    break;
-                case "reviews":
-                    foreach (Book book in DatabaseInstance.browseBooksByReviews())
-                    {
-                        TableRow tableRow = new TableRow();
-                        tableRow.Cells.Add(getCell(book.isbnNum));
-                        tableRow.Cells.Add(getCell(book.title));
-                        tableRow.Cells.Add(getCell(book.pubDate));
-                        tableRow.Cells.Add(getCell(book.price.ToString()));
-                        tableRow.Cells.Add(getCell(book.reviews.ToString()));
-                        tableRow.Cells.Add(getCell(book.category));
+                            tblRow.Rows.Add(tableRow);
+                        }
+                        break;
+                    case "pubDate":
+                        foreach (Book book in DatabaseInstance.browseBooksByPubDate())
+                        {
+                            TableRow tableRow = new TableRow();
+                            tableRow.Cells.Add(getCell(book.isbnNum));
+                            tableRow.Cells.Add(getCell(book.title));
+                            tableRow.Cells.Add(getCell(book.pubDate));
+                            tableRow.Cells.Add(getCell(book.price.ToString()));
+                            tableRow.Cells.Add(getCell(book.reviews.ToString()));
+                            tableRow.Cells.Add(getCell(book.category));
 
-                        tblRow.Rows.Add(tableRow);
-                    }
-                    break;
-                default:
-                    foreach (Book book in DatabaseInstance.viewBooks())
-                    {
-                        TableRow tableRow = new TableRow();
-                        tableRow.Cells.Add(getCell(book.isbnNum));
-                        tableRow.Cells.Add(getCell(book.title));
-                        tableRow.Cells.Add(getCell(book.pubDate));
-                        tableRow.Cells.Add(getCell(book.price.ToString()));
-                        tableRow.Cells.Add(getCell(book.reviews.ToString()));
-                        tableRow.Cells.Add(getCell(book.category));
+                            tblRow.Rows.Add(tableRow);
+                        }
+                        break;
+                    case "reviews":
+                        foreach (Book book in DatabaseInstance.browseBooksByReviews())
+                        {
+                            TableRow tableRow = new TableRow();
+                            tableRow.Cells.Add(getCell(book.isbnNum));
+                            tableRow.Cells.Add(getCell(book.title));
+                            tableRow.Cells.Add(getCell(book.pubDate));
+                            tableRow.Cells.Add(getCell(book.price.ToString()));
+                            tableRow.Cells.Add(getCell(book.reviews.ToString()));
+                            tableRow.Cells.Add(getCell(book.category));
 
-                        tblRow.Rows.Add(tableRow);
-                    }
-                    break;
+                            tblRow.Rows.Add(tableRow);
+                        }
+                        break;
+                    default:
+                        foreach (Book book in DatabaseInstance.viewBooks())
+                        {
+                            TableRow tableRow = new TableRow();
+                            tableRow.Cells.Add(getCell(book.isbnNum));
+                            tableRow.Cells.Add(getCell(book.title));
+                            tableRow.Cells.Add(getCell(book.pubDate));
+                            tableRow.Cells.Add(getCell(book.price.ToString()));
+                            tableRow.Cells.Add(getCell(book.reviews.ToString()));
+                            tableRow.Cells.Add(getCell(book.category));
+
+                            tblRow.Rows.Add(tableRow);
+                        }
+                        break;
+                }
             }
             if (BlazorBookStore1.Customer.customerID == -1)
             {
@@ -279,7 +296,14 @@ namespace BookStore_James_Brewster
         private void cmbSearchBy_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             string searchBy = cmbSearchBy.SelectedItem.ToString();
-            CustomerBookBrowser cbb = new CustomerBookBrowser();
+            CustomerBookBrowser cbb = new CustomerBookBrowser(searchBy);
+            cbb.Show();
+            this.Close();
+        }
+
+        private void txtSearchTerm_LostFocus(object sender, RoutedEventArgs e)
+        {
+            CustomerBookBrowser cbb = new CustomerBookBrowser(searchTerm: txtSearchTerm.Text.Trim());
             cbb.Show();
             this.Close();
         }

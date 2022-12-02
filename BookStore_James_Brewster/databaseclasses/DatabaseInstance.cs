@@ -19,7 +19,7 @@ namespace BlazorBookStore1
     /// </summary>
     public static class DatabaseInstance
     {
-        private static string connectionString = @"Server=(LocalDB)\MSSQLLocalDB;Integrated Security=true;AttachDbFileName=C:\Users\brade\source\repos\BookStore_James_Brewster\BookStore_James_Brewster\database\BookStoreDB.mdf;Connection Lifetime=120;MultipleActiveResultSets=true;";
+        private static string connectionString = @"Server=(LocalDB)\MSSQLLocalDB;Integrated Security=true;AttachDbFileName=C:\Users\Legen\source\repos\BookStore_James_Brewster\BookStore_James_Brewster\database\BookStoreDB.mdf;Connection Lifetime=120;MultipleActiveResultSets=true;";
         public static void createCategory(string catName)
         {
             string query = $"INSERT INTO dbo.Categories VALUES('{catName}')";
@@ -510,7 +510,7 @@ namespace BlazorBookStore1
         public static List<Book> searchBooks(string searchTerm)
         {
             List<Book> books = new List<Book>();
-            string query = $"SELECT * FROM dbo.Books JOIN dbo.BookCategories ON dbo.Books.isbnNum = dbo.BookCategories.isbnNum JOIN dbo.Categories ON dbo.BookCategories.catCode = dbo.BookCategories.catCode WHERE dbo.Books.isbnNum like '%{searchTerm}%' or title like '%{searchTerm}%'";
+            string query = $"SELECT * FROM dbo.Books WHERE dbo.Books.isbnNum like '%{searchTerm}%' or title like '%{searchTerm}%'";
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 SqlCommand command = new SqlCommand(query, conn);
@@ -519,13 +519,26 @@ namespace BlazorBookStore1
                 {
                     while (reader.Read())
                     {
+                        string name = string.Empty;
                         string isbnNum = reader.GetString(reader.GetOrdinal("isbnNum"));
                         string title = reader.GetString(reader.GetOrdinal("title"));
                         string pubDate = reader.GetString(reader.GetOrdinal("pubDate"));
                         decimal price = reader.GetDecimal(reader.GetOrdinal("price"));
                         decimal reviews = reader.GetDecimal(reader.GetOrdinal("reviews"));
                         int supplierID = reader.GetInt32(reader.GetOrdinal("supplierID"));
-                        string name = reader.GetString(reader.GetOrdinal("catDesc"));
+
+                        query = $"SELECT * FROM dbo.BookCategories JOIN dbo.Categories ON dbo.BookCategories.catCode = dbo.Categories.catCode WHERE isbnNum='{isbnNum}'";
+                        using (SqlCommand command1 = new SqlCommand(query, conn))
+                        {
+                            using (SqlDataReader reader1 = command1.ExecuteReader())
+                            {
+                                while (reader1.Read())
+                                {
+                                    name = reader1.GetString(reader1.GetOrdinal("catDesc"));
+                                    break;
+                                }
+                            }
+                        }
                         Book newBook = new Book(isbnNum, title, pubDate, price, reviews, supplierID, name);
                         books.Add(newBook);
                     }
@@ -537,7 +550,7 @@ namespace BlazorBookStore1
         public static List<Book> browseBooksByTitle()
         {
             List<Book> books = new List<Book>();
-            string query = $"SELECT * FROM dbo.Books JOIN dbo.BookCategories ON dbo.Books.isbnNum = dbo.BookCategories.isbnNum JOIN dbo.Categories ON dbo.BookCategories.catCode = dbo.BookCategories.catCode order by title asc";
+            string query = $"SELECT * FROM dbo.Books order by title desc";
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 SqlCommand command = new SqlCommand(query, conn);
@@ -576,7 +589,7 @@ namespace BlazorBookStore1
         public static List<Book> browseBooksByPubDate()
         {
             List<Book> books = new List<Book>();
-            string query = $"SELECT * FROM dbo.Books JOIN dbo.BookCategories ON dbo.Books.isbnNum = dbo.BookCategories.isbnNum JOIN dbo.Categories ON dbo.BookCategories.catCode = dbo.BookCategories.catCode order by pubDate asc";
+            string query = $"SELECT * FROM dbo.Books order by pubDate desc";
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 SqlCommand command = new SqlCommand(query, conn);
@@ -585,13 +598,25 @@ namespace BlazorBookStore1
                 {
                     while (reader.Read())
                     {
+                        string name = string.Empty;
                         string isbnNum = reader.GetString(reader.GetOrdinal("isbnNum"));
                         string title = reader.GetString(reader.GetOrdinal("title"));
                         string pubDate = reader.GetString(reader.GetOrdinal("pubDate"));
                         decimal price = reader.GetDecimal(reader.GetOrdinal("price"));
                         decimal reviews = reader.GetDecimal(reader.GetOrdinal("reviews"));
                         int supplierID = reader.GetInt32(reader.GetOrdinal("supplierID"));
-                        string name = reader.GetString(reader.GetOrdinal("catDesc"));
+                        query = $"SELECT * FROM dbo.BookCategories JOIN dbo.Categories ON dbo.BookCategories.catCode = dbo.Categories.catCode WHERE isbnNum='{isbnNum}'";
+                        using (SqlCommand command1 = new SqlCommand(query, conn))
+                        {
+                            using (SqlDataReader reader1 = command1.ExecuteReader())
+                            {
+                                while (reader1.Read())
+                                {
+                                    name = reader1.GetString(reader1.GetOrdinal("catDesc"));
+                                    break;
+                                }
+                            }
+                        }
 
                         Book newBook = new Book(isbnNum, title, pubDate, price, reviews, supplierID, name);
                         books.Add(newBook);
@@ -603,7 +628,7 @@ namespace BlazorBookStore1
         public static List<Book> browseBooksByReviews()
         {
             List<Book> books = new List<Book>();
-            string query = $"SELECT * FROM dbo.Booksorder by reviews desc";
+            string query = $"SELECT * FROM dbo.Books order by reviews desc";
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 SqlCommand command = new SqlCommand(query, conn);

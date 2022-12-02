@@ -46,15 +46,22 @@
                                         <Label FontSize="18" HorizontalAlignment="Left" Margin="-2,0,0,0">Search By:</Label>
                                     </BlockUIContainer>
                                 </TableCell>
+                                <TableCell>
+                                    <BlockUIContainer>
+                                        <Label FontSize="18" HorizontalAlignment="Left" Margin="-2,0,0,0">Search:</Label>
+                                    </BlockUIContainer>
+                                </TableCell>
                             </TableRow>
                             <TableRow>
                                 <TableCell>
                                     <BlockUIContainer>
                                         <ComboBox Name="cmbSearchBy" Text="Search" Width="200" Height="30" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,10,0,0" SelectionChanged="cmbSearchBy_SelectionChanged">
-                                            <ComboBoxItem>
-                                                
-                                            </ComboBoxItem>
                                         </ComboBox>
+                                    </BlockUIContainer>
+                                </TableCell>
+                                <TableCell>
+                                    <BlockUIContainer>
+                                        <TextBox x:Name="txtSearchTerm" LostFocus="txtSearchTerm_LostFocus"></TextBox>
                                     </BlockUIContainer>
                                 </TableCell>
                             </TableRow>
