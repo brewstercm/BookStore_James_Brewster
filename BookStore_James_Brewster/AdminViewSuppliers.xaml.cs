@@ -23,22 +23,14 @@ namespace BookStore_James_Brewster
 	{
 		public AdminViewSuppliers()
 		{
-			foreach(Supplier s in DatabaseInstance.viewSuppliers())
-			{
+			InitializeComponent();
+            foreach (Supplier s in DatabaseInstance.viewSuppliers())
+            {
                 TableRow tableRow = new TableRow();
                 tableRow.Cells.Add(getCell(s.supplierID.ToString()));
                 tableRow.Cells.Add(getCell(s.name));
-				if (tblRow == null)
-				{
-
-				}
-				else 
-				{
-					tblRow.Rows.Add(tableRow);
-				}
+                tblRow.Rows.Add(tableRow);
             }
-			
-			InitializeComponent();
             if (BlazorBookStore1.Customer.customerID == -1)
             {
                 hideProfileButtons();
