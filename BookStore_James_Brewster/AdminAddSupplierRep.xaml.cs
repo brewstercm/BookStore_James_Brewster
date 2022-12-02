@@ -37,7 +37,10 @@ namespace BookStore_James_Brewster
 		}
 		private void btnAddSupplierRep_Click(object sender, RoutedEventArgs e)
 		{
-			DatabaseInstance.addSupplierRep(txtfName.Text.Trim(), txtlName.Text.Trim(), txtWorkNum.Text.Trim(), txtCellNum.Text.Trim(), txtEmail.Text.Trim(), );
+			DatabaseInstance.addSupplierRep(txtfName.Text.Trim(), txtlName.Text.Trim(), txtWorkNum.Text.Trim(), txtCellNum.Text.Trim(), txtEmail.Text.Trim(), s.supplierID);
+			AdminViewSupplierReps avsr = new AdminViewSupplierReps(s);
+			avsr.Show();
+			this.Close();
 		}
 
 		private void Button_Click(object sender, RoutedEventArgs e)
