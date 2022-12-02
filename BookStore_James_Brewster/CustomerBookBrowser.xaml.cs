@@ -3,6 +3,7 @@ using BookStore_James_Brewster.databaseclasses;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -22,54 +23,81 @@ namespace BookStore_James_Brewster
 	/// </summary>
 	public partial class CustomerBookBrowser : Window
 	{
-		public CustomerBookBrowser()
+        public CustomerBookBrowser(string searchBy = "")
 		{
 			InitializeComponent();
+            switch (searchBy)
+            {
+                case "category":
+                    foreach (Book book in DatabaseInstance.browseBooksByCategory())
+                    {
+                        TableRow tableRow = new TableRow();
+                        tableRow.Cells.Add(getCell(book.isbnNum));
+                        tableRow.Cells.Add(getCell(book.title));
+                        tableRow.Cells.Add(getCell(book.pubDate));
+                        tableRow.Cells.Add(getCell(book.price.ToString()));
+                        tableRow.Cells.Add(getCell(book.reviews.ToString()));
+                        tableRow.Cells.Add(getCell(book.category));
 
-			foreach(Book book in DatabaseInstance.viewBooks())
-			{
-				TableRow tableRow = new TableRow();
-				TableCell isbnCell = new TableCell();
-				Paragraph isbnParagraph = new Paragraph();
-				Run isbnRun = new Run();
-				isbnRun.Text = book.isbnNum;
-                isbnParagraph.Inlines.Add(isbnRun);
-                isbnCell.Blocks.Add(isbnParagraph);
-				tableRow.Cells.Add(isbnCell);
+                        tblRow.Rows.Add(tableRow);
+                    }
+                    break;
+                case "title":
+                    foreach (Book book in DatabaseInstance.browseBooksByTitle())
+                    {
+                        TableRow tableRow = new TableRow();
+                        tableRow.Cells.Add(getCell(book.isbnNum));
+                        tableRow.Cells.Add(getCell(book.title));
+                        tableRow.Cells.Add(getCell(book.pubDate));
+                        tableRow.Cells.Add(getCell(book.price.ToString()));
+                        tableRow.Cells.Add(getCell(book.reviews.ToString()));
+                        tableRow.Cells.Add(getCell(book.category));
 
-                TableCell titleCell = new TableCell();
-                Paragraph titleParagraph = new Paragraph();
-                Run titleRun = new Run();
-                titleRun.Text = book.title;
-                titleParagraph.Inlines.Add(titleRun);
-                titleCell.Blocks.Add(titleParagraph);
-                tableRow.Cells.Add(titleCell);
+                        tblRow.Rows.Add(tableRow);
+                    }
+                    break;
+                case "pubDate":
+                    foreach (Book book in DatabaseInstance.browseBooksByPubDate())
+                    {
+                        TableRow tableRow = new TableRow();
+                        tableRow.Cells.Add(getCell(book.isbnNum));
+                        tableRow.Cells.Add(getCell(book.title));
+                        tableRow.Cells.Add(getCell(book.pubDate));
+                        tableRow.Cells.Add(getCell(book.price.ToString()));
+                        tableRow.Cells.Add(getCell(book.reviews.ToString()));
+                        tableRow.Cells.Add(getCell(book.category));
 
-                TableCell pubDateCell = new TableCell();
-                Paragraph pubDateParagraph = new Paragraph();
-                Run pubDateRun = new Run();
-                pubDateRun.Text = book.pubDate;
-                pubDateParagraph.Inlines.Add(pubDateRun);
-                pubDateCell.Blocks.Add(pubDateParagraph);
-                tableRow.Cells.Add(pubDateCell);
+                        tblRow.Rows.Add(tableRow);
+                    }
+                    break;
+                case "reviews":
+                    foreach (Book book in DatabaseInstance.browseBooksByReviews())
+                    {
+                        TableRow tableRow = new TableRow();
+                        tableRow.Cells.Add(getCell(book.isbnNum));
+                        tableRow.Cells.Add(getCell(book.title));
+                        tableRow.Cells.Add(getCell(book.pubDate));
+                        tableRow.Cells.Add(getCell(book.price.ToString()));
+                        tableRow.Cells.Add(getCell(book.reviews.ToString()));
+                        tableRow.Cells.Add(getCell(book.category));
 
-                TableCell priceCell = new TableCell();
-                Paragraph priceParagraph = new Paragraph();
-                Run priceRun = new Run();
-                priceRun.Text = book.price.ToString();
-                priceParagraph.Inlines.Add(priceRun);
-                priceCell.Blocks.Add(priceParagraph);
-                tableRow.Cells.Add(priceCell);
+                        tblRow.Rows.Add(tableRow);
+                    }
+                    break;
+                default:
+                    foreach (Book book in DatabaseInstance.viewBooks())
+                    {
+                        TableRow tableRow = new TableRow();
+                        tableRow.Cells.Add(getCell(book.isbnNum));
+                        tableRow.Cells.Add(getCell(book.title));
+                        tableRow.Cells.Add(getCell(book.pubDate));
+                        tableRow.Cells.Add(getCell(book.price.ToString()));
+                        tableRow.Cells.Add(getCell(book.reviews.ToString()));
+                        tableRow.Cells.Add(getCell(book.category));
 
-                TableCell reviewsCell = new TableCell();
-                Paragraph reviewsParagraph = new Paragraph();
-                Run reviewsRun = new Run();
-                reviewsRun.Text = book.reviews.ToString();
-                reviewsParagraph.Inlines.Add(reviewsRun);
-                reviewsCell.Blocks.Add(reviewsParagraph);
-                tableRow.Cells.Add(reviewsCell);
-
-                tblRow.Rows.Add(tableRow);
+                        tblRow.Rows.Add(tableRow);
+                    }
+                    break;
             }
             if (BlazorBookStore1.Customer.customerID == -1)
             {
@@ -84,7 +112,17 @@ namespace BookStore_James_Brewster
                 hideAdminButtons();
             }
         }
+        private TableCell getCell(string value)
+        {
+            TableCell isbnCell = new TableCell();
+            Paragraph isbnParagraph = new Paragraph();
+            Run isbnRun = new Run();
+            isbnRun.Text = value;
+            isbnParagraph.Inlines.Add(isbnRun);
+            isbnCell.Blocks.Add(isbnParagraph);
 
+            return isbnCell;
+        }
         private void hideLoggedInButtons()
         {
             btnLogin.Visibility = Visibility.Hidden;

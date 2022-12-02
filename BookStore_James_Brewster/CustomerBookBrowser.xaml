@@ -50,7 +50,7 @@
                             <TableRow>
                                 <TableCell>
                                     <BlockUIContainer>
-                                        <ComboBox Name="ComboBox2" Text="Search" Width="200" Height="30" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,10,0,0">
+                                        <ComboBox Name="cmbSearchBy" Text="Search" Width="200" Height="30" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,10,0,0">
                                             <ComboBoxItem>
                                                 
                                             </ComboBoxItem>
@@ -82,6 +82,9 @@
                                 </TableCell>
                                 <TableCell>
                                     <Paragraph>Reviews</Paragraph>
+                                </TableCell>
+                                <TableCell>
+                                    <Paragraph>Category</Paragraph>
                                 </TableCell>
                             </TableRow>
                         </TableRowGroup>

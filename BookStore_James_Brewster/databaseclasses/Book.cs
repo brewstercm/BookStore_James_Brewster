@@ -14,8 +14,9 @@ namespace BlazorBookStore1
         public decimal price { get; set; }
         public decimal reviews { get; set; }
         public int supplierID { get; set; }
+        public string category { get; set; }
 
-        public Book(string isbnNum, string title, string pubDate, decimal price, decimal reviews, int supplierID)
+        public Book(string isbnNum, string title, string pubDate, decimal price, decimal reviews, int supplierID, string category)
         {
             this.isbnNum = isbnNum;
             this.title = title;
@@ -23,6 +24,7 @@ namespace BlazorBookStore1
             this.price = price;
             this.reviews = reviews;
             this.supplierID = supplierID;
+            this.category = category;
         }
     }
 }
