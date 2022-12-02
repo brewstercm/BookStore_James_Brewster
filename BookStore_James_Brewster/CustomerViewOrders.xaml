@@ -73,7 +73,7 @@
             <Label HorizontalAlignment="Center"></Label>
             <Button x:Name="btnEditOrderItems" Width="150" Background="Blue" Foreground="White" Height="30" Click="btnEditOrder_Click">Edit Order Items</Button>
             <Label HorizontalAlignment="Center"></Label>
-            <Button x:Name="btnPlaceOrder" Width="150" Background="Green" Foreground="White" Height="30" Click="btnEditOrder_Click">Place Order</Button>
+            <Button x:Name="btnPlaceOrder" Width="150" Background="Green" Foreground="White" Height="30" Click="btnPlaceOrder_Click">Place Order</Button>
             <Label HorizontalAlignment="Center"></Label>
             <Label x:Name="lblMessage" HorizontalAlignment="Center" Visibility="Hidden"></Label>
         </StackPanel>

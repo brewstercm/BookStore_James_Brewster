@@ -241,6 +241,18 @@ namespace BlazorBookStore1
                 }
             }
         }
+        public static void placeOrder(int orderID)
+        {
+            string query = $"UPDATE dbo.Orders SET isPlaced=1 WHERE orderID={orderID}";
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+                using(SqlCommand command = new SqlCommand(query, conn))
+                {
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
 
         public static void UpdateAccount(int customerID, string fName, string lName, string address, string email, string phone, string password)
         {

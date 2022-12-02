@@ -201,6 +201,9 @@ namespace BookStore_James_Brewster
         private void btnDeleteOrderItem_Click(object sender, RoutedEventArgs e) 
         {
             DatabaseInstance.deleteOrderItems(o.orderID, Int32.Parse(txtItemNum.Text.Trim()));
+            CustomerViewOrders cvo = new CustomerViewOrders();
+            cvo.Show();
+            this.Close();
         }
     }
 }

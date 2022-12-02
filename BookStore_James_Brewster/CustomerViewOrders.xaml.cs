@@ -28,31 +28,17 @@ namespace BookStore_James_Brewster
             foreach (Order o in DatabaseInstance.viewCustomerOrders(BlazorBookStore1.Customer.customerID))
             {
                 TableRow tableRow = new TableRow();
-
-                TableCell orderIDCell = new TableCell();
-                Paragraph orderIDParagraph = new Paragraph();
-                Run orderIDRun = new Run();
-                orderIDRun.Text = o.orderID.ToString();
-                orderIDParagraph.Inlines.Add(orderIDRun);
-                orderIDCell.Blocks.Add(orderIDParagraph);
-                tableRow.Cells.Add(orderIDCell);
-
-                TableCell orderDateCell = new TableCell();
-                Paragraph orderDateParagraph = new Paragraph();
-                Run orderDateRun = new Run();
-                orderDateRun.Text = o.orderDate;
-                orderDateParagraph.Inlines.Add(orderDateRun);
-                orderDateCell.Blocks.Add(orderDateParagraph);
-                tableRow.Cells.Add(orderDateCell);
-
-                TableCell orderValCell = new TableCell();
-                Paragraph orderValParagraph = new Paragraph();
-                Run orderValRun = new Run();
-                orderValRun.Text = o.orderVal.ToString();
-                orderValParagraph.Inlines.Add(orderValRun);
-                orderValCell.Blocks.Add(orderValParagraph);
-                tableRow.Cells.Add(orderValCell);
-
+                tableRow.Cells.Add(getCell(o.orderID.ToString()));
+                tableRow.Cells.Add(getCell(o.orderDate));
+                tableRow.Cells.Add(getCell(o.orderVal.ToString()));
+                if(o.isPlaced == 1)
+                {
+                    tableRow.Cells.Add(getCell("Yes"));
+                }
+                else
+                {
+                    tableRow.Cells.Add(getCell("No"));
+                }
                 tblRow.Rows.Add(tableRow);
             }
 
@@ -69,7 +55,16 @@ namespace BookStore_James_Brewster
                 hideAdminButtons();
             }
         }
-
+        private TableCell getCell(string info)
+        {
+            TableCell phoneCell = new TableCell();
+            Paragraph phoneParagraph = new Paragraph();
+            Run phoneRun = new Run();
+            phoneRun.Text = info;
+            phoneParagraph.Inlines.Add(phoneRun);
+            phoneCell.Blocks.Add(phoneParagraph);
+            return phoneCell;
+        }
         private void hideLoggedInButtons()
         {
             btnLogin.Visibility = Visibility.Hidden;
@@ -212,9 +207,17 @@ namespace BookStore_James_Brewster
 		{
             if (Int32.TryParse(txtOrderNum.Text.Trim(), out int result))
             {
-                Customer a = new Customer(DatabaseInstance.getOrder(Int32.Parse(txtOrderNum.Text.Trim())));
-                a.Show();
-                this.Close();
+                Order o = DatabaseInstance.getOrder(Int32.Parse(txtOrderNum.Text.Trim()));
+                if(o.isPlaced == 1)
+                {
+                    lblMessage.Visibility = Visibility.Visible;
+                    lblMessage.Content = "Can't edit an order that's been placed.";
+                }else
+                {
+                    Customer a = new Customer(DatabaseInstance.getOrder(Int32.Parse(txtOrderNum.Text.Trim())));
+                    a.Show();
+                    this.Close();
+                }
             }
             else {
                 lblMessage.Visibility = Visibility.Visible;
@@ -224,10 +227,55 @@ namespace BookStore_James_Brewster
 
 		private void btnDeleteOrder_Click(object sender, RoutedEventArgs e)
 		{
-            DatabaseInstance.deleteOrder(Int32.Parse(txtOrderNum.Text.Trim()));
-            CustomerViewOrders cv = new CustomerViewOrders();
-            cv.Show();
-            this.Close();
+            if(Int32.TryParse(txtOrderNum.Text.Trim(), out int result))
+            {
+                Order o = DatabaseInstance.getOrder(Int32.Parse(txtOrderNum.Text.Trim()));
+                if (o.isPlaced == 1)
+                {
+                    lblMessage.Visibility = Visibility.Visible;
+                    lblMessage.Content = "Can't edit an order that's been placed.";
+                }
+                else
+                {
+                    DatabaseInstance.deleteOrder(Int32.Parse(txtOrderNum.Text.Trim()));
+                    CustomerViewOrders cv = new CustomerViewOrders();
+                    cv.Show();
+                    this.Close();
+                }
+            }
+            
+        }
+
+        private void btnPlaceOrder_Click(object sender, RoutedEventArgs e)
+        {
+            if(Int32.TryParse(txtOrderNum.Text.Trim(), out int result))
+            {
+                Order o = DatabaseInstance.getOrder(Int32.Parse(txtOrderNum.Text.Trim()));
+                if(o == null)
+                {
+                    lblMessage.Visibility = Visibility.Visible;
+                    lblMessage.Content = "Error Placing Order...";
+                } else
+                {
+                    if (o.isPlaced == 1)
+                    {
+                        lblMessage.Visibility = Visibility.Visible;
+                        lblMessage.Content = "Can't place an order that's been placed... duh";
+                    }
+                    else
+                    {
+                        DatabaseInstance.placeOrder(Int32.Parse(txtOrderNum.Text.Trim()));
+                        CustomerViewOrders cvo = new CustomerViewOrders();
+                        cvo.Show();
+                        this.Close();
+                    }
+                }
+            }
+            else
+            {
+                lblMessage.Visibility = Visibility.Visible;
+                lblMessage.Content = "Error Placing Order...";
+            }
         }
     }
 }
