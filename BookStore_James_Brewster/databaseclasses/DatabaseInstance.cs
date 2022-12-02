@@ -342,8 +342,9 @@ namespace BlazorBookStore1
                         string orderDate = reader.GetString(reader.GetOrdinal("orderDate"));
                         decimal orderVal = reader.GetDecimal(reader.GetOrdinal("orderVal"));
                         int customerID = reader.GetInt32(reader.GetOrdinal("customerID"));
+                        int isPlaced = reader.GetInt32(reader.GetOrdinal("isPlaced"));
 
-                        Order newOrder = new Order(orderID, orderDate, orderVal, customerID);
+                        Order newOrder = new Order(orderID, orderDate, orderVal, customerID, isPlaced);
                         orders.Add(newOrder);
                     }
                 }
@@ -366,8 +367,9 @@ namespace BlazorBookStore1
                         int orderID = reader.GetInt32(reader.GetOrdinal("orderID"));
                         string orderDate = reader.GetString(reader.GetOrdinal("orderDate"));
                         decimal orderVal = reader.GetDecimal(reader.GetOrdinal("orderVal"));
+                        int isPlaced = reader.GetInt32(reader.GetOrdinal("isPlaced"));
 
-                        Order newOrder = new Order(orderID, orderDate, orderVal, customerID);
+                        Order newOrder = new Order(orderID, orderDate, orderVal, customerID, isPlaced);
                         orders.Add(newOrder);
                     }
                 }
@@ -390,8 +392,9 @@ namespace BlazorBookStore1
                         string orderDate = reader.GetString(reader.GetOrdinal("orderDate"));
                         decimal orderVal = reader.GetDecimal(reader.GetOrdinal("orderVal"));
                         int customerID = reader.GetInt32(reader.GetOrdinal("customerID"));
+                        int isPlaced = reader.GetInt32(reader.GetOrdinal("isPlaced"));
 
-                        order = new Order(orderID, orderDate, orderVal, customerID);
+                        order = new Order(orderID, orderDate, orderVal, customerID, isPlaced);
                     }
                 }
             }
