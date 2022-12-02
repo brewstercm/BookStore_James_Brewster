@@ -37,7 +37,7 @@ namespace BookStore_James_Brewster
 
 		private void btnAddBook_Click(object sender, RoutedEventArgs e)
 		{
-			AdminAddSupplierRep a = new AdminAddSupplierRep();
+			AdminAddSupplierRep a = new AdminAddSupplierRep(s);
 			a.Show();
 			this.Close();
 		}

@@ -21,8 +21,10 @@ namespace BookStore_James_Brewster
 	/// </summary>
 	public partial class AdminAddSupplierRep : Window
 	{
-		public AdminAddSupplierRep()
+		public Supplier s;
+		public AdminAddSupplierRep(Supplier s)
 		{
+			this.s = s;
 			InitializeComponent();
 		}
 
@@ -35,7 +37,7 @@ namespace BookStore_James_Brewster
 		}
 		private void btnAddSupplierRep_Click(object sender, RoutedEventArgs e)
 		{
-			DatabaseInstance.addSupplierRep(txtfName.Text.Trim(), txtlName.Text.Trim(), txtWorkNum.Text.Trim(), txtCellNum.Text.Trim(), txtEmail.Text.Trim(), int.Parse(txtSupplierID.Text.Trim()));
+			DatabaseInstance.addSupplierRep(txtfName.Text.Trim(), txtlName.Text.Trim(), txtWorkNum.Text.Trim(), txtCellNum.Text.Trim(), txtEmail.Text.Trim(), );
 		}
 
 		private void Button_Click(object sender, RoutedEventArgs e)
