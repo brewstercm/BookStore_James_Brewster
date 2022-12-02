@@ -38,6 +38,32 @@
         <StackPanel Grid.Column="1" Background="LightGray">
             <FlowDocumentScrollViewer>
                 <FlowDocument>
+                    <Table>
+                        <TableRowGroup>
+                            <TableRow>
+                                <TableCell>
+                                    <BlockUIContainer>
+                                        <Label FontSize="18" HorizontalAlignment="Left" Margin="-2,0,0,0">Search By:</Label>
+                                    </BlockUIContainer>
+                                </TableCell>
+                            </TableRow>
+                            <TableRow>
+                                <TableCell>
+                                    <BlockUIContainer>
+                                        <ComboBox Name="ComboBox2" Text="Search" Width="200" Height="30" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,10,0,0">
+                                            <ComboBoxItem>
+                                                
+                                            </ComboBoxItem>
+                                        </ComboBox>
+                                    </BlockUIContainer>
+                                </TableCell>
+                            </TableRow>
+                        </TableRowGroup>
+                    </Table>
+                </FlowDocument>
+            </FlowDocumentScrollViewer>
+            <FlowDocumentScrollViewer>
+                <FlowDocument>
                     <Paragraph FontSize="14pt">Book Browser: (c)</Paragraph>
                     <Table>
                         <TableRowGroup x:Name="tblRow" Paragraph.TextAlignment="left">
