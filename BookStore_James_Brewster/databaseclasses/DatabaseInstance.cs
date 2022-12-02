@@ -429,7 +429,7 @@ namespace BlazorBookStore1
         public static List<Book> viewBooks()
         {
             List<Book> books = new List<Book>();
-            string query = $"SELECT * FROM dbo.Books";
+            string query = $"SELECT * FROM dbo.Books JOIN dbo.BookCategories ON dbo.Books.isbnNum = dbo.BookCategories.isbnNum JOIN dbo.Categories ON dbo.BookCategories.catCode = dbo.BookCategories.catCode";
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 conn.Open();
@@ -445,8 +445,8 @@ namespace BlazorBookStore1
                             decimal price = reader.GetDecimal(reader.GetOrdinal("price"));
                             decimal reviews = reader.GetDecimal(reader.GetOrdinal("reviews"));
                             int supplierID = reader.GetInt32(reader.GetOrdinal("supplierID"));
-
-                            Book newBook = new Book(isbnNum, title, pubDate, price, reviews, supplierID);
+                            string name = reader.GetString(reader.GetOrdinal("catDesc"));
+                            Book newBook = new Book(isbnNum, title, pubDate, price, reviews, supplierID, name);
                             books.Add(newBook);
                         }
                     }
@@ -457,7 +457,7 @@ namespace BlazorBookStore1
         public static List<Book> searchBooks(string searchTerm)
         {
             List<Book> books = new List<Book>();
-            string query = $"SELECT * FROM dbo.Books WHERE isbnNum like '%{searchTerm}%' or title like '%{searchTerm}%'";
+            string query = $"SELECT * FROM dbo.Books JOIN dbo.BookCategories ON dbo.Books.isbnNum = dbo.BookCategories.isbnNum JOIN dbo.Categories ON dbo.BookCategories.catCode = dbo.BookCategories.catCode WHERE dbo.Books.isbnNum like '%{searchTerm}%' or title like '%{searchTerm}%'";
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 SqlCommand command = new SqlCommand(query, conn);
@@ -472,8 +472,8 @@ namespace BlazorBookStore1
                         decimal price = reader.GetDecimal(reader.GetOrdinal("price"));
                         decimal reviews = reader.GetDecimal(reader.GetOrdinal("reviews"));
                         int supplierID = reader.GetInt32(reader.GetOrdinal("supplierID"));
-
-                        Book newBook = new Book(isbnNum, title, pubDate, price, reviews, supplierID);
+                        string name = reader.GetString(reader.GetOrdinal("catDesc"));
+                        Book newBook = new Book(isbnNum, title, pubDate, price, reviews, supplierID, name);
                         books.Add(newBook);
                     }
                 }
@@ -484,7 +484,7 @@ namespace BlazorBookStore1
         public static List<Book> browseBooksByTitle()
         {
             List<Book> books = new List<Book>();
-            string query = $"SELECT * FROM dbo.Books order by title desc";
+            string query = $"SELECT * FROM dbo.Books JOIN dbo.BookCategories ON dbo.Books.isbnNum = dbo.BookCategories.isbnNum JOIN dbo.Categories ON dbo.BookCategories.catCode = dbo.BookCategories.catCode order by title asc";
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 SqlCommand command = new SqlCommand(query, conn);
@@ -499,8 +499,90 @@ namespace BlazorBookStore1
                         decimal price = reader.GetDecimal(reader.GetOrdinal("price"));
                         decimal reviews = reader.GetDecimal(reader.GetOrdinal("reviews"));
                         int supplierID = reader.GetInt32(reader.GetOrdinal("supplierID"));
+                        string name = reader.GetString(reader.GetOrdinal("catDesc"));
 
-                        Book newBook = new Book(isbnNum, title, pubDate, price, reviews, supplierID);
+                        Book newBook = new Book(isbnNum, title, pubDate, price, reviews, supplierID, name);
+                        books.Add(newBook);
+                    }
+                }
+            }
+            return books;
+        }
+        public static List<Book> browseBooksByPubDate()
+        {
+            List<Book> books = new List<Book>();
+            string query = $"SELECT * FROM dbo.Books JOIN dbo.BookCategories ON dbo.Books.isbnNum = dbo.BookCategories.isbnNum JOIN dbo.Categories ON dbo.BookCategories.catCode = dbo.BookCategories.catCode order by pubDate asc";
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                SqlCommand command = new SqlCommand(query, conn);
+                conn.Open();
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        string isbnNum = reader.GetString(reader.GetOrdinal("isbnNum"));
+                        string title = reader.GetString(reader.GetOrdinal("title"));
+                        string pubDate = reader.GetString(reader.GetOrdinal("pubDate"));
+                        decimal price = reader.GetDecimal(reader.GetOrdinal("price"));
+                        decimal reviews = reader.GetDecimal(reader.GetOrdinal("reviews"));
+                        int supplierID = reader.GetInt32(reader.GetOrdinal("supplierID"));
+                        string name = reader.GetString(reader.GetOrdinal("catDesc"));
+
+                        Book newBook = new Book(isbnNum, title, pubDate, price, reviews, supplierID, name);
+                        books.Add(newBook);
+                    }
+                }
+            }
+            return books;
+        }
+        public static List<Book> browseBooksByReviews()
+        {
+            List<Book> books = new List<Book>();
+            string query = $"SELECT * FROM dbo.Books JOIN dbo.BookCategories ON dbo.Books.isbnNum = dbo.BookCategories.isbnNum JOIN dbo.Categories ON dbo.BookCategories.catCode = dbo.BookCategories.catCode order by reviews desc";
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                SqlCommand command = new SqlCommand(query, conn);
+                conn.Open();
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        string isbnNum = reader.GetString(reader.GetOrdinal("isbnNum"));
+                        string title = reader.GetString(reader.GetOrdinal("title"));
+                        string pubDate = reader.GetString(reader.GetOrdinal("pubDate"));
+                        decimal price = reader.GetDecimal(reader.GetOrdinal("price"));
+                        decimal reviews = reader.GetDecimal(reader.GetOrdinal("reviews"));
+                        int supplierID = reader.GetInt32(reader.GetOrdinal("supplierID"));
+                        string name = reader.GetString(reader.GetOrdinal("catDesc"));
+
+                        Book newBook = new Book(isbnNum, title, pubDate, price, reviews, supplierID, name);
+                        books.Add(newBook);
+                    }
+                }
+            }
+            return books;
+        }
+        public static List<Book> browseBooksByCategory()
+        {
+            List<Book> books = new List<Book>();
+            string query = $"SELECT * FROM dbo.Books JOIN dbo.BookCategories ON dbo.Books.isbnNum = dbo.BookCategories.isbnNum JOIN dbo.Categories ON dbo.BookCategories.catCode = dbo.BookCategories.catCode order by dbo.Categories.catDesc asc";
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                SqlCommand command = new SqlCommand(query, conn);
+                conn.Open();
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        string isbnNum = reader.GetString(reader.GetOrdinal("isbnNum"));
+                        string title = reader.GetString(reader.GetOrdinal("title"));
+                        string pubDate = reader.GetString(reader.GetOrdinal("pubDate"));
+                        decimal price = reader.GetDecimal(reader.GetOrdinal("price"));
+                        decimal reviews = reader.GetDecimal(reader.GetOrdinal("reviews"));
+                        int supplierID = reader.GetInt32(reader.GetOrdinal("supplierID"));
+                        string name = reader.GetString(reader.GetOrdinal("catDesc"));
+
+                        Book newBook = new Book(isbnNum, title, pubDate, price, reviews, supplierID, name);
                         books.Add(newBook);
                     }
                 }
@@ -511,7 +593,7 @@ namespace BlazorBookStore1
         public static Book getBook(string isbnNum)
         {
             Book book = null;
-            string query = $"SELECT * FROM dbo.Books WHERE isbnNum='{isbnNum}'";
+            string query = $"SELECT * FROM dbo.Books JOIN dbo.BookCategories ON dbo.Books.isbnNum = dbo.BookCategories.isbnNum JOIN dbo.Categories ON dbo.BookCategories.catCode = dbo.BookCategories.catCode WHERE dbo.Books.isbnNum='{isbnNum}'";
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 SqlCommand command = new SqlCommand(query, conn);
@@ -525,8 +607,8 @@ namespace BlazorBookStore1
                         decimal price = reader.GetDecimal(reader.GetOrdinal("price"));
                         decimal reviews = reader.GetDecimal(reader.GetOrdinal("reviews"));
                         int supplierID = reader.GetInt32(reader.GetOrdinal("supplierID"));
-
-                        book = new Book(isbnNum, title, pubDate, price, reviews, supplierID);
+                        string name = reader.GetString(reader.GetOrdinal("catDesc"));
+                        book = new Book(isbnNum, title, pubDate, price, reviews, supplierID, name);
                     }
                 }
             }
