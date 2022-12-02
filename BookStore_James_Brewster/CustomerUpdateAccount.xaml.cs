@@ -21,15 +21,17 @@ namespace BookStore_James_Brewster
 	/// </summary>
 	public partial class CustomerUpdateAccount : Window
 	{
+        public CustomerDetails cd { get; set; }
 		public CustomerUpdateAccount()
 		{
+            this.cd = DatabaseInstance.getCustomer(BlazorBookStore1.Customer.customerID);
 			InitializeComponent();
-            txtfName.Text = BlazorBookStore1.Customer.fName;
-            txtlName.Text = BlazorBookStore1.Customer.lName;
-            txtAddress.Text = BlazorBookStore1.Customer.address;
-            txtEmail.Text = BlazorBookStore1.Customer.email;
-			txtPhone.Text = BlazorBookStore1.Customer.phone;
-			txtPassword.Text = BlazorBookStore1.Customer.password;
+            txtfName.Text = cd.fName;
+            txtlName.Text = cd.lName;
+            txtAddress.Text = cd.address;
+            txtEmail.Text = cd.email;
+			txtPhone.Text = cd.phone;
+			txtPassword.Text = cd.password;
 
             if (BlazorBookStore1.Customer.customerID == -1)
             {
@@ -186,7 +188,7 @@ namespace BookStore_James_Brewster
         private void btnDeleteAccount_Click(object sender, RoutedEventArgs e)
         {
             DatabaseInstance.deleteCustomer(BlazorBookStore1.Customer.customerID);
-            MainWindow mw = new MainWindow();
+            CreateAccount mw = new CreateAccount();
             mw.Show();
             this.Close();
         }
