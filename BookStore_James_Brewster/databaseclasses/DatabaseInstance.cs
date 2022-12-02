@@ -17,7 +17,7 @@ namespace BlazorBookStore1
     /// </summary>
     public static class DatabaseInstance
     {
-        private static string connectionString = @"Server=(LocalDB)\MSSQLLocalDB;Integrated Security=true;AttachDbFileName=C:\Users\brade\source\repos\BookStore_James_Brewster\BookStore_James_Brewster\database\BookStoreDB.mdf;Connection Lifetime=120;MultipleActiveResultSets=true;";
+        private static string connectionString = @"Server=(LocalDB)\MSSQLLocalDB;Integrated Security=true;AttachDbFileName=C:\Users\Legend\source\repos\BookStore_James_Brewster\BookStore_James_Brewster\database\BookStoreDB.mdf;Connection Lifetime=120;MultipleActiveResultSets=true;";
         public static void createCategory(string catName)
         {
             string query = $"INSERT INTO dbo.Categories VALUES('{catName}')";
@@ -488,18 +488,30 @@ namespace BlazorBookStore1
             string query = $"UPDATE dbo.Books SET isbnNum='{isbnNum}', title='{title}', pubDate='{pubDate}', price={price}, reviews={reviews}, supplierID={supplierID} WHERE isbnNum='{isbnNum}'";
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                SqlCommand command = new SqlCommand(query, conn);
                 conn.Open();
-                command.ExecuteNonQuery();
+                using (SqlCommand command = new SqlCommand(query, conn))
+                {
+                    command.ExecuteNonQuery();
+                }
             }
         }
 
-        public static void addBook(string isbnNum, string title, string pubDate, decimal price, decimal reviews, int supplierID)
+        public static void addBook(string isbnNum, string title, string pubDate, decimal price, decimal reviews, int supplierID, int categoryID, int AuthorID)
         {
             string query = $"INSERT INTO dbo.Books VALUES('{isbnNum}', '{title}', '{pubDate}', {price}, {reviews}, {supplierID})";
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 conn.Open();
+                using (SqlCommand command = new SqlCommand(query, conn))
+                {
+                    command.ExecuteNonQuery();
+                }
+                query = $"INSERT INTO dbo.BookCategories VALUES({isbnNum}, {categoryID})";
+                using (SqlCommand command = new SqlCommand(query, conn))
+                {
+                    command.ExecuteNonQuery();
+                }
+                query = $"INSERT INTO dbo.BookAuthor VALUES({AuthorID}, {isbnNum})";
                 using (SqlCommand command = new SqlCommand(query, conn))
                 {
                     command.ExecuteNonQuery();
