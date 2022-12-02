@@ -70,11 +70,11 @@ namespace BookStore_James_Brewster
 
         private void btnAddBook_Click(object sender, RoutedEventArgs e)
 		{
-			if(!txtISBN.Text.Trim().Equals(string.Empty) && !txtTitle.Text.Trim().Equals(string.Empty) && !txtPubDate.Text.Trim().Equals(string.Empty) && !txtPrice.Text.Trim().Equals(string.Empty) && !txtReviews.Text.Trim().Equals(string.Empty) && 
+			if (!txtISBN.Text.Trim().Equals(string.Empty) && !txtTitle.Text.Trim().Equals(string.Empty) && !txtPubDate.Text.Trim().Equals(string.Empty) && !txtPrice.Text.Trim().Equals(string.Empty) && !txtReviews.Text.Trim().Equals(string.Empty) &&
 				!txtSupplierID.Text.Trim().Equals(string.Empty) && Int32.TryParse(txtSupplierID.Text.Trim(), out int result) && !txtCategoryID.Text.Trim().Equals(string.Empty) && Int32.TryParse(txtCategoryID.Text.Trim(), out int result2) &&
 				!txtAuthorID.Text.Trim().Equals(string.Empty) && Int32.TryParse(txtAuthorID.Text.Trim(), out int result3))
 			{
-                DatabaseInstance.addBook(txtISBN.Text.Trim(), txtTitle.Text.Trim(), txtPubDate.Text.Trim(), decimal.Parse(txtPrice.Text.Trim()), decimal.Parse(txtReviews.Text.Trim()), 
+				DatabaseInstance.addBook(txtISBN.Text.Trim(), txtTitle.Text.Trim(), txtPubDate.Text.Trim(), decimal.Parse(txtPrice.Text.Trim()), decimal.Parse(txtReviews.Text.Trim()),
 					Int32.Parse(txtSupplierID.Text.Trim()), Int32.Parse(txtCategoryID.Text.Trim()), Int32.Parse(txtAuthorID.Text.Trim()));
 				txtISBN.Text = string.Empty;
 				txtTitle.Text = string.Empty;
@@ -88,7 +88,11 @@ namespace BookStore_James_Brewster
 				AdminBookBrowser abb = new AdminBookBrowser();
 				abb.Show();
 				this.Close();
-            }
+			}
+			else {
+				lblMessage.Visibility = Visibility.Visible;
+				lblMessage.Content = "Cannot Add Book";
+			}
         }
 		private void Button_Click(object sender, RoutedEventArgs e)
 		{
@@ -200,7 +204,10 @@ namespace BookStore_James_Brewster
 
 		private void btnConfirmEditBook_Click(object sender, RoutedEventArgs e)
 		{
-			
+			DatabaseInstance.editBook(txtISBN.Text.Trim(), txtTitle.Text.Trim(), txtPubDate.Text.Trim(), decimal.Parse(txtPrice.Text.Trim()), decimal.Parse(txtReviews.Text.Trim()), int.Parse(txtSupplierID.Text.Trim()));
+			AdminBookBrowser abb = new AdminBookBrowser();
+			abb.Show();
+			this.Close();
         }
     }
 }

@@ -108,6 +108,7 @@
 
             <Label Width="150" HorizontalAlignment="Center"></Label>
             <Button x:Name="btnAddBook" Width="150" Background="Green" Foreground="White" Click="btnAddBook_Click" Height="30">Add Book</Button>
+            <Label x:Name="lblMessage" Width="150" HorizontalAlignment="Center" Foreground="Red" Visibility="Hidden"></Label>
             
         </StackPanel>
     </Grid>
