@@ -193,6 +193,13 @@ namespace BookStore_James_Brewster
 		{
             
         }
-    }
+
+		private void btnViewSupplierReps_Click(object sender, RoutedEventArgs e)
+		{
+            AdminViewSupplierReps avsr = new AdminViewSupplierReps(s);
+            avsr.Show();
+            this.Close();
+		}
+	}
 	
 }

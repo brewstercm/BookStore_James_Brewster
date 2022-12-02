@@ -20,14 +20,18 @@ namespace BookStore_James_Brewster
 	/// </summary>
 	public partial class AdminViewSupplierReps : Window
 	{
-		public AdminViewSupplierReps()
+		private Supplier s;
+		public AdminViewSupplierReps(Supplier s)
 		{
 			InitializeComponent();
+			this.s = s; 
 		}
 
 		private void btnViewSupplierRep_Click(object sender, RoutedEventArgs e)
 		{
-		
+			AdminEditSupplierRep a = new AdminEditSupplierRep();
+			a.Show();
+			this.Close();
 		}
 
 		private void btnAddBook_Click(object sender, RoutedEventArgs e)

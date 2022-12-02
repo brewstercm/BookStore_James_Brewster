@@ -32,7 +32,7 @@ namespace BookStore_James_Brewster
 			mw.Show();
 			this.Close();
 		}
-		private void btnAddBook_Click(object sender, RoutedEventArgs e)
+		private void btnAddSupplierRep_Click(object sender, RoutedEventArgs e)
 		{
 			DatabaseInstance.addSupplierRep(txtfName.Text, txtlName.Text, txtWorkNum.Text, txtCellNum.Text, txtEmail.Text, int.Parse(txtSupplierID.Text));
 		}
