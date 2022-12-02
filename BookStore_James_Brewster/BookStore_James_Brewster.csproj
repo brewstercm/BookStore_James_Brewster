@@ -242,6 +242,7 @@
     <Compile Include="databaseclasses\Author.cs" />
     <Compile Include="databaseclasses\AuthorDetails.cs" />
     <Compile Include="databaseclasses\Book.cs" />
+    <Compile Include="databaseclasses\Category.cs" />
     <Compile Include="databaseclasses\Customer.cs" />
     <Compile Include="databaseclasses\CustomerDetails.cs" />
     <Compile Include="databaseclasses\DatabaseInstance.cs" />
@@ -302,6 +303,10 @@
   <ItemGroup>
     <Content Include="database\BookStoreDB.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="database\BookStoreDB_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>BookStoreDB.mdf</DependentUpon>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

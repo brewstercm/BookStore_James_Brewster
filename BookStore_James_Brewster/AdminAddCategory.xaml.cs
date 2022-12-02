@@ -24,6 +24,14 @@ namespace BookStore_James_Brewster
 		public AdminAddCategory()
 		{
 			InitializeComponent();
+			foreach(Category c in DatabaseInstance.viewCategories())
+			{
+                TableRow tableRow = new TableRow();
+				tableRow.Cells.Add(getCell(c.catID.ToString()));
+				tableRow.Cells.Add(getCell(c.name));
+				tblRow.Rows.Add(tableRow);
+            }
+
             if (BlazorBookStore1.Customer.customerID == -1)
             {
                 hideProfileButtons();
@@ -36,6 +44,17 @@ namespace BookStore_James_Brewster
             {
                 hideAdminButtons();
             }
+        }
+        private TableCell getCell(string value)
+        {
+            TableCell isbnCell = new TableCell();
+            Paragraph isbnParagraph = new Paragraph();
+            Run isbnRun = new Run();
+            isbnRun.Text = value;
+            isbnParagraph.Inlines.Add(isbnRun);
+            isbnCell.Blocks.Add(isbnParagraph);
+
+            return isbnCell;
         }
 
         private void hideLoggedInButtons()
@@ -76,6 +95,9 @@ namespace BookStore_James_Brewster
 			{
                 DatabaseInstance.createCategory(txtCategoryName.Text.Trim());
             }
+			AdminAddCategory aac = new AdminAddCategory();
+			aac.Show();
+			this.Close();
 		}
 		private void Button_Click(object sender, RoutedEventArgs e)
 		{

@@ -8,6 +8,7 @@ using System.Xml.Linq;
 using System.Collections;
 using System.Windows.Controls;
 using System.Runtime.CompilerServices;
+using System.ComponentModel;
 
 namespace BlazorBookStore1
 {
@@ -17,7 +18,7 @@ namespace BlazorBookStore1
     /// </summary>
     public static class DatabaseInstance
     {
-        private static string connectionString = @"Server=(LocalDB)\MSSQLLocalDB;Integrated Security=true;AttachDbFileName=C:\Users\brade\source\repos\BookStore_James_Brewster\BookStore_James_Brewster\database\BookStoreDB.mdf;Connection Lifetime=120;MultipleActiveResultSets=true;";
+        private static string connectionString = @"Server=(LocalDB)\MSSQLLocalDB;Integrated Security=true;AttachDbFileName=C:\Users\Legen\source\repos\BookStore_James_Brewster\BookStore_James_Brewster\database\BookStoreDB.mdf;Connection Lifetime=120;MultipleActiveResultSets=true;";
         public static void createCategory(string catName)
         {
             string query = $"INSERT INTO dbo.Categories VALUES('{catName}')";
@@ -29,6 +30,29 @@ namespace BlazorBookStore1
                     command.ExecuteNonQuery();
                 }
             }
+        }
+
+        public static List<Category> viewCategories()
+        {
+            List<Category> categories = new List<Category>();
+            string query = $"SELECT * FROM dbo.Categories";
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+                using (SqlCommand command = new SqlCommand(query, conn))
+                {
+                    using(SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            int catCode = reader.GetInt32(reader.GetOrdinal("catCode"));
+                            string name = reader.GetString(reader.GetOrdinal("catDesc"));
+                            categories.Add(new Category(catCode, name));
+                        }
+                    }
+                }
+            }
+            return categories;
         }
         public static void addBookToOrder(Book book, int customerID)
         {
