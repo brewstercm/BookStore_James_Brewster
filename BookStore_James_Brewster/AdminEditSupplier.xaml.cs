@@ -189,7 +189,7 @@ namespace BookStore_James_Brewster
 
 		private void btnConfirmEditSupplier_Click(object sender, RoutedEventArgs e)
 		{
-            DatabaseInstance.editSupplier(s.supplierID, s.name);
+            DatabaseInstance.editSupplier(s.supplierID, txtSupplierName.Text.Trim());
             AdminViewSuppliers avs = new AdminViewSuppliers();
             avs.Show();
             this.Close();
