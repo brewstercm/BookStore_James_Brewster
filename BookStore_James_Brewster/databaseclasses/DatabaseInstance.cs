@@ -365,7 +365,7 @@ namespace BlazorBookStore1
                     {
                         int orderID = reader.GetInt32(reader.GetOrdinal("orderID"));
                         string orderDate = reader.GetString(reader.GetOrdinal("orderDate"));
-                        decimal orderVal = (decimal)reader.GetDecimal(reader.GetOrdinal("orderVal"));
+                        decimal orderVal = reader.GetDecimal(reader.GetOrdinal("orderVal"));
 
                         Order newOrder = new Order(orderID, orderDate, orderVal, customerID);
                         orders.Add(newOrder);
