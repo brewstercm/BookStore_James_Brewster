@@ -199,7 +199,7 @@ namespace BookStore_James_Brewster
 
 		private void btnSubmitAuthorChanges_Click(object sender, RoutedEventArgs e)
 		{
-			DatabaseInstance.editAuthor(author.AuthorID, author.FName, author.LName, author.Gender, author.DOB, author.Address, author.Email, author.Phone);
+			DatabaseInstance.editAuthor(author.AuthorID, txtfName.Text.Trim(), txtlName.Text.Trim(), txtGender.Text.Trim(), txtDOB.Text.Trim(), txtAddress.Text.Trim(), txtAuthorEmail.Text.Trim(), txtAuthorPhone.Text.Trim());
 			AdminViewAuthors a = new AdminViewAuthors();
 			a.Show();
 			this.Close();
@@ -207,7 +207,7 @@ namespace BookStore_James_Brewster
 
 		private void btnDeleteAuthor_Click(object sender, RoutedEventArgs e) 
 		{
-			DatabaseInstance.deleteAuthor(Int32.Parse(txtAuthorID.Text.Trim()));
+			DatabaseInstance.deleteAuthor(author.AuthorID);
 		}
 	}
 }
