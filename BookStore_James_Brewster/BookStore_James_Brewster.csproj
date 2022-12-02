@@ -92,7 +92,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="AdminCreateCategory.xaml">
+    <Page Include="AdminAddCategory.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -183,8 +183,8 @@
     <Compile Include="AdminBookBrowser.xaml.cs">
       <DependentUpon>AdminBookBrowser.xaml</DependentUpon>
     </Compile>
-    <Compile Include="AdminCreateCategory.xaml.cs">
-      <DependentUpon>AdminCreateCategory.xaml</DependentUpon>
+    <Compile Include="AdminAddCategory.xaml.cs">
+      <DependentUpon>AdminAddCategory.xaml</DependentUpon>
     </Compile>
     <Compile Include="AdminEditAuthorData.xaml.cs">
       <DependentUpon>AdminEditAuthorData.xaml</DependentUpon>

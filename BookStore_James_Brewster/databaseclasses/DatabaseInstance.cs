@@ -715,8 +715,8 @@ namespace BlazorBookStore1
 
         public static void addAuthor(int authorID, string fName, string lName, string gender, string DOB, string address, string email, string phone)
         {
-            string query = $"INSERT INTO dbo.Author VALUES('{authorID}', '{fName}', '{lName}', '{gender}', '{DOB}')";
-            string query2 = $"INSERT INTO dbo.AuthorContactDetails VALUES('{authorID}', {address}, '{email}', '{phone}') WHERE authorID={authorID}";
+            string query = $"INSERT INTO dbo.Author VALUES('{fName}', '{lName}', '{gender}', '{DOB}')";
+            string query2 = $"INSERT INTO dbo.AuthorContactDetails VALUES('{address}', '{email}', '{phone}') WHERE authorID={authorID}";
 			using (SqlConnection conn = new SqlConnection(connectionString))
 			{
 				SqlCommand command = new SqlCommand(query, conn);
@@ -729,7 +729,7 @@ namespace BlazorBookStore1
 
         public static void deleteAuthor(int authorID)
         {
-            string query = $"DELETE FROM dbo.Author WHERE authorID='{authorID}'";
+            string query = $"DELETE FROM dbo.Author WHERE authorID={authorID}";
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
 				conn.Open();

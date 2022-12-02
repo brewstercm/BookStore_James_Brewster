@@ -86,7 +86,7 @@ namespace BookStore_James_Brewster
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-            AdminCreateCategory a = new AdminCreateCategory();
+			AdminAddCategory a = new AdminAddCategory();
             a.Show();
             this.Close();
         }

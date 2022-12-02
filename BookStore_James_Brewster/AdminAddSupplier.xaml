@@ -1,11 +1,14 @@
 ﻿<Window x:Class="BookStore_James_Brewster.AdminAddSupplier"
+        WindowStartupLocation="CenterScreen"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BookStore_James_Brewster"
         mc:Ignorable="d"
-        Title="AdminAddSupplier" Height="450" Width="800">
+        d:DesignHeight="450"
+        d:DesignWidth="800"
+        Title="AdminAddSupplier">
     <Grid Background="LightGray">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width=".20*" />
