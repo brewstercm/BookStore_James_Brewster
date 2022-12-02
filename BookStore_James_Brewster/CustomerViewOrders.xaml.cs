@@ -221,5 +221,13 @@ namespace BookStore_James_Brewster
                 lblMessage.Content = "Can't find order...";
             }
 		}
-	}
+
+		private void btnDeleteOrder_Click(object sender, RoutedEventArgs e)
+		{
+            DatabaseInstance.deleteOrder(Int32.Parse(txtOrderNum.Text.Trim()));
+            CustomerViewOrders cv = new CustomerViewOrders();
+            cv.Show();
+            this.Close();
+        }
+    }
 }

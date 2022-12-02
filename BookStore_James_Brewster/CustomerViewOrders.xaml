@@ -61,7 +61,7 @@
                 </FlowDocument>
 
             </FlowDocumentScrollViewer>
-            <TextBox x:Name="txtOrderNum" Text="Order Number" Width="150" FontSize="17">
+            <TextBox x:Name="txtOrderNum" Text="OrderID" Width="150" FontSize="17">
                 <TextBox.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="8"/>
@@ -69,7 +69,7 @@
                 </TextBox.Resources>
             </TextBox>
             <Label HorizontalAlignment="Center"></Label>
-            <Button x:Name="btnDeleteOrder" Width="150" Background="Red" Foreground="White" Height="30">Delete Order</Button>
+            <Button x:Name="btnDeleteOrder" Width="150" Background="Red" Foreground="White" Height="30" Click="btnDeleteOrder_Click">Delete Order</Button>
             <Label HorizontalAlignment="Center"></Label>
             <Button x:Name="btnEditOrderItems" Width="150" Background="Blue" Foreground="White" Height="30" Click="btnEditOrder_Click">Edit Order Items</Button>
             <Label HorizontalAlignment="Center"></Label>
