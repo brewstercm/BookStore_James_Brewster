@@ -758,16 +758,26 @@ namespace BlazorBookStore1
 
         public static void deleteAuthor(int authorID)
         {
-            string query = $"DELETE FROM dbo.Author WHERE authorID={authorID}";
+            string query = $"DELETE FROM dbo.BookAuthor WHERE authorID={authorID}";
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
 				conn.Open();
-				using (SqlCommand command = new SqlCommand(query, conn))
-				{
-					command.ExecuteNonQuery();
-				}
-			}
-		}
+                using (SqlCommand command = new SqlCommand(query, conn))
+                {
+                    command.ExecuteNonQuery();
+                }
+                query = $"DELETE FROM dbo.BookCategories WHERE authorID WHERE authorID={authorID}";
+                using (SqlCommand command = new SqlCommand(query, conn))
+                {
+                    command.ExecuteNonQuery();
+                }
+                query = $"DELETE FROM dbo.Author WHERE authorID={authorID}";
+                using (SqlCommand command = new SqlCommand(query, conn))
+                {
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
 
         public static void addSupplier(string name) 
         {
