@@ -3,6 +3,7 @@ using BookStore_James_Brewster.databaseclasses;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -177,10 +178,11 @@ namespace BookStore_James_Brewster
 
         private void Button_Click_15(object sender, RoutedEventArgs e)
         {
-			Administrator.CheckAdmin();
-			this.Close();
+            Administrator.CheckAdmin();
+            this.Close();
 
-		private void btnDeleteSupplier_Click(object sender, RoutedEventArgs e)
+        }
+	    private void btnDeleteSupplier_Click(object sender, RoutedEventArgs e)
 		{
             DatabaseInstance.deleteSupplier(s.supplierID);
         }
