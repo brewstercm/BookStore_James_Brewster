@@ -740,7 +740,7 @@ namespace BlazorBookStore1
 			}
 		}
 
-        public static void addSupplier(int supplierID, string name) 
+        public static void addSupplier(string name) 
         {
 			string query = $"INSERT INTO dbo.Supplier VALUES('{name}')";
 			using (SqlConnection conn = new SqlConnection(connectionString))
