@@ -9,6 +9,7 @@ using System.Collections;
 using System.Windows.Controls;
 using System.Runtime.CompilerServices;
 using System.ComponentModel;
+using BookStore_James_Brewster.databaseclasses;
 
 namespace BlazorBookStore1
 {
@@ -342,8 +343,9 @@ namespace BlazorBookStore1
                         string orderDate = reader.GetString(reader.GetOrdinal("orderDate"));
                         decimal orderVal = reader.GetDecimal(reader.GetOrdinal("orderVal"));
                         int customerID = reader.GetInt32(reader.GetOrdinal("customerID"));
+                        int isPlaced = reader.GetInt32(reader.GetOrdinal("isPlaced"));
 
-                        Order newOrder = new Order(orderID, orderDate, orderVal, customerID);
+                        Order newOrder = new Order(orderID, orderDate, orderVal, customerID, isPlaced);
                         orders.Add(newOrder);
                     }
                 }
@@ -366,8 +368,9 @@ namespace BlazorBookStore1
                         int orderID = reader.GetInt32(reader.GetOrdinal("orderID"));
                         string orderDate = reader.GetString(reader.GetOrdinal("orderDate"));
                         decimal orderVal = reader.GetDecimal(reader.GetOrdinal("orderVal"));
+                        int isPlaced = reader.GetInt32(reader.GetOrdinal("isPlaced"));
 
-                        Order newOrder = new Order(orderID, orderDate, orderVal, customerID);
+                        Order newOrder = new Order(orderID, orderDate, orderVal, customerID, isPlaced);
                         orders.Add(newOrder);
                     }
                 }
@@ -390,8 +393,9 @@ namespace BlazorBookStore1
                         string orderDate = reader.GetString(reader.GetOrdinal("orderDate"));
                         decimal orderVal = reader.GetDecimal(reader.GetOrdinal("orderVal"));
                         int customerID = reader.GetInt32(reader.GetOrdinal("customerID"));
+                        int isPlaced = reader.GetInt32(reader.GetOrdinal("isPlaced"));
 
-                        order = new Order(orderID, orderDate, orderVal, customerID);
+                        order = new Order(orderID, orderDate, orderVal, customerID, isPlaced);
                     }
                 }
             }
@@ -837,5 +841,30 @@ namespace BlazorBookStore1
 				}
 			}
 		}
+
+        public static List<OrderItem> getOrderItems(int orderID)
+        {
+            string query = $"SELECT * FROM dbo.Order_Item WHERE orderID={orderID}";
+            List<OrderItem> items = new List<OrderItem>();
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+                using (SqlCommand command = new SqlCommand(query, conn))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            int itemNum = reader.GetInt32(reader.GetOrdinal("itemNum"));
+                            decimal itemPrice = reader.GetDecimal(reader.GetOrdinal("itemPrice"));
+                            string isbnNum = reader.GetString(reader.GetOrdinal("isbnNum"));
+
+                            items.Add(new OrderItem(itemNum, itemPrice, orderID, isbnNum));
+                        }
+                    }
+                }
+            }
+            return items;
+        }
     }
 }

@@ -247,6 +247,7 @@
     <Compile Include="databaseclasses\CustomerDetails.cs" />
     <Compile Include="databaseclasses\DatabaseInstance.cs" />
     <Compile Include="databaseclasses\Order.cs" />
+    <Compile Include="databaseclasses\OrderItem.cs" />
     <Compile Include="databaseclasses\Supplier.cs" />
     <Compile Include="databaseclasses\SupplierRep.cs" />
     <Compile Include="Login.xaml.cs">

@@ -12,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using BookStore_James_Brewster.databaseclasses;
 
 namespace BookStore_James_Brewster
 {
@@ -25,6 +26,16 @@ namespace BookStore_James_Brewster
 		{
             this.o = o;
 			InitializeComponent();
+
+            foreach(OrderItem oi in DatabaseInstance.getOrderItems(o.orderID))
+            {
+                TableRow tR = new TableRow();
+                tR.Cells.Add(getCell(oi.itemNum.ToString()));
+                tR.Cells.Add(getCell(oi.itemPrice.ToString()));
+                tR.Cells.Add(getCell(oi.orderID.ToString()));
+                tR.Cells.Add(getCell(oi.isbnNum));
+                tblRow.Rows.Add(tR);
+            }
             if (BlazorBookStore1.Customer.customerID == -1)
             {
                 hideProfileButtons();
@@ -37,6 +48,16 @@ namespace BookStore_James_Brewster
             {
                 hideAdminButtons();
             }
+        }
+        private TableCell getCell(string info)
+        {
+            TableCell phoneCell = new TableCell();
+            Paragraph phoneParagraph = new Paragraph();
+            Run phoneRun = new Run();
+            phoneRun.Text = info;
+            phoneParagraph.Inlines.Add(phoneRun);
+            phoneCell.Blocks.Add(phoneParagraph);
+            return phoneCell;
         }
 
         private void hideLoggedInButtons()

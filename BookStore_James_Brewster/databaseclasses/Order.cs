@@ -13,12 +13,15 @@ namespace BlazorBookStore1
         public decimal orderVal { get; set; }
         public int customerID { get; set; }
 
-        public Order(int orderID, string orderDate, decimal orderVal, int customerID)
+        public int isPlaced { get; set; }
+
+        public Order(int orderID, string orderDate, decimal orderVal, int customerID, int isPlaced)
         {
             this.orderID = orderID;
             this.orderDate = orderDate;
             this.orderVal = orderVal;
             this.customerID = customerID;
+            this.isPlaced = isPlaced;
         }
     }
 }
