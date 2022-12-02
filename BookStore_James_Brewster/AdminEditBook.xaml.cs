@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using BlazorBookStore1;
+using BookStore_James_Brewster.databaseclasses;
 
 namespace BookStore_James_Brewster
 {
@@ -193,8 +194,7 @@ namespace BookStore_James_Brewster
 
 		private void Button_Click_15(object sender, RoutedEventArgs e)
 		{
-			MainWindow a = new MainWindow();
-			a.Show();
+			Administrator.CheckAdmin();
 			this.Close();
 		}
 

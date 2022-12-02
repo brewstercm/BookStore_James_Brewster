@@ -194,9 +194,8 @@ namespace BookStore_James_Brewster
 
         private void Button_Click_15(object sender, RoutedEventArgs e)
         {
-            MainWindow a = new MainWindow();
-            a.Show();
-            this.Close();
-        }
+			Administrator.CheckAdmin();
+			this.Close();
+		}
     }
 }
