@@ -16,21 +16,21 @@
         </Grid.ColumnDefinitions>
 
         <StackPanel Background="DarkSlateGray">
-            <Label HorizontalAlignment="Center" Foreground="White" TextElement.FontSize="14" TextElement.FontWeight="Bold">Book Store</Label>
-            <Button x:Name="btnAdminBookBrowser" Foreground="BlueViolet" Click="Button_Click_1" Height="30">Book Browser</Button>
-            <Button x:Name="btnAdminCreateCategory" Foreground="BlueViolet" Click="Button_Click_2" Height="30">Create Category</Button>
-            <Button x:Name="btnAdminViewAuthors" Foreground="BlueViolet" Click="Button_Click_5" Height="30">Admin View Authors</Button>
-            <Button x:Name="btnAdminViewCustomers" Foreground="BlueViolet" Click="Button_Click_6" Height="30">Admin View Customers</Button>
-            <Button x:Name="btnAdminViewOrders" Foreground="BlueViolet" Click="Button_Click_7" Height="30">Admin View Orders</Button>
-            <Button x:Name="btnAdminViewSuppliers" Foreground="BlueViolet" Click="Button_Click_8" Height="30">Admin View Suppliers</Button>
-            <Button x:Name="btnAdminSpacer">----</Button>
-            <Button x:Name="btnCustomerBookBrowser" Click="Button_Click_10" Height="30">Book Browser</Button>
-            <Button x:Name="btnCustomerUpdateAccount" Click="Button_Click_11" Height="30">Customer Update Account</Button>
-            <Button x:Name="btnCustomerViewOrders" Click="Button_Click_12" Height="30">Customer View Orders</Button>
-            <Button x:Name="btnCreateAccount" Click="Button_Click_13" Height="30">Create Account</Button>
-            <Button x:Name="btnLogin" Click="Button_Click_14" Height="30">Login</Button>
-            <Button x:Name="btnLogout" Click="btnLogout_Click" Height="30">Logout</Button>
-            <Button Click="Button_Click_15" Height="30">Home</Button>
+            <Label HorizontalAlignment="Center" Foreground="White" TextElement.FontSize="20" TextElement.FontWeight="Bold" TextElement.FontStyle="Italic">Book Store</Label>
+            <Button x:Name="btnAdminBookBrowser" Foreground="BlueViolet" FontSize="18" TextElement.FontStyle="Italic" Click="Button_Click_1" Height="46">Book Browser</Button>
+            <Button x:Name="btnAdminCreateCategory" Foreground="BlueViolet" FontSize="18" TextElement.FontStyle="Italic" Click="Button_Click_2" Height="46">Create Category</Button>
+            <Button x:Name="btnAdminViewAuthors" Foreground="BlueViolet" FontSize="18" TextElement.FontStyle="Italic" Click="Button_Click_5" Height="46">Admin View Authors</Button>
+            <Button x:Name="btnAdminViewCustomers" Foreground="BlueViolet" FontSize="18" TextElement.FontStyle="Italic" Click="Button_Click_6" Height="46">Admin View Customers</Button>
+            <Button x:Name="btnAdminViewOrders" Foreground="BlueViolet" FontSize="18" TextElement.FontStyle="Italic" Click="Button_Click_7" Height="46">Admin View Orders</Button>
+            <Button x:Name="btnAdminViewSuppliers" Foreground="BlueViolet" FontSize="18" TextElement.FontStyle="Italic" Click="Button_Click_8" Height="46">Admin View Suppliers</Button>
+            <Button x:Name="btnAdminSpacer" Background="DarkSlateGray" TextElement.FontStyle="Italic">----</Button>
+            <Button x:Name="btnCustomerBookBrowser" Click="Button_Click_10" FontSize="18" Height="46" TextElement.FontStyle="Italic">Book Browser</Button>
+            <Button x:Name="btnCustomerUpdateAccount" Click="Button_Click_11" FontSize="18" Height="46" TextElement.FontStyle="Italic">Customer Update Account</Button>
+            <Button x:Name="btnCustomerViewOrders" Click="Button_Click_12" FontSize="18" Height="46" TextElement.FontStyle="Italic">Customer View Orders</Button>
+            <Button x:Name="btnCreateAccount" Click="Button_Click_13" FontSize="18" Height="46" TextElement.FontStyle="Italic">Create Account</Button>
+            <Button x:Name="btnLogin" Click="Button_Click_14" FontSize="18" Height="46" TextElement.FontStyle="Italic">Login</Button>
+            <Button x:Name="btnLogout" Click="btnLogout_Click" FontSize="18" Height="46" TextElement.FontStyle="Italic">Logout</Button>
+            <Button Click="Button_Click_15" FontSize="18" Height="46" TextElement.FontStyle="Italic">Home</Button>
         </StackPanel>
 
         <StackPanel Grid.Column="1" Background="LightGray">

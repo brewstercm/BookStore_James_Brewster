@@ -239,6 +239,7 @@
     <Compile Include="CustomerViewOrders.xaml.cs">
       <DependentUpon>CustomerViewOrders.xaml</DependentUpon>
     </Compile>
+    <Compile Include="databaseclasses\Administrator.cs" />
     <Compile Include="databaseclasses\Author.cs" />
     <Compile Include="databaseclasses\AuthorDetails.cs" />
     <Compile Include="databaseclasses\Book.cs" />

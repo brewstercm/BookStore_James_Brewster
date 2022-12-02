@@ -1,4 +1,5 @@
 ﻿using BlazorBookStore1;
+using BookStore_James_Brewster.databaseclasses;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -180,10 +181,9 @@ namespace BookStore_James_Brewster
 
         private void Button_Click_15(object sender, RoutedEventArgs e)
         {
-            MainWindow a = new MainWindow();
-            a.Show();
-            this.Close();
-        }
+			Administrator.CheckAdmin();
+			this.Close();
+		}
 
         private void btnDeleteAccount_Click(object sender, RoutedEventArgs e)
         {
