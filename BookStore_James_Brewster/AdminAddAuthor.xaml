@@ -38,14 +38,6 @@
 
         <StackPanel Grid.Column="1" Background="LightGray">
             <Label Content="Add Author" HorizontalAlignment="Center" FontSize="20" FontFamily="Georgia"/>
-            <Label Width="150" HorizontalAlignment="Center">AuthorID</Label>
-            <TextBox x:Name="txtAuthorID" Text="AuthorID" Width="150" FontSize="17">
-                <TextBox.Resources>
-                    <Style TargetType="{x:Type Border}">
-                        <Setter Property="CornerRadius" Value="8"/>
-                    </Style>
-                </TextBox.Resources>
-            </TextBox>
 
             <Label Width="150" HorizontalAlignment="Center">First Name</Label>
             <TextBox x:Name="txtfName" Text="First Name" Width="150" FontSize="17">

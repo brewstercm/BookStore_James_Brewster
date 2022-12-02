@@ -144,7 +144,7 @@ namespace BookStore_James_Brewster
 
 		private void btnConfirmAddAuthor_Click(object sender, RoutedEventArgs e)
 		{
-			DatabaseInstance.addAuthor(Int32.Parse(txtAuthorID.Text), txtfName.Text, txtfLName.Text, txtGender.Text, txtDOB.Text, txtAddress.Text, txtEmail.Text, txtPhone.Text);
+			DatabaseInstance.addAuthor(txtfName.Text, txtfLName.Text, txtGender.Text, txtDOB.Text, txtAddress.Text, txtEmail.Text, txtPhone.Text);
 			AdminViewAuthors a = new AdminViewAuthors();
 			a.Show();
 			this.Close();

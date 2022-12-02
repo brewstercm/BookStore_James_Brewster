@@ -78,7 +78,25 @@
                     </Style>
                 </TextBox.Resources>
             </TextBox>
-           
+
+            <Label Width="150" HorizontalAlignment="Center">CategoryID</Label>
+            <TextBox x:Name="txtCategoryID" Text="CategoryID" Width="150" FontSize="17">
+                <TextBox.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="8"/>
+                    </Style>
+                </TextBox.Resources>
+            </TextBox>
+
+            <Label Width="150" HorizontalAlignment="Center">AuthorID</Label>
+            <TextBox x:Name="txtAuthorID" Text="AuthorID" Width="150" FontSize="17">
+                <TextBox.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="8"/>
+                    </Style>
+                </TextBox.Resources>
+            </TextBox>
+
             <Label Width="150" HorizontalAlignment="Center"></Label>
             <Button x:Name="btnAddBook" Width="150" Background="Green" Foreground="White" Click="btnAddBook_Click" Height="30">Add Book</Button>
             
