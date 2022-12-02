@@ -25,6 +25,11 @@ namespace BookStore_James_Brewster
         public CustomerBookBrowser(string searchBy = "")
 		{
 			InitializeComponent();
+            cmbSearchBy.Items.Add("category");
+            cmbSearchBy.Items.Add("title");
+            cmbSearchBy.Items.Add("pubDate");
+            cmbSearchBy.Items.Add("reviews");
+            cmbSearchBy.Items.Add("");
             switch (searchBy)
             {
                 case "category":
@@ -267,6 +272,14 @@ namespace BookStore_James_Brewster
             DatabaseInstance.addBookToOrder(book, BlazorBookStore1.Customer.customerID);
             CustomerViewOrders c = new CustomerViewOrders();
             c.Show();
+            this.Close();
+        }
+
+        private void cmbSearchBy_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            string searchBy = cmbSearchBy.SelectedItem.ToString();
+            CustomerBookBrowser cbb = new CustomerBookBrowser();
+            cbb.Show();
             this.Close();
         }
     }

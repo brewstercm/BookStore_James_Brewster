@@ -50,7 +50,7 @@
                             <TableRow>
                                 <TableCell>
                                     <BlockUIContainer>
-                                        <ComboBox Name="cmbSearchBy" Text="Search" Width="200" Height="30" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,10,0,0">
+                                        <ComboBox Name="cmbSearchBy" Text="Search" Width="200" Height="30" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,10,0,0" SelectionChanged="cmbSearchBy_SelectionChanged">
                                             <ComboBoxItem>
                                                 
                                             </ComboBoxItem>
