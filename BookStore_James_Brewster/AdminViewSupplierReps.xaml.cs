@@ -25,10 +25,32 @@ namespace BookStore_James_Brewster
 		public AdminViewSupplierReps(Supplier s)
 		{
 			InitializeComponent();
-			this.s = s; 
-		}
+			this.s = s;
+			foreach (SupplierRep sr in DatabaseInstance.viewSupplierReps(s.supplierID))
+			{
+				TableRow tr = new TableRow();
+				tr.Cells.Add(getCell(sr.fName));
+				tr.Cells.Add(getCell(sr.lName));
+				tr.Cells.Add(getCell(sr.workNum));
+				tr.Cells.Add(getCell(sr.cellNum));
+				tr.Cells.Add(getCell(sr.email));
 
-		private void btnViewSupplierRep_Click(object sender, RoutedEventArgs e)
+				tblRow.Rows.Add(tr);
+			}
+		}
+        private TableCell getCell(string value)
+        {
+            TableCell isbnCell = new TableCell();
+            Paragraph isbnParagraph = new Paragraph();
+            Run isbnRun = new Run();
+            isbnRun.Text = value;
+            isbnParagraph.Inlines.Add(isbnRun);
+            isbnCell.Blocks.Add(isbnParagraph);
+
+            return isbnCell;
+        }
+
+        private void btnViewSupplierRep_Click(object sender, RoutedEventArgs e)
 		{
 			AdminEditSupplierRep a = new AdminEditSupplierRep();
 			a.Show();

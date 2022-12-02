@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 
 namespace BookStore_James_Brewster.databaseclasses
 {
-	internal class SupplierRep
+	public class SupplierRep
 	{
 		public string fName { get; set; }
 		public string lName { get; set; }
-		public int workNum { get; set; }
-		public int cellNum { get; set; }
+		public string workNum { get; set; }
+		public string cellNum { get; set; }
 		public string email { get; set; }
 		public int supplierID { get; set; }
-		public SupplierRep(string fName, string lName, int workNum, int cellNum, string email, int supplierID) 
+		public SupplierRep(string fName, string lName, string workNum, string cellNum, string email, int supplierID) 
 		{
 			this.fName = fName;
 			this.lName = lName;

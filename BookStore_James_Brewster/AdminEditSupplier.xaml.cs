@@ -185,6 +185,9 @@ namespace BookStore_James_Brewster
 	    private void btnDeleteSupplier_Click(object sender, RoutedEventArgs e)
 		{
             DatabaseInstance.deleteSupplier(s.supplierID);
+            AdminViewSuppliers avs = new AdminViewSuppliers();
+            avs.Show();
+            this.Close();
         }
 
 		private void btnConfirmEditSupplier_Click(object sender, RoutedEventArgs e)

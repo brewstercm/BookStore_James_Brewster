@@ -69,7 +69,7 @@
 
             <Button x:Name="btnDeleteOrder" Width="150" Background="Red" Foreground="White" Click="btnDeleteOrder_Click" Height="30">Delete Order</Button>
             <Label Width="150"  HorizontalAlignment="Center"></Label>
-            <Button x:Name="btnConfirmOrderChanges" Width="150" Background="Green" Foreground="White" Height="30">Confirm Changes</Button>
+            <Button x:Name="btnConfirmOrderChanges" Width="150" Background="Green" Foreground="White" Height="30" Click="btnConfirmOrderChanges_Click">Confirm Changes</Button>
 
         </StackPanel>
     </Grid>

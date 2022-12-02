@@ -230,18 +230,30 @@ namespace BookStore_James_Brewster
             if(Int32.TryParse(txtOrderNum.Text.Trim(), out int result))
             {
                 Order o = DatabaseInstance.getOrder(Int32.Parse(txtOrderNum.Text.Trim()));
-                if (o.isPlaced == 1)
+                if (o == null)
                 {
                     lblMessage.Visibility = Visibility.Visible;
-                    lblMessage.Content = "Can't edit an order that's been placed.";
+                    lblMessage.Content = "Could not find order.";
                 }
                 else
                 {
-                    DatabaseInstance.deleteOrder(Int32.Parse(txtOrderNum.Text.Trim()));
-                    CustomerViewOrders cv = new CustomerViewOrders();
-                    cv.Show();
-                    this.Close();
+                    if (o.isPlaced == 1)
+                    {
+                        lblMessage.Visibility = Visibility.Visible;
+                        lblMessage.Content = "Can't delete an order that's been placed.";
+                    }
+                    else
+                    {
+                        DatabaseInstance.deleteOrder(Int32.Parse(txtOrderNum.Text.Trim()));
+                        CustomerViewOrders cv = new CustomerViewOrders();
+                        cv.Show();
+                        this.Close();
+                    }
                 }
+            } else
+            {
+                lblMessage.Visibility = Visibility.Visible;
+                lblMessage.Content = "Please enter a valid order number";
             }
             
         }

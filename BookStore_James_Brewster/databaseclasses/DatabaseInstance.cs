@@ -19,7 +19,7 @@ namespace BlazorBookStore1
     /// </summary>
     public static class DatabaseInstance
     {
-        private static string connectionString = @"Server=(LocalDB)\MSSQLLocalDB;Integrated Security=true;AttachDbFileName=C:\Users\Legen\source\repos\BookStore_James_Brewster\BookStore_James_Brewster\database\BookStoreDB.mdf;Connection Lifetime=120;MultipleActiveResultSets=true;";
+        private static string connectionString = @"Server=(LocalDB)\MSSQLLocalDB;Integrated Security=true;AttachDbFileName=C:\Users\Legen\Source\Repos\BookStore_James_Brewster1\BookStore_James_Brewster\database\BookStoreDB.mdf;Connection Lifetime=120;MultipleActiveResultSets=true;";
         public static void createCategory(string catName)
         {
             string query = $"INSERT INTO dbo.Categories VALUES('{catName}')";
@@ -920,6 +920,32 @@ namespace BlazorBookStore1
                 command.ExecuteNonQuery();
             }
         }
+        public static List<SupplierRep> viewSupplierReps(int supplierID)
+        {
+            List<SupplierRep> reps = new List<SupplierRep>();
+            string query = $"SELECT * FROM dbo.SupplierRep WHERE supplierID={supplierID}";
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+                using (SqlCommand command = new SqlCommand(query, conn))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            string fName = reader.GetString(reader.GetOrdinal("fName"));
+                            string lName = reader.GetString(reader.GetOrdinal("lName"));
+                            string workNum = reader.GetString(reader.GetOrdinal("workNum"));
+                            string cellNum = reader.GetString(reader.GetOrdinal("cellNum"));
+                            string email = reader.GetString(reader.GetOrdinal("email"));
+
+                            reps.Add(new SupplierRep(fName, lName, workNum, cellNum, email, supplierID));
+                        }
+                    }
+                }
+            }
+            return reps;
+        }
         public static void addSupplierRep(string fName, string lName, string workNum, string cellNum, string email, int supplierID)
         {
             string query = $"INSERT INTO dbo.SupplierRep VALUES('{fName}', '{lName}', '{workNum}', '{cellNum}', '{email}', {supplierID})";
@@ -1013,7 +1039,7 @@ namespace BlazorBookStore1
                 {
                     command.ExecuteNonQuery();
                 }
-                query = $"DELETE FROM dbo.BookCategories WHERE authorID={authorID}";
+                query = $"DELETE FROM dbo.AuthorContactDetails WHERE authorID={authorID}";
                 using (SqlCommand command = new SqlCommand(query, conn))
                 {
                     command.ExecuteNonQuery();

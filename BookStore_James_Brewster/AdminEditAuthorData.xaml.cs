@@ -208,6 +208,9 @@ namespace BookStore_James_Brewster
 		private void btnDeleteAuthor_Click(object sender, RoutedEventArgs e) 
 		{
 			DatabaseInstance.deleteAuthor(author.AuthorID);
+			AdminViewAuthors ava = new AdminViewAuthors();
+			ava.Show();
+			this.Close();
 		}
 	}
 }

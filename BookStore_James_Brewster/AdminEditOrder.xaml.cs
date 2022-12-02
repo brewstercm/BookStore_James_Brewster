@@ -27,6 +27,8 @@ namespace BookStore_James_Brewster
 		{
 			this.o = o;
 			InitializeComponent();
+			txtOrderDate.Text = o.orderDate;
+			TxtOrderCost.Text = o.orderVal.ToString();
             if (BlazorBookStore1.Customer.customerID == -1)
             {
                 hideProfileButtons();
@@ -183,6 +185,17 @@ namespace BookStore_James_Brewster
 		private void btnDeleteOrder_Click(object sender, RoutedEventArgs e)
 		{
 			DatabaseInstance.deleteOrder(o.orderID);
+            AdminViewOrders avo = new AdminViewOrders();
+            avo.Show();
+            this.Close();
+        }
+
+        private void btnConfirmOrderChanges_Click(object sender, RoutedEventArgs e)
+        {
+			DatabaseInstance.editOrder(o.orderID, txtOrderDate.Text.Trim(), decimal.Parse(TxtOrderCost.Text.Trim()), o.customerID);
+			AdminViewOrders avo = new AdminViewOrders();
+			avo.Show();
+			this.Close();
         }
     }
 	

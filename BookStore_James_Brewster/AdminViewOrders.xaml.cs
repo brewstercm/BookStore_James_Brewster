@@ -32,6 +32,7 @@ namespace BookStore_James_Brewster
 				tableRow.Cells.Add(getCell(o.orderID.ToString()));
 				tableRow.Cells.Add(getCell(o.orderDate));
 				tableRow.Cells.Add(getCell(o.orderVal.ToString()));
+				tableRow.Cells.Add(getCell(o.customerID.ToString()));
 				tblRow.Rows.Add(tableRow);
 			}
 			if (BlazorBookStore1.Customer.customerID == -1)

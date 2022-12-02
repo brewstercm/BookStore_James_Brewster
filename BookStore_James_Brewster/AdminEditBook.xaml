@@ -86,7 +86,7 @@
 
             <Button x:Name="btntDeleteBook" Width="150" Background="Red" Foreground="White" Click="btntDeleteBook_Click" Height="30">Delete Book</Button>
             <Label Width="150" HorizontalAlignment="Center"></Label>
-            <Button x:Name="btnConfirmEditBook" Width="150" Background="Green" Foreground="White" Click="btnConfirmEditBook_Click" Height="30" >Confirm Cahnges</Button>
+            <Button x:Name="btnConfirmEditBook" Width="150" Background="Green" Foreground="White" Click="btnConfirmEditBook_Click" Height="30" >Confirm Changes</Button>
 
         </StackPanel>
     </Grid>

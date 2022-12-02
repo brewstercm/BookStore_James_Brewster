@@ -85,11 +85,10 @@ namespace BookStore_James_Brewster
 
 		private void btnConfirmChanges_Click(object sender, RoutedEventArgs e)
 		{
-			if(!txtISBN.Text.Trim().Equals(string.Empty) && !txtTitle.Text.Trim().Equals(string.Empty) && !txtPubDate.Text.Trim().Equals(string.Empty) && !txtPrice.Text.Trim().Equals(string.Empty) && 
-				!txtReviews.Text.Trim().Equals(string.Empty) && float.TryParse(txtPrice.Text.Trim(), out float result) && float.TryParse(txtReviews.Text.Trim(), out float result2))
-			{
-                DatabaseInstance.editBook(txtISBN.Text.Trim(), txtTitle.Text.Trim(), txtPubDate.Text.Trim(), decimal.Parse(txtPrice.Text.Trim()), decimal.Parse(txtReviews.Text.Trim()), this.book.supplierID);
-            }
+			DatabaseInstance.editBook(txtISBN.Text.Trim(), txtTitle.Text.Trim(), txtPubDate.Text.Trim(), decimal.Parse(txtPrice.Text.Trim()), decimal.Parse(txtReviews.Text.Trim()), this.book.supplierID);
+			AdminBookBrowser abb = new AdminBookBrowser();
+			abb.Show();
+			this.Close();
         }
 		private void Button_Click(object sender, RoutedEventArgs e)
 		{
@@ -208,7 +207,7 @@ namespace BookStore_James_Brewster
 
 		private void btnConfirmEditBook_Click(object sender, RoutedEventArgs e)
 		{
-			DatabaseInstance.editBook(book.isbnNum, book.title, book.pubDate, book.price, book.reviews, book.supplierID);
+			DatabaseInstance.editBook(txtISBN.Text.Trim(), txtTitle.Text.Trim(), txtPubDate.Text.Trim(), decimal.Parse(txtPrice.Text.Trim()), decimal.Parse(txtReviews.Text.Trim()), book.supplierID);
 			AdminBookBrowser a = new AdminBookBrowser();
 			a.Show();
 			this.Close();

@@ -196,7 +196,7 @@ namespace BookStore_James_Brewster
 
 		private void btnConfirmEditCustomer_Click(object sender, RoutedEventArgs e)
 		{
-            DatabaseInstance.editCustomer(customer.customerID, customer.fName, customer.lName, customer.email, customer.phone, customer.address);
+            DatabaseInstance.editCustomer(customer.customerID, txtfName.Text.Trim(), txtfLName.Text.Trim(), txtEmail.Text.Trim(), txtPhone.Text.Trim(), txtAddress.Text.Trim());
 			AdminViewCustomers a = new AdminViewCustomers();
 			a.Show();
 			this.Close();
