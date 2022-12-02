@@ -28,7 +28,14 @@ namespace BookStore_James_Brewster
                 TableRow tableRow = new TableRow();
                 tableRow.Cells.Add(getCell(s.supplierID.ToString()));
                 tableRow.Cells.Add(getCell(s.name));
-				tblRow.Rows.Add(tableRow);
+				if (tblRow == null)
+				{
+
+				}
+				else 
+				{
+					tblRow.Rows.Add(tableRow);
+				}
             }
 			
 			InitializeComponent();
@@ -206,9 +213,7 @@ namespace BookStore_James_Brewster
 		}
         private void btnAddSupplier_Click(object sender, RoutedEventArgs e)
         {
-            string supplierName = (txtSupplierID.Text).Trim();
-            DatabaseInstance.createSupplier(supplierName);
-            AdminViewSuppliers avs = new AdminViewSuppliers();
+            AdminAddSupplier avs = new AdminAddSupplier();
             avs.Show();
             this.Close();
         }

@@ -38,8 +38,8 @@
 
         <StackPanel Grid.Column="1" Background="LightGray">
             <Label Content="Add Author" HorizontalAlignment="Center" FontSize="20" FontFamily="Georgia"/>
-            <Label Width="150" HorizontalAlignment="Center">Author First Name</Label>
-            <TextBox x:Name="txtAuthorfName" Text="First Name" Width="150" FontSize="17">
+            <Label Width="150" HorizontalAlignment="Center">AuthorID</Label>
+            <TextBox x:Name="txtAuthorID" Text="AuthorID" Width="150" FontSize="17">
                 <TextBox.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="8"/>
@@ -47,8 +47,8 @@
                 </TextBox.Resources>
             </TextBox>
 
-            <Label Width="150" HorizontalAlignment="Center">Author Last Name</Label>
-            <TextBox x:Name="txtAuthorlName" Text="Last Name" Width="150" FontSize="17">
+            <Label Width="150" HorizontalAlignment="Center">First Name</Label>
+            <TextBox x:Name="txtfName" Text="First Name" Width="150" FontSize="17">
                 <TextBox.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="8"/>
@@ -56,8 +56,8 @@
                 </TextBox.Resources>
             </TextBox>
 
-            <Label Width="150" HorizontalAlignment="Center">Author Gender</Label>
-            <TextBox x:Name="txtAuthorGender" Text="Address" Width="150" FontSize="17">
+            <Label Width="150" HorizontalAlignment="Center">Last Name</Label>
+            <TextBox x:Name="txtfLName" Text="Last Name" Width="150" FontSize="17">
                 <TextBox.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="8"/>
@@ -65,19 +65,56 @@
                 </TextBox.Resources>
             </TextBox>
 
-            <Label Width="150" HorizontalAlignment="Center">Author DOB</Label>
-            <TextBox x:Name="txtAuthorDOB" Text="DOB" Width="150" FontSize="17">
+            <Label Width="150" HorizontalAlignment="Center">Gender</Label>
+            <TextBox x:Name="txtGender" Text="Gender" Width="150" FontSize="17">
                 <TextBox.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="8"/>
                     </Style>
                 </TextBox.Resources>
             </TextBox>
+
+            <Label Width="150" HorizontalAlignment="Center">DOB</Label>
+            <TextBox x:Name="txtDOB" Text="DOB" Width="150" FontSize="17">
+                <TextBox.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="8"/>
+                    </Style>
+                </TextBox.Resources>
+            </TextBox>
+
+            <Label Width="150" HorizontalAlignment="Center">Address</Label>
+            <TextBox x:Name="txtAddress" Text="Address" Width="150" FontSize="17">
+                <TextBox.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="8"/>
+                    </Style>
+                </TextBox.Resources>
+            </TextBox>
+
+            <Label Width="150" HorizontalAlignment="Center">Email</Label>
+            <TextBox x:Name="txtEmail" Text="Email" Width="150" FontSize="17">
+                <TextBox.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="8"/>
+                    </Style>
+                </TextBox.Resources>
+            </TextBox>
+
+            <Label Width="150" HorizontalAlignment="Center">Phone</Label>
+            <TextBox x:Name="txtPhone" Text="Phone" Width="150" FontSize="17">
+                <TextBox.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="8"/>
+                    </Style>
+                </TextBox.Resources>
+            </TextBox>
+
             <Label Width="150" HorizontalAlignment="Center"></Label>
 
+            <Button x:Name="btnConfirmAddAuthor" Width="150" Background="Green" Foreground="White" Click="btnConfirmAddAuthor_Click" Height="30">Add Author</Button>
             <Label Width="150" HorizontalAlignment="Center"></Label>
-            <Button x:Name="btnAddAuthor" Width="150" BorderBrush="Green" Click="btnCreateAccount_Click" Background="Green" Foreground="White" Height="30">Add Author</Button>
-            <Label x:Name="lblMessage">test</Label>
+
         </StackPanel>
     </Grid>
 </Window>

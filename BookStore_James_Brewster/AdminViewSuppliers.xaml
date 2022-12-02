@@ -41,13 +41,24 @@
                 <FlowDocument>
                     <Paragraph FontSize="14pt">View Suppliers:</Paragraph>
                     <Table x:Name="tblTable">
-                        <TableRowGroup x:Name="tblRow" Paragraph.TextAlignment="left">
+                        <TableRowGroup x:Name="headers" Paragraph.TextAlignment="left">
                             <TableRow FontWeight="Bold" >
                                 <TableCell>
                                     <Paragraph>SupplierID</Paragraph>
                                 </TableCell>
                                 <TableCell>
                                     <Paragraph>Name</Paragraph>
+                                </TableCell>
+                            </TableRow>
+                        </TableRowGroup>
+
+                        <TableRowGroup x:Name="tblRow" Paragraph.TextAlignment="left">
+                            <TableRow FontWeight="Bold" >
+                                <TableCell>
+                                    <Paragraph></Paragraph>
+                                </TableCell>
+                                <TableCell>
+                                    <Paragraph></Paragraph>
                                 </TableCell>
                             </TableRow>
                         </TableRowGroup>

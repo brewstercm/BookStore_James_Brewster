@@ -79,7 +79,7 @@
             <Label HorizontalAlignment="Center"></Label>
             <Button x:Name="btnAddBook" Width="150" Click="btnAddBook_Click" Background="Green" Foreground="White" Height="30">Add Book</Button>
             <Label HorizontalAlignment="Center"></Label>
-            <Button x:Name="btnEditBook" Width="150" Background="Blue" Foreground="White" Height="30">Edit Book</Button>
+            <Button x:Name="btnEditBook" Width="150" Background="Blue" Foreground="White" Height="30" Click="btnEditBook_Click">Edit Book</Button>
         </StackPanel>
     </Grid>
 </Window>

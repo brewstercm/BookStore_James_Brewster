@@ -5,6 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Xml.Linq;
+using System.Collections;
+using System.Windows.Controls;
+using System.Runtime.CompilerServices;
 
 namespace BlazorBookStore1
 {
@@ -700,6 +703,46 @@ namespace BlazorBookStore1
         public static void editSupplierRep(string fName, string lName, string workNum, string cellNum, string email, int supplierID)
         {
 			string query = $"UPDATE dbo.SupplierRep SET name='{fName}' , '{lName}', '{workNum}' , '{cellNum}' , '{email}' WHERE supplierID={supplierID}";
+			using (SqlConnection conn = new SqlConnection(connectionString))
+			{
+				conn.Open();
+				using (SqlCommand command = new SqlCommand(query, conn))
+				{
+					command.ExecuteNonQuery();
+				}
+			}
+		}
+
+        public static void addAuthor(int authorID, string fName, string lName, string gender, string DOB, string address, string email, string phone)
+        {
+            string query = $"INSERT INTO dbo.Author VALUES('{authorID}', '{fName}', '{lName}', '{gender}', '{DOB}')";
+            string query2 = $"INSERT INTO dbo.AuthorContactDetails VALUES('{authorID}', {address}, '{email}', '{phone}') WHERE authorID={authorID}";
+			using (SqlConnection conn = new SqlConnection(connectionString))
+			{
+				SqlCommand command = new SqlCommand(query, conn);
+				SqlCommand command2 = new SqlCommand(query2, conn);
+				conn.Open();
+				command2.ExecuteNonQuery();
+				command.ExecuteNonQuery();
+			}
+		}
+
+        public static void deleteAuthor(int authorID)
+        {
+            string query = $"DELETE FROM dbo.Author WHERE authorID='{authorID}'";
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+				conn.Open();
+				using (SqlCommand command = new SqlCommand(query, conn))
+				{
+					command.ExecuteNonQuery();
+				}
+			}
+		}
+
+        public static void addSupplier(int supplierID, string name) 
+        {
+			string query = $"INSERT INTO dbo.Supplier VALUES('{name}')";
 			using (SqlConnection conn = new SqlConnection(connectionString))
 			{
 				conn.Open();

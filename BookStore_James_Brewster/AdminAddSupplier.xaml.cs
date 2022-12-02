@@ -11,21 +11,54 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace BookStore_James_Brewster
 {
 	/// <summary>
-	/// Interaction logic for AdminAddAuthor.xaml
+	/// Interaction logic for AdminAddSupplier.xaml
 	/// </summary>
-	public partial class AdminAddAuthor : Window
+	public partial class AdminAddSupplier : Window
 	{
-		public AdminAddAuthor()
+		public AdminAddSupplier()
 		{
 			InitializeComponent();
 		}
 
+		private void btnConfirmAddSupplier_Click(object sender, RoutedEventArgs e)
+		{
+			DatabaseInstance.addSupplier(Int32.Parse(txtSupplierID.Text), txtSupplierName.Text);
+        }
+
+		private void hideLoggedInButtons()
+		{
+			btnLogin.Visibility = Visibility.Hidden;
+			btnCreateAccount.Visibility = Visibility.Hidden;
+		}
+		private void hideAdminButtons()
+		{
+			btnAdminBookBrowser.Visibility = Visibility.Hidden;
+			btnAdminCreateCategory.Visibility = Visibility.Hidden;
+			btnAdminSpacer.Visibility = Visibility.Hidden;
+			btnAdminViewCustomers.Visibility = Visibility.Hidden;
+			btnAdminViewOrders.Visibility = Visibility.Hidden;
+			btnAdminViewSuppliers.Visibility = Visibility.Hidden;
+			btnAdminCreateCategory.Visibility = Visibility.Hidden;
+		}
+		private void hideProfileButtons()
+		{
+			btnLogout.Visibility = Visibility.Hidden;
+			btnCustomerUpdateAccount.Visibility = Visibility.Hidden;
+			btnCustomerViewOrders.Visibility = Visibility.Hidden;
+			btnCustomerBookBrowser.Visibility = Visibility.Hidden;
+		}
+		private void btnLogout_Click(object sender, RoutedEventArgs e)
+		{
+			DatabaseInstance.Logout();
+			Login mw = new Login();
+			mw.Show();
+			this.Close();
+		}
 		private void Button_Click(object sender, RoutedEventArgs e)
 		{
 			AdminAddBook a = new AdminAddBook();
@@ -130,22 +163,6 @@ namespace BookStore_James_Brewster
 		private void Button_Click_15(object sender, RoutedEventArgs e)
 		{
 			MainWindow a = new MainWindow();
-			a.Show();
-			this.Close();
-		}
-
-		private void btnLogout_Click(object sender, RoutedEventArgs e)
-		{
-			DatabaseInstance.Logout();
-			Login mw = new Login();
-			mw.Show();
-			this.Close();
-		}
-
-		private void btnConfirmAddAuthor_Click(object sender, RoutedEventArgs e)
-		{
-			DatabaseInstance.addAuthor(Int32.Parse(txtAuthorID.Text), txtfName.Text, txtfLName.Text, txtGender.Text, txtDOB.Text, txtAddress.Text, txtEmail.Text, txtPhone.Text);
-			AdminViewAuthors a = new AdminViewAuthors();
 			a.Show();
 			this.Close();
 		}

@@ -80,6 +80,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="AdminAddSupplier.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="AdminAddSupplierRep.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -169,6 +173,9 @@
     </Compile>
     <Compile Include="AdminAddBook.xaml.cs">
       <DependentUpon>AdminAddBook.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AdminAddSupplier.xaml.cs">
+      <DependentUpon>AdminAddSupplier.xaml</DependentUpon>
     </Compile>
     <Compile Include="AdminAddSupplierRep.xaml.cs">
       <DependentUpon>AdminAddSupplierRep.xaml</DependentUpon>

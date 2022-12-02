@@ -209,7 +209,7 @@ namespace BookStore_James_Brewster
 			this.Close();
 		}
 
-		private void btnCreateAccount_Click(object sender, RoutedEventArgs e)
+		private void btnAddAuthor_Click (object sender, RoutedEventArgs e)
 		{
 			AdminAddAuthor aa = new AdminAddAuthor();
 			aa.Show();
